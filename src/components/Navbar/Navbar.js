@@ -7,13 +7,13 @@ const Navbar = () => {
     return(
         <header className="navbar" id="home">
             <img className="navbar__logo" src={Logo} alt="Rosa Reinigung company logo" />
-            <nav className="navbar__nav">
-                <a href="#home">Home</a>
-                <a href="#services">Dienstleistungen</a>
-                <a href="#reviews">Bewertungen</a>
-                <a href="#gallery">Fotogalerie</a>
-                <a href="#contact">Kontakt</a>
-                <button type="button">
+            <nav className="nav">
+                <a className="nav__link" href="#home">Home</a>
+                <a className="nav__link" href="#services">Dienstleistungen</a>
+                <a className="nav__link" href="#reviews">Bewertungen</a>
+                <a className="nav__link" href="#gallery">Fotogalerie</a>
+                <a className="nav__link" href="#contact">Kontakt</a>
+                <button className="nav__link--button" type="button">
                     <a href="#form">Terminvereinbarung</a>
                 </button>
             </nav>
