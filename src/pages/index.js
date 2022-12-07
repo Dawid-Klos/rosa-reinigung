@@ -2,13 +2,13 @@ import * as React from "react"
 
 import "../styles/index.scss";
 import Navbar from "../components/Navbar/Navbar";
+import Hero from "../components/Hero/Hero";
 
 const IndexPage = () => {
   return (
     <>
       <Navbar/>
-      <h1>Welcome to Rosa Reinigung</h1>
-      <p>This is my first website with Gatsby on the board! Awesome.</p>
+      <Hero />
     </>
     )
 }

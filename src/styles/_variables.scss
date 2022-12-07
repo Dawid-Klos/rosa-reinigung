@@ -1,0 +1,56 @@
+// Colors
+$color-pink: #E277AD;
+$color-pink-light: hsla(332, 77%, 85%, 0.2);
+$color-grey: #504E51;
+$color-purple: #733C92;
+$color-white: #FFFAFD;
+
+// Fonts
+$font-family-poppins: 'Poppins', serif;
+$font-family-raleway: 'Raleway', sans-serif;
+
+// Mixins
+@mixin small-mobile-up {
+    @media (min-width: 280px) {
+      @content;
+    }
+  }
+  @mixin mobile-up {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  @mixin mobile-up {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+@mixin mobile-up {
+    @media (min-width: 481px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet-up{
+    @media (min-width: 768px){
+        @content;
+    }
+  }
+
+  @mixin small-desktop-up{
+    @media (min-width: 1024px) and (max-width: 1399px){
+        @content;
+    }
+  }
+
+  @mixin desktop-up{
+    @media (min-width: 1440px){
+        @content;
+    }
+  }
+
+  @mixin large-desktop-up{
+    @media (min-width: 1920px){
+        @content;
+    }
+  }
