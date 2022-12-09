@@ -2,7 +2,6 @@ import React from "react";
 
 import "../../styles/hero.scss";
 import Lines from "../../images/img-line-detail.png";
-import Person from "../../images/img-hero-person.png";
 import LocationIcon from "../../images/icons/icon-location.svg";
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 
