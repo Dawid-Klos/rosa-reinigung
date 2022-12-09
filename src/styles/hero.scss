@@ -1,12 +1,12 @@
 @import "./_variables.scss";
 
 .hero {
+    display: flex;
+    min-height: 85vh;
     margin: 1rem;
     background-color: $color-pink-light;
     border-radius: 0.6rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 85vh;
+    position: relative;
     overflow: hidden;
     @include large-desktop-up {
         margin: 2rem 8rem;
@@ -17,6 +17,7 @@
     margin-left: 8rem;
     margin-top: 8rem;
     max-width: 40rem;
+    z-index: 1;
     @include small-desktop-up {
         margin-left: 4rem;
         margin-top: 6rem;
@@ -26,12 +27,11 @@
         margin-top: 5rem;
         margin-left: 13rem;
     }
-
     &__location {
         display: flex;
         align-items: center;
         @include small-desktop-up {
-            margin-bottom: 1rem;
+            margin-bottom: -0.2rem;
         }
         & img {
             width: 1.4rem;
@@ -88,6 +88,7 @@
         min-height: 3.6rem;
         padding: .2rem 2rem;
         margin-top: 2rem;
+        text-decoration: none;
         color: hsla(324, 100%, 99%, 0.8);
         transition: all .4s;
         @include small-desktop-up {
@@ -97,6 +98,8 @@
         }
         @include large-desktop-up {
             margin-top: 2.4rem;
+            min-height: 3.2rem;
+            padding: 0 2rem;
         }
             &:hover {
                 width: 40%;
@@ -109,6 +112,9 @@
                     padding: 0 2rem;
                 }
             }
+            & img {
+                width: 0.1rem;
+            }
             &:hover img {
                 transition: all 0.8s;
                 width: 1.6rem;
@@ -118,56 +124,37 @@
             & p {
                 color: inherit;
                 font-weight: 600;
-                text-decoration: none;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 padding: .4rem 0;
                 margin-right: 1rem;
                 transition: color .4s ease-in-out;
+                margin-left: 10px;
             }
-            & img {
-                width: 0.1rem;
-            }
-
     }
 }
 
 .hero-image {
-    position: relative;
+    position: absolute;
+    width: calc(100vw - 1rem);
+    top: 0%;
+    left: calc(8% - 2vw);
+    transform: translate(-4%, -2%);
     &__lines {
-        width: 180vw;
-        height: auto;
-        transform: translate(-49%, 4%);
-        position: absolute;
+        width: 100%;
         z-index: -1;
-        @include small-desktop-up {
-            width: 110vw;
-            height: auto;
-            transform: translate(-53%, -8%);
-        }
-        @include large-desktop-up {
-            width: 130vw;
-            height: auto;
-            transform: translate(-48%, 2%); 
-        }
     }
-    &__person {
-        width: 35rem;
-        height: 37.5rem;
-        position: absolute;
-        top: 6rem;
-        left: 6rem;
-        @include small-desktop-up {
-            width: 28rem;
-            height: 30rem;
-            top: 6rem;
-            left: 2rem;
-        }
-        @include large-desktop-up {
-            // width: 42rem;
-            // height: 45rem;
-            top: 4rem;
-            left: 7rem;
-        }
+    @include small-desktop-up {
+        width: calc(100vw - 2vw);
+        left: -2%;
+        top: 55%;
+        transform: translate(2%, -50%);
     }
+    @include large-desktop-up {
+        width: calc(100vw - 25%);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
 }
