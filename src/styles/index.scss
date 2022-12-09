@@ -24,6 +24,7 @@ body {
   font-size: 16px;
   color: $color-grey;
   font-family: $font-family-poppins;
+  overflow-x: hidden;
   @include small-desktop-up {
     font-size: 14px;
   }
