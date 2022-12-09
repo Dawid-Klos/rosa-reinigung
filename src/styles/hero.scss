@@ -12,90 +12,145 @@
 
 .hero-content {
     margin-left: 8rem;
-    margin-top: 4rem;
+    margin-top: 8rem;
     max-width: 40rem;
+    @include small-desktop-up {
+        margin-left: 4rem;
+        margin-top: 3rem;
+        max-width: 26rem;
+    }
+    @include large-desktop-up {
+        margin-left: 20rem;
+    }
+
     &__location {
         display: flex;
         align-items: center;
         margin-bottom: -.5rem;
-    }
-    &__location img {
-        width: 1.4rem;
-        height: 1.4rem;
-        margin-right: .5rem;
-    }
-    &__location p {
-        color: hsla(280, 2%, 31%, 0.65);
-        letter-spacing: 3px;
-        font-weight: 600;
+        & img {
+            width: 1.4rem;
+            height: 1.4rem;
+            margin-right: .5rem;
+        }
+        & p {
+            color: hsla(280, 2%, 31%, 0.65);
+            @include large-desktop-up {
+                font-size: 1.1rem;
+            }
+            & span {
+                letter-spacing: 3px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $color-purple-light;
+            }
+        }
     }
     &__heading {
         min-width: 34rem;
         font-family: $font-family-raleway;
         font-weight: 600;
         color: $color-grey;
-        font-size: 4rem;
+        font-size: 3.6rem;
         line-height: 116%;
         margin: 0;
+        @include small-desktop-up {
+            font-size: 2.6rem;
+            min-width: 26rem;
+        }
+        @include large-desktop-up {
+            font-size: 4.6rem;
+        }
     }
     &__description {
         line-height: 1.8rem;
         color: hsla(280, 2%, 31%, 0.65);
+        @include small-desktop-up {
+            line-height: 1.5rem;
+        }
+        @include large-desktop-up {
+            line-height: 2rem;
+            font-size: 1.1rem;
+        }
     }
     &__call-to-action {
-        width: 35%;
+        width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: $color-purple;
-        border-radius: 36px;
+        border-radius: 0.6rem;
         min-height: 3.6rem;
         padding: .2rem 2rem;
         margin-top: 2rem;
-        color: hsla(324, 100%, 99%, 0.7);
+        color: hsla(324, 100%, 99%, 0.8);
         transition: all .4s;
-    }
-    &__call-to-action:hover {
-        width: 40%;
-        box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35), 0px 6px 24px rgba(175, 120, 206, 0.45);
-        color: $color-white;
-        cursor: pointer;
-    }
-    &__call-to-action p {
-        color: inherit;
-        font-weight: 600;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: .4rem 0;
-        margin-right: 1rem;
-        transition: color .4s ease-in-out;
-    }
-    &__call-to-action img {
-        width: 0.1rem;
-    }
-    &__call-to-action:hover img {
-        transition: all 0.8s;
-        width: 1.6rem;
-        opacity: 1;
-        transform: rotateY(360deg);
+        @include small-desktop-up {
+            width: 35%;
+            min-height: 2rem;
+            padding: 0 2rem;
+        }
+        @include large-desktop-up {
+
+        }
+            &:hover {
+                width: 40%;
+                box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35), 0px 6px 24px rgba(175, 120, 206, 0.45);
+                color: $color-white;
+                cursor: pointer;
+                @include small-desktop-up {
+                    width: 45%;
+                    min-height: 2rem;
+                    padding: 0 2rem;
+                }
+            }
+            &:hover img {
+                transition: all 0.8s;
+                width: 1.6rem;
+                opacity: 1;
+                transform: rotateY(360deg);
+            }
+            & p {
+                color: inherit;
+                font-weight: 600;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: .4rem 0;
+                margin-right: 1rem;
+                transition: color .4s ease-in-out;
+            }
+            & img {
+                width: 0.1rem;
+            }
+
     }
 }
 
 .hero-image {
     position: relative;
     &__lines {
-        width: 100vw;
+        width: 102vw;
         height: 100vh;
-        transform: translate(-48%,-8%);
+        transform: translate(-50%, -6%);
         position: absolute;
         z-index: -1;
+        // @include small-desktop-up {
+        //     width: 1024px;
+        //     height: 768px;
+        //     transform: translate(-49%, -4%);
+        // }
     }
     &__person {
         width: 35rem;
         height: 37.5rem;
         position: absolute;
-        top: 4rem;
-        left: 4.3rem;
+        top: 5rem;
+        left: 6rem;
+        @include small-desktop-up {
+            width: 28rem;
+            height: 30rem;
+            top: 4rem;
+            left: 5rem;
+        }
     }
 }

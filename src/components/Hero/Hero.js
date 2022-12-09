@@ -12,7 +12,7 @@ const Hero = () => {
             <div className="hero-content">
                 <div className="hero-content__location">
                     <img src={LocationIcon} alt="Location icon" />
-                    <p>HAMBURG</p>
+                    <p>Wir bieten Dienstleistungen in <span>Hamburg</span></p>
                 </div>
                 <h1 className="hero-content__heading">Moin moin, schön, dass Du da bist!</h1>
                 <p className="hero-content__description">Ich bin Pamela, und Rosa Reinigung ist mein Unternehmen, das seit 2021 besteht. Es ist das Ergebnis von meiner großen Liebe zur Sauberkeit im weitesten Sinne. Mit Hilfe unserer Unternehmen können Sie Ihre Zeit für die wöchentliche Reinigung, die saisonale Fensterreinigung und überstehen Sie Ihren Umzug völlig stressfrei. Wir veranstaltenjedes Zimmer in Ihrem Haus, vom Dachboden bis zum Keller, damit die Sauberkeit Ihr ständiger Gast ist.
