@@ -8,6 +8,9 @@
     grid-template-columns: 1fr 1fr;
     min-height: 85vh;
     overflow: hidden;
+    @include large-desktop-up {
+        margin: 2rem 8rem;
+    }
 }
 
 .hero-content {
@@ -16,17 +19,20 @@
     max-width: 40rem;
     @include small-desktop-up {
         margin-left: 4rem;
-        margin-top: 3rem;
+        margin-top: 6rem;
         max-width: 26rem;
     }
     @include large-desktop-up {
-        margin-left: 20rem;
+        margin-top: 5rem;
+        margin-left: 13rem;
     }
 
     &__location {
         display: flex;
         align-items: center;
-        margin-bottom: -.5rem;
+        @include small-desktop-up {
+            margin-bottom: 1rem;
+        }
         & img {
             width: 1.4rem;
             height: 1.4rem;
@@ -34,8 +40,8 @@
         }
         & p {
             color: hsla(280, 2%, 31%, 0.65);
-            @include large-desktop-up {
-                font-size: 1.1rem;
+            @include small-desktop-up {
+                font-size: 0.8rem;
             }
             & span {
                 letter-spacing: 3px;
@@ -54,11 +60,12 @@
         line-height: 116%;
         margin: 0;
         @include small-desktop-up {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             min-width: 26rem;
+            line-height: 105%;
         }
         @include large-desktop-up {
-            font-size: 4.6rem;
+            font-size: 4rem;
         }
     }
     &__description {
@@ -69,7 +76,6 @@
         }
         @include large-desktop-up {
             line-height: 2rem;
-            font-size: 1.1rem;
         }
     }
     &__call-to-action {
@@ -86,11 +92,11 @@
         transition: all .4s;
         @include small-desktop-up {
             width: 35%;
-            min-height: 2rem;
+            min-height: 1rem;
             padding: 0 2rem;
         }
         @include large-desktop-up {
-
+            margin-top: 2.4rem;
         }
             &:hover {
                 width: 40%;
@@ -129,28 +135,39 @@
 .hero-image {
     position: relative;
     &__lines {
-        width: 102vw;
-        height: 100vh;
-        transform: translate(-50%, -6%);
+        width: 180vw;
+        height: auto;
+        transform: translate(-49%, 4%);
         position: absolute;
         z-index: -1;
-        // @include small-desktop-up {
-        //     width: 1024px;
-        //     height: 768px;
-        //     transform: translate(-49%, -4%);
-        // }
+        @include small-desktop-up {
+            width: 110vw;
+            height: auto;
+            transform: translate(-53%, -8%);
+        }
+        @include large-desktop-up {
+            width: 130vw;
+            height: auto;
+            transform: translate(-48%, 2%); 
+        }
     }
     &__person {
         width: 35rem;
         height: 37.5rem;
         position: absolute;
-        top: 5rem;
+        top: 6rem;
         left: 6rem;
         @include small-desktop-up {
             width: 28rem;
             height: 30rem;
+            top: 6rem;
+            left: 2rem;
+        }
+        @include large-desktop-up {
+            // width: 42rem;
+            // height: 45rem;
             top: 4rem;
-            left: 5rem;
+            left: 7rem;
         }
     }
 }
