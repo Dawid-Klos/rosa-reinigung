@@ -3,12 +3,14 @@ import * as React from "react"
 import "../styles/index.scss";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
+import Reviews from "../components/Reviews/Reviews";
 
 const IndexPage = () => {
   return (
     <>
       <Navbar/>
       <Hero />
+      <Reviews />
     </>
     )
 }
