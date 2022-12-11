@@ -1,3 +1,139 @@
 @import "./variables.scss";
 
+.reviews {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &__heading {
+        font-family: $font-family-raleway;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 116%;
+        margin: 8rem 0 0 9rem;
+    }
+    &__image-wrapper {
+        position: absolute;
+        top: 28vh;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        & img {
+            width: 100%;
+        }   
+    }
+}
+// .reviews-container-wrapper {
+//     width: 100vw;
+//     height: auto;
+// }
+.reviews-container {
+    width: calc(100% - 24rem);
+    display: grid;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(6, minmax(20rem,1fr));
+    overflow-x: auto;
+    padding: 4rem 12rem;
+    /* hide scroll-bar */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+}
 
+
+  
+
+
+.review-card {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 100%;
+    max-width: 16rem;
+    padding: 1.6rem;
+    background-color: #FFFFFF;
+    border-radius: 0.8rem;
+    box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    &__avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+        background-color: $color-purple-light;
+        box-shadow: 0px 10px 48px rgba(0, 0, 0, 0.35);
+        & img {
+            margin-top: -0.1rem;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &__name {
+        font-family: $font-family-raleway;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: $color-purple;
+        margin-left: 1rem;
+    }
+    &__comment {
+        color: $color-grey-light;
+        font-weight: 300;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        margin: 1rem 0;
+    }
+    &__stars {
+
+        & img {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+        & img:last-child {
+            opacity: 0.5;
+        }
+    }
+}
+
+.reviews-control {
+    margin: 0 auto;
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        & span {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: $color-purple-light;
+            opacity: 0.6;
+            margin: .6rem;
+        }
+    }
+    &__arrows {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 10rem;
+        &--left {
+            background-color: $color-purple-light;
+            border-radius: 50%;
+            padding: 1rem;
+        }
+        &--right {
+            background-color: $color-purple-light;
+            border-radius: 50%;
+            padding: 1rem;
+        }
+    }
+}
+
+.active-dot {
+    opacity: 1 !important;
+}

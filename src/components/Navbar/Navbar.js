@@ -5,7 +5,7 @@ import "../../styles/navbar.scss";
 
 const Navbar = () => {
     return(
-        <header className="navbar" id="home">
+        <header className="navbar">
             <img className="navbar__logo" src={Logo} alt="Rosa Reinigung company logo" />
             <nav className="nav">
                 <a className="nav__link" href="#home">Home</a>

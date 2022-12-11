@@ -8,6 +8,7 @@ import Reviews from "../components/Reviews/Reviews";
 const IndexPage = () => {
   return (
     <>
+      <a id="home"></a>
       <Navbar/>
       <Hero />
       <Reviews />
