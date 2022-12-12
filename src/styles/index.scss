@@ -7,6 +7,7 @@
 // Additional imports
 @import "_variables.scss";
 
+
 // Remove default styles
 input, button, textarea, select {
   padding: 0;
@@ -19,11 +20,16 @@ input, button, textarea, select {
   appearance: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $color-white;
   font-size: 16px;
   color: $color-grey;
   font-family: $font-family-poppins;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   @include small-desktop-up {
     font-size: 14px;

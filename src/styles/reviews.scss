@@ -1,0 +1,102 @@
+@import "./variables.scss";
+
+.reviews {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &__heading {
+        font-family: $font-family-raleway;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 116%;
+        margin: 8rem 0 0 9rem;
+    }
+    &__image-wrapper {
+        position: absolute;
+        top: 28vh;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        & img {
+            width: 100%;
+            position: absolute;
+        }   
+    }
+}
+
+.review-card {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 100%;
+    max-width: 16rem;
+    padding: 1.6rem;
+    background-color: #FFFFFF;
+    border-radius: 0.8rem;
+    box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    &__avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+        background-color: $color-purple-light;
+        box-shadow: 0px 10px 48px rgba(0, 0, 0, 0.35);
+        & img {
+            margin-top: -0.1rem;
+            width: 3rem;
+            height: 3rem;
+            &::after {
+                content:" (image)";
+            }
+        }
+    }
+    &__name {
+        font-family: $font-family-raleway;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: $color-purple;
+        margin-left: 1rem;
+    }
+    &__comment {
+        color: $color-grey-light;
+        font-weight: 300;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        margin: 1rem 0;
+    }
+    &__stars {
+
+        & img {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+        & img:last-child {
+            opacity: 0.5;
+        }
+    }
+}
+
+
+.awesome-slider {
+    width: 90vw;
+    margin: 1rem auto;
+
+    --slider-height-percentage: 40%;
+    --slider-transition-duration: 800ms;
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-border-radius: 16px;
+    --organic-arrow-height: 27px;
+    --organic-arrow-color: #713b91;
+    --control-button-width: 10%;
+    --control-button-height: 25%;
+    --control-button-background: transparent;
+    --control-bullet-color: hsla(278, 42%, 40%, 0.4);
+    --control-bullet-active-color: #713b91;
+    --loader-bar-color: transparent;
+    --loader-bar-height: 1px;
+    --content-background-color: none;
+}

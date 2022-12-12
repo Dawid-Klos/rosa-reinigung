@@ -24,7 +24,6 @@ const Hero = () => {
             <div className="hero-image">
                 <img className="hero-image__lines" src={Lines} alt="Pink lines in the background running around the picture" />
             </div>
-
         </section>
     )
 }
