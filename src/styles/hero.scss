@@ -7,7 +7,6 @@
     background-color: $color-pink-light;
     border-radius: 0.6rem;
     position: relative;
-    overflow: hidden;
     @include large-desktop-up {
         margin: 2rem 8rem;
     }
@@ -135,26 +134,28 @@
 }
 
 .hero-image {
-    position: absolute;
-    width: calc(100vw - 1rem);
-    top: 0%;
-    left: calc(8% - 2vw);
-    transform: translate(-4%, -2%);
+    position: relative;
     &__lines {
-        width: 100%;
-        z-index: -1;
-    }
-    @include small-desktop-up {
-        width: calc(100vw - 2vw);
-        left: -2%;
-        top: 55%;
-        transform: translate(2%, -50%);
-    }
-    @include large-desktop-up {
-        width: calc(100vw - 25%);
-        left: 50%;
+        width: 115vw;
+        height: auto;
+        position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        left: 10%;
+        -webkit-transform:translate(-50%, -40%);
+        transform:translate(-50%, -40%);
+        @include small-desktop-up {
+            width: 135vw;
+            top: 60%;
+            left: 50%;
+            -webkit-transform:translate(-50%, -50%);
+            transform:translate(-50%, -50%);
+        }
+        @include large-desktop-up {
+            width: 105vw;
+            top: 60%;
+            left: 50%;
+            -webkit-transform:translate(-48%, -50%);
+            transform:translate(-48%, -50%);
+        }
     }
-
 }
