@@ -70,12 +70,12 @@
     }
     &__stars {
 
+        &--disabled {
+            opacity: 0.4;
+        }
         & img {
             width: 1.3rem;
             height: 1.3rem;
-        }
-        & img:last-child {
-            opacity: 0.5;
         }
     }
 }

@@ -3,36 +3,42 @@
         "id": 1,
         "name": "Ava",
         "comment": "\"Household cleaning by Rosa Reinigung is fantastic! Communication is quick, friendly, and professional. Rosa Reinigung performs regular household cleanings for me, as well as semi-annual window cleaning, and a one-off organization of some rooms. They are flexible and work to balance their services with my needs, schedule, and budget. The regular cleaning is such a relief for me and is exactly what I need.\"",
-        "avatar": "../../images/avatar-woman.svg"
+        "avatar": "../../images/avatar-woman.svg",
+        "stars": 4
     },
     {
         "id": 2,
         "name": "Kathrin",
         "comment": "\"Der Service von Rosa Reinigung ist zu 100% zufriedenstellend. Die Reinigung erfolgt zügig, aber dennoch ausgesprochen gründlich. Sonderleistungen, wie z.B. Fensterreinigung oder Kühlschrankreinigung, können individuell nach Bedarf hinzu gebucht werden. Die Kommunikation erfolgt schnell und zuverlässig. Wir können Rosa Reinigung uneingeschränkt weiterempfehlen.\"",
-        "avatar": "../../images/avatar-woman2.svg"
+        "avatar": "../../images/avatar-woman2.svg",
+        "stars": 5
     },
     {
         "id": 3,
         "name": "Ava",
         "comment": "\"Household cleaning by Rosa Reinigung is fantastic! Communication is quick, friendly, and professional. Rosa Reinigung performs regular household cleanings for me, as well as semi-annual window cleaning, and a one-off organization of some rooms. They are flexible and work to balance their services with my needs, schedule, and budget. The regular cleaning is such a relief for me and is exactly what I need.\"",
-        "avatar": "../../images/avatar-woman.svg"
+        "avatar": "../../images/avatar-woman.svg",
+        "stars": 4
     },
     {
         "id": 4,
         "name": "Ava",
         "comment": "\"Household cleaning by Rosa Reinigung is fantastic! Communication is quick, friendly, and professional. Rosa Reinigung performs regular household cleanings for me, as well as semi-annual window cleaning, and a one-off organization of some rooms. They are flexible and work to balance their services with my needs, schedule, and budget. The regular cleaning is such a relief for me and is exactly what I need.\"",
-        "avatar": "../../images/avatar-woman.svg"
+        "avatar": "../../images/avatar-woman.svg",
+        "stars": 5
     },
     {
         "id": 5,
         "name": "Kathrin",
         "comment": "\"Der Service von Rosa Reinigung ist zu 100% zufriedenstellend. Die Reinigung erfolgt zügig, aber dennoch ausgesprochen gründlich. Sonderleistungen, wie z.B. Fensterreinigung oder Kühlschrankreinigung, können individuell nach Bedarf hinzu gebucht werden. Die Kommunikation erfolgt schnell und zuverlässig. Wir können Rosa Reinigung uneingeschränkt weiterempfehlen.\"",
-        "avatar": "../../images/avatar-woman2.svg"
+        "avatar": "../../images/avatar-woman2.svg",
+        "stars": 3
     },
     {
         "id": 6,
         "name": "Ava",
         "comment": "\"Household cleaning by Rosa Reinigung is fantastic! Communication is quick, friendly, and professional. Rosa Reinigung performs regular household cleanings for me, as well as semi-annual window cleaning, and a one-off organization of some rooms. They are flexible and work to balance their services with my needs, schedule, and budget. The regular cleaning is such a relief for me and is exactly what I need.\"",
-        "avatar": "../../images/avatar-woman.svg"
+        "avatar": "../../images/avatar-woman.svg",
+        "stars": 4
     }
 ]
