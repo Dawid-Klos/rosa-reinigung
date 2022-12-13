@@ -82,10 +82,9 @@
 
 
 .awesome-slider {
-    width: 90vw;
-    margin: 1rem auto;
-
-    --slider-height-percentage: 40%;
+    width: 70vw;
+    margin: 4rem auto;
+    --slider-height-percentage: calc(50vh + 10%);
     --slider-transition-duration: 800ms;
     --organic-arrow-thickness: 4px;
     --organic-arrow-border-radius: 16px;
