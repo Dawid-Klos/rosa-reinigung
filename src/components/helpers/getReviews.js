@@ -13,7 +13,6 @@ const reviewsCards = reviews.map((review, i) => {
         )
     }
     if (stars.length < 6) {
-        console.log(review.stars, " - ", stars.length);
         for (let y = 0; y < 5-review.stars; y++) {
             stars.push(
                 <img className="review-card__stars--disabled" src={Star} alt="Purple star review score" />
