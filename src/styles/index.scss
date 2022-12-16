@@ -30,8 +30,12 @@ body {
   color: $color-grey;
   font-family: $font-family-poppins;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+
   @include small-desktop-up {
     font-size: 14px;
   }
+}
+
+#gatsby-focus-wrapper {
+  overflow: hidden;
 }
