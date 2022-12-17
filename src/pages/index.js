@@ -4,6 +4,7 @@ import "../styles/index.scss";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import Reviews from "../components/Reviews/Reviews";
+import Services from "../components/Services/Services";
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <Navbar/>
       <Hero />
       <Reviews />
+      <Services />
     </>
     )
 }
