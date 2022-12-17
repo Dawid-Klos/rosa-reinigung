@@ -6,7 +6,7 @@ import "../../styles/reviews.scss";
 
 import Lines from "../../images/img-line-reviews.svg";
 import Circles from "../../images/img-circles-bg.svg";
-import reviewsCards from "../helpers/getReviews";
+import reviewsCards from "./ReviewsCards";
 
 const Reviews = () => {
     return (

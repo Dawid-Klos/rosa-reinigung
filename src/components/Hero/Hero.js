@@ -1,7 +1,7 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import "../../styles/hero.scss";
-import Lines from "../../images/img-line-hero.png";
 import LocationIcon from "../../images/icons/icon-location.svg";
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 
@@ -22,7 +22,7 @@ const Hero = () => {
                 </a>
             </div>
             <div className="hero-image">
-                <img className="hero-image__lines" src={Lines} alt="Pink lines in the background running around the picture" />
+                <StaticImage quality={100} className="hero-image__lines" src="../../images/img-line-hero-2.png" alt="Owner of Rosa Reinigung, who is surrounded by a pink line that circles around her" placeholder="blurred" loading="eager" />
             </div>
         </section>
     )
