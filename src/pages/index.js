@@ -12,7 +12,9 @@ const IndexPage = () => {
       <a id="home"></a>
       <Navbar/>
       <Hero />
+      <a id="reviews"></a>
       <Reviews />
+      <a id="services"></a>
       <Services />
     </>
     )
