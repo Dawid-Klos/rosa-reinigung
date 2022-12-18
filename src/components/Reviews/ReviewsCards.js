@@ -18,7 +18,6 @@ const reviewsCards = reviews.map((review, i) => {
                 <img className="review-card__stars--disabled" src={Star} alt="Purple star review score" />
             )
         }
-        console.log(stars);
     }
     return (
         <div className="review-card" key={review.id}>

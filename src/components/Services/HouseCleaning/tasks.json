@@ -1,0 +1,31 @@
+{
+  "basicServiceTasks": [
+    "Staub wischt alle zugänglichen Bereiche",
+    "Abwischen von Ober- und Arbeitsfläche",
+    "Staubsaugen und Wischen aller Böden",
+    "Nebelfeuchtes' Wischen aller Holzböden (nach Absprache) ",
+    "Reinigen von Dusche und Badewanne (inkl. Duschablauf & Leisten)",
+    "Reinigen der WC's",
+    "Reinigen des Waschbeckens",
+    "Reiniger von Arbeitsflächen und Küchenfronten",
+    "Reinigung des Herdes (außen)",
+    "Abstauben ser Kuchen- und Arbeitsgeräte",
+    "Reinigen der Spule",
+    "Austausch von Türbeschlägen (obwohl dies nicht notwendig ist)",
+    "Ersatz von Polyster- und Sitzmöbeln",
+    "Abstauben von elektrischen Schaltanlagen",
+    "Moultrennung und Auswurf"
+  ],
+  "extraServiceTasks": [
+    "Reinigung des Ofens, Herdes, Mikrowellenherdes (innen)",
+    "Reinigen der Dunstabzugshaube",
+    "Reinigung und Entfernung der Kalke von Fliesen und Fugen im Bad/Küche etc.",
+    "Reinigung in Küchenschränken/ Kleiderschränken",
+    "Reinigung der Fenstern",
+    "Reinigen Sie die Türen, Türrahmen und die Eingangstür",
+    "Abstauben von Hochschränken (oben) und Küchenschränken (oben und unten)",
+    "Reinigung des Kühl-/ Gefrierschranks (innen) etc.",
+    "Bügeln und Waschen",
+    "Reinigung der Eingangstür, Klingel und Briefkasten"
+  ]
+}

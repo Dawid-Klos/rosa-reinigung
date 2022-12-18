@@ -1,13 +1,76 @@
 import React from "react";
 
-import Service from "../Service";
 import ServiceImage from "../../../images/img-services-01.svg";
+import BasicServiceIcon from "../../../images/icons/icon-services-basic.svg";
+import ExtraServiceIcon from "../../../images/icons/icon-services-extra.svg";
+import CheckMarkIcon from "../../../images/icons/icon-check-mark.svg";
+
+import tasks from "./tasks.json";
+
+import Service from "../Service";
+
+
+const basicServiceTasks = tasks.basicServiceTasks;
+const extraServiceTasks = tasks.extraServiceTasks;
+
+const activeTab = (e) => {
+    const basicTab = document.querySelector(".house-cleaning__tab--basic");
+    const extraTab = document.querySelector(".house-cleaning__tab--extra");
+
+    const tab = e.currentTarget.getAttribute("data-value");
+    if(tab === "basic") {
+        if(extraTab.classList.contains("house-cleaning__tab--active")) {
+            extraTab.classList.remove("house-cleaning__tab--active");
+        }
+        basicTab.classList.toggle("house-cleaning__tab--active");
+    }
+
+    if(tab === "extra") {
+        if(basicTab.classList.contains("house-cleaning__tab--active")) {
+            basicTab.classList.remove("house-cleaning__tab--active");
+        }
+        extraTab.classList.toggle("house-cleaning__tab--active");
+    }
+    
+}
 
 const HouseCleaning = () => {
 
     const servicesTabs = (
         <div className="house-cleaning">
-            <p>It actually works!</p>
+            <div className="house-cleaning__buttons">
+                <button onClick={activeTab} data-value="basic" className="basic-btn" title="Klicken Sie hier, um die Basis-Reinigung zu sehen" type="button">Die BASIS-Reingung</button>
+                <button onClick={activeTab} data-value="extra" className="extra-btn" title="Klicken Sie hier, um Extra-Reinigung zu sehen" type="button">Die EXTRA-Reingung</button>
+            </div>
+            <div className="house-cleaning__tab house-cleaning__tab--basic">
+                <img src={BasicServiceIcon} alt="Two hands indicating the quality of the service" />
+                <h4>Die BASIS-Reinigung</h4>
+                <ul className="tab-list">
+                    {basicServiceTasks.map((task, i) => {
+                        return (
+                            <li className="tab-list__row" key={i}>
+                                <img src={CheckMarkIcon} alt="Pink check mark" />
+                                <p>{task}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
+            <div className="house-cleaning__tab house-cleaning__tab--extra">
+                <img src={ExtraServiceIcon} alt="Two hands indicating the quality of the service" />
+                <h4>Die EXTRA-Reinigung</h4>
+                <div className="tab-list">
+                    {extraServiceTasks.map((task, i) => {
+                        return (
+                            <div className="tab-list__row" key={i}>
+                                <img src={CheckMarkIcon} alt="Pink check mark" />
+                                <p>{task}</p>
+                            </div>
+                        );
+                    })}
+                    <p>und weitere nach Absprache und gemeinsamen Vereinbarungen.</p>
+                </div>
+            </div>
         </div>
     );
 

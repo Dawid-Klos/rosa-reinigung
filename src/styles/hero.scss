@@ -3,12 +3,15 @@
 .hero {
     display: flex;
     min-height: 85vh;
-    margin: 1rem;
+    margin: 7rem 1rem 1rem 1rem;
     background-color: $color-pink-light;
     border-radius: 0.6rem;
     position: relative;
+    @include small-desktop-up {
+        margin: 5rem 1rem;
+    }
     @include large-desktop-up {
-        margin: 2rem 8rem;
+        margin: 7rem 8rem;
     }
 }
 

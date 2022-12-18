@@ -1,0 +1,19 @@
+@import "../styles/_variables";
+
+.services {
+    
+    &__heading {
+        font-family: $font-family-raleway;
+        font-weight: 600;
+        font-size: 3rem;
+        margin: 4rem auto;
+        text-align: center;
+    }
+    &__image {
+        width: 100vw;
+        margin-bottom: -20rem;
+        & img {
+            width: 100%;
+        }
+    }
+}

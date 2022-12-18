@@ -1,5 +1,6 @@
 import React from "react";
 
+import "../../styles/services.scss";
 import Lines from "../../images/img-services-detail.svg";
 import HouseCleaning from "./HouseCleaning/HouseCleaning";
 import CorporateCleaning from "./CorporateCleaning/CorporateCleaning";
@@ -11,8 +12,8 @@ const Services = () => {
     return(
         <section id="services">
             <h2 className="services__heading">Unsere Dienstleistungen für Dich.</h2>
-            <div className="services-image">
-                <img className="services-image__lines" src={Lines} alt="A woman falling through mess and cable on the floor" />
+            <div className="services__image">
+                <img src={Lines} alt="A woman falling through mess and cable on the floor" />
             </div>
             <HouseCleaning />
             <CorporateCleaning />
