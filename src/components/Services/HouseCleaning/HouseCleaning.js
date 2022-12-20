@@ -13,7 +13,10 @@ import Service from "../Service";
 const basicServiceTasks = tasks.basicServiceTasks;
 const extraServiceTasks = tasks.extraServiceTasks;
 
-const activeTab = (e) => {
+const handleTab = (e) => {
+   
+    
+
     const basicTab = document.querySelector(".house-cleaning__tab--basic");
     const extraTab = document.querySelector(".house-cleaning__tab--extra");
 
@@ -39,8 +42,8 @@ const HouseCleaning = () => {
     const servicesTabs = (
         <div className="house-cleaning">
             <div className="house-cleaning__buttons">
-                <button onClick={activeTab} data-value="basic" className="basic-btn" title="Klicken Sie hier, um die Basis-Reinigung zu sehen" type="button">Die BASIS-Reingung</button>
-                <button onClick={activeTab} data-value="extra" className="extra-btn" title="Klicken Sie hier, um Extra-Reinigung zu sehen" type="button">Die EXTRA-Reingung</button>
+                <button onClick={handleTab} data-value="basic" className="house-cleaning__button house-cleaning__button--basic" title="Klicken Sie hier, um die Basis-Reinigung zu sehen" type="button">Die BASIS-Reingung</button>
+                <button onClick={handleTab} data-value="extra" className="house-cleaning__button house-cleaning__button--extra" title="Klicken Sie hier, um Extra-Reinigung zu sehen" type="button">Die EXTRA-Reingung</button>
             </div>
             <div className="house-cleaning__tab house-cleaning__tab--basic">
                 <img src={BasicServiceIcon} alt="Two hands indicating the quality of the service" />

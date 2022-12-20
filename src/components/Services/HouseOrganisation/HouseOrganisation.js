@@ -8,11 +8,11 @@ const HouseOrganisation = () => {
 
     const warningMessage = (
         <div className="house-organisation">
-            <div className="warning">
-                <img src={WarningIcon} alt="Warning sign" />
-                <p>Achtung!</p>
+            <div className="house-organisation__warning">
+                <img className="house-organisation__img" src={WarningIcon} alt="Warning sign" />
+                <p className="house-organisation__text">Achtung!</p>
             </div>
-            <p className="house-organisation__text">Wir arbeiten mit einer Renovierungsfirma und einer Elektrofirma zusammen. Wir können Ihr Interieur von Grund auf neu gestalten.</p>
+            <p className="house-organisation__info">Wir arbeiten mit einer Renovierungsfirma und einer Elektrofirma zusammen. Wir können Ihr Interieur von Grund auf neu gestalten.</p>
         </div>
     );
 
