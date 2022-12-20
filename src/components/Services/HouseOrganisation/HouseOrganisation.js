@@ -22,6 +22,8 @@ const HouseOrganisation = () => {
         isReversed: true,
         image: ServiceImage,
         imageAlt: 'A person sitting on the floor with legs crossed, showing peace of mind',
+        hasBackground : false,
+        backgroundPath: "",
         extraStuff: warningMessage
     };
 

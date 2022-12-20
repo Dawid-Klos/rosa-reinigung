@@ -2,6 +2,7 @@ import React from "react";
 
 import Service from "../Service";
 import ServiceImage from "../../../images/img-services-02.svg";
+import Lines from "../../../images/img-line-corporate.svg";
 
 const CorporateCleaning = () => {
 
@@ -11,6 +12,8 @@ const CorporateCleaning = () => {
         isReversed: true,
         image: ServiceImage,
         imageAlt: 'A person vacuuming letters from the company floor',
+        hasBackground : true,
+        backgroundPath: Lines,
         extraStuff: null
     };
 

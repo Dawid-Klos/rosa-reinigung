@@ -83,6 +83,8 @@ const HouseCleaning = () => {
         isReversed: false,
         image: ServiceImage,
         imageAlt: 'A person drinking a tea on the sofa in a clean room',
+        hasBackground : false,
+        backgroundPath: "",
         extraStuff: servicesTabs
     };
 

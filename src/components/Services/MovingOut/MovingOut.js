@@ -4,35 +4,36 @@ import Service from "../Service";
 import ServiceImage from "../../../images/img-services-05.svg";
 import WarningIcon from "../../../images/icons/icon-warning.svg";
 import CheckIcon from "../../../images/icons/icon-check-mark.svg";
+import Lines from "../../../images/img-line-move-out.svg";
 
 const HouseOrganisation = () => {
 
     const pointsAndWarningMessage = (
         <div className="moving-out">
-            <div className="moving-out__points">
-                <div className="point">
+            <ul className="moving-out__points">
+                <li className="moving-out__point">
                     <img src={CheckIcon} alt="Pink check mark" />
                     <p>Organisieren und Koordinieren der Verpackung</p>
-                </div>
-                <div className="point">
+                </li>
+                <li className="moving-out__point">
                     <img src={CheckIcon} alt="Pink check mark" />
                     <p>Auspacken Ihrer Sachen in der neuen Wohnung</p>
-                </div>
-                <div className="point">
+                </li>
+                <li className="moving-out__point">
                     <img src={CheckIcon} alt="Pink check mark" />
                     <p>Haushalts</p>
-                </div>
-                <div className="point">
+                </li>
+                <li className="moving-out__point">
                     <img src={CheckIcon} alt="Pink check mark" />
                     <p>Ihr neues Zuhause so einrichten, dass es bequem ist für alle Mitglieder Ihres</p>
-                </div>
-            </div>
+                </li>
+            </ul>
             <div className="moving-out__message">
-                <div className="warning">
-                    <img src={WarningIcon} alt="Warning sign" />
-                    <p>Achtung!</p>
+                <div className="moving-out__warning">
+                    <img className="moving-out__img" src={WarningIcon} alt="Warning sign" />
+                    <p className="moving-out__text">Achtung!</p>
                 </div>
-                <p>Wir arbeiten mit einer Renovierungsfirma und einer Elektrofirma zusammen. Wir können Ihr Interieur von Grund auf neu gestalten.</p>
+                <p className="moving-out__info">Wir arbeiten mit einer Renovierungsfirma und einer Elektrofirma zusammen. Wir können Ihr Interieur von Grund auf neu gestalten.</p>
             </div>
         </div>
 
@@ -44,6 +45,8 @@ const HouseOrganisation = () => {
         isReversed: false,
         image: ServiceImage,
         imageAlt: 'A parent showing child the choice of new home in the smartphone',
+        hasBackground : true,
+        backgroundPath: Lines,
         extraStuff: pointsAndWarningMessage
     };
 

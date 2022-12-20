@@ -2,6 +2,7 @@ import React from "react";
 
 import Service from "../Service";
 import ServiceImage from "../../../images/img-services-03.svg";
+import Lines from "../../../images/img-line-windows.svg";
 
 const WindowCleaning = () => {
 
@@ -11,6 +12,8 @@ const WindowCleaning = () => {
         isReversed: false,
         image: ServiceImage,
         imageAlt: 'A person drinking a coffee looking trough a perfect clean window',
+        hasBackground : true,
+        backgroundPath: Lines,
         extraStuff: null
     };
 
