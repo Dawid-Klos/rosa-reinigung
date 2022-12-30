@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/service.scss";
+import "../../styles/services.scss";
 
 const Service = ({ title, description, isReversed, image, imageAlt, hasBackground, backgroundPath, extraStuff }) => {
 
@@ -15,7 +15,7 @@ const Service = ({ title, description, isReversed, image, imageAlt, hasBackgroun
         if (extraText.classList.contains("service-content__description--show-extra-text")) {
             button.textContent = "weniger lesen";
         } else {
-            button.textContent = "mehr LESEN";
+            button.textContent = "mehr lesen";
         }
     }
 
@@ -26,7 +26,7 @@ const Service = ({ title, description, isReversed, image, imageAlt, hasBackgroun
                 {
                     desc.length > 400 ? (
                         <div className="service-content__container">
-                            <p className="service-content__description">{desc.substring(0, 418)} <span className="service-content__description--extra-text">{desc.substring(401)}</span></p>
+                            <p className="service-content__description">{desc.substring(0, 418)} <span className="service-content__description--extra-text">{desc.substring(418)}</span></p>
                             <button className="service-content__button" onClick={handleText} type="button">Mehr lesen</button>
                         </div>
                     ) : (
@@ -35,7 +35,7 @@ const Service = ({ title, description, isReversed, image, imageAlt, hasBackgroun
                 }
                 {extraStuff !== null ? extraStuff : null}
             </div>
-            <img src={image} alt={imageAlt} />
+            <img className="service__img" src={image} alt={imageAlt} />
             {
                 hasBackground ? (<div className="service__lines">
                                     <img className="service__lines" src={backgroundPath} alt="" />

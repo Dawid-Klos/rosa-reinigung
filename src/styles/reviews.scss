@@ -13,7 +13,7 @@
         line-height: 116%;
         margin: 10rem 0 0 9rem;
         @include small-desktop-up {
-            margin: 8rem 4rem 0 4rem;
+            margin: 8rem 5rem 0 5rem;
             font-size: 2.4rem;
         }
         @include large-desktop-up {
@@ -84,13 +84,14 @@
         font-size: 0.9rem;
         line-height: 1.2rem;
         margin: 1rem 0;
+        @include small-desktop-up {
+            font-size: 0.8rem;
+        }
         @include large-desktop-up {
-            font-size: 1rem;
-            line-height: 1.5rem;
+            line-height: 1.6rem;
         }
     }
     &__stars {
-
         &--disabled {
             opacity: 0.4;
         }
@@ -125,8 +126,9 @@
     --content-background-color: none;
     @include small-desktop-up {
         margin: 1rem auto;
-        --control-button-width: 20%;
+        --control-button-width: 24%;
         --slider-height-percentage: calc(50vh + 10%);
+        --control-bullet-width: 4px;
     }
     @include large-desktop-up {
         margin: 4rem auto;

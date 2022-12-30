@@ -8,7 +8,7 @@
     border-radius: 0.6rem;
     position: relative;
     @include small-desktop-up {
-        margin: 4rem 1rem;
+        margin: 6rem 1rem -1rem 1rem;
     }
     @include large-desktop-up {
         margin: 6rem 8rem;

@@ -22,7 +22,7 @@ const Hero = () => {
                 </a>
             </div>
             <div className="hero-image">
-                <StaticImage quality={100} className="hero-image__lines" src="../../images/img-line-hero-2.png" alt="Owner of Rosa Reinigung, who is surrounded by a pink line that circles around her" placeholder="blurred" loading="eager" />
+                <StaticImage quality={100} className="hero-image__lines" src="../../images/img-line-hero.png" alt="Owner of Rosa Reinigung, who is surrounded by a pink line that circles around her" placeholder="blurred" loading="eager" />
             </div>
         </section>
     )
