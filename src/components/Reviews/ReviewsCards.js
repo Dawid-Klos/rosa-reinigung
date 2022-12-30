@@ -3,7 +3,7 @@ import React from "react";
 import Star from "../../images/icons/icon-star.svg";
 import AvatarIcon from "../../images/avatar-woman.svg";
 import AvatarIcon2 from "../../images/avatar-woman2.svg";
-import reviews from "../Reviews/reviews.json";
+import reviews from "./reviews.json";
 
 const reviewsCards = reviews.map((review, i) => {
     const stars = [];
@@ -18,7 +18,6 @@ const reviewsCards = reviews.map((review, i) => {
                 <img className="review-card__stars--disabled" src={Star} alt="Purple star review score" />
             )
         }
-        console.log(stars);
     }
     return (
         <div className="review-card" key={review.id}>

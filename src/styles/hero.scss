@@ -1,161 +1,161 @@
 @import "./_variables.scss";
 
 .hero {
-    display: flex;
-    min-height: 85vh;
-    margin: 1rem;
-    background-color: $color-pink-light;
-    border-radius: 0.6rem;
-    position: relative;
-    @include large-desktop-up {
-        margin: 2rem 8rem;
-    }
+  display: flex;
+  min-height: 85vh;
+  margin: 6rem 1rem 1rem 1rem;
+  background-color: $color-pink-light;
+  border-radius: 0.6rem;
+  position: relative;
+  @include small-desktop-up {
+    margin: 5.6rem 1rem -1rem 1rem;
+  }
+  @include large-desktop-up {
+    margin: 7rem 8rem;
+  }
 }
 
 .hero-content {
-    margin-left: 8rem;
-    margin-top: 8rem;
-    max-width: 40rem;
-    z-index: 1;
+  margin-left: 8rem;
+  margin-top: 8rem;
+  max-width: 40rem;
+  z-index: 1;
+  @include small-desktop-up {
+    margin-left: 4rem;
+    margin-top: 6rem;
+    max-width: 26rem;
+  }
+  @include large-desktop-up {
+    margin-top: 5rem;
+    margin-left: 13rem;
+  }
+  &__location {
+    display: flex;
+    align-items: center;
+    & img {
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-right: 0.5rem;
+    }
+    & p {
+      color: hsla(280, 2%, 31%, 0.65);
+      @include small-desktop-up {
+        font-size: 0.8rem;
+      }
+      & span {
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color-purple-light;
+      }
+    }
+  }
+  &__heading {
+    max-width: 34rem;
+    font-family: $font-family-raleway;
+    font-weight: 600;
+    color: $color-grey;
+    font-size: 3.2rem;
+    line-height: 116%;
+    margin: 0;
     @include small-desktop-up {
-        margin-left: 4rem;
-        margin-top: 6rem;
-        max-width: 26rem;
+      font-size: 3rem;
+      min-width: 26rem;
     }
     @include large-desktop-up {
-        margin-top: 5rem;
-        margin-left: 13rem;
+      font-size: 3.6rem;
     }
-    &__location {
-        display: flex;
-        align-items: center;
-        @include small-desktop-up {
-            margin-bottom: -0.2rem;
-        }
-        & img {
-            width: 1.4rem;
-            height: 1.4rem;
-            margin-right: .5rem;
-        }
-        & p {
-            color: hsla(280, 2%, 31%, 0.65);
-            @include small-desktop-up {
-                font-size: 0.8rem;
-            }
-            & span {
-                letter-spacing: 3px;
-                font-weight: 600;
-                text-transform: uppercase;
-                color: $color-purple-light;
-            }
-        }
+  }
+  &__description {
+    line-height: 1.8rem;
+    color: hsla(280, 2%, 31%, 0.65);
+    @include small-desktop-up {
+      line-height: 1.5rem;
     }
-    &__heading {
-        min-width: 34rem;
-        font-family: $font-family-raleway;
-        font-weight: 600;
-        color: $color-grey;
-        font-size: 3.6rem;
-        line-height: 116%;
-        margin: 0;
-        @include small-desktop-up {
-            font-size: 2.8rem;
-            min-width: 26rem;
-            line-height: 105%;
-        }
-        @include large-desktop-up {
-            font-size: 4rem;
-        }
+    @include large-desktop-up {
+      line-height: 2rem;
     }
-    &__description {
-        line-height: 1.8rem;
-        color: hsla(280, 2%, 31%, 0.65);
-        @include small-desktop-up {
-            line-height: 1.5rem;
-        }
-        @include large-desktop-up {
-            line-height: 2rem;
-        }
+  }
+  &__call-to-action {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-purple;
+    border-radius: 0.6rem;
+    min-height: 3.6rem;
+    padding: 0.2rem 2rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: hsla(324, 100%, 99%, 0.8);
+    transition: all 0.4s;
+    @include small-desktop-up {
+      width: 35%;
+      min-height: 1rem;
+      padding: 0 2rem;
     }
-    &__call-to-action {
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $color-purple;
-        border-radius: 0.6rem;
-        min-height: 3.6rem;
-        padding: .2rem 2rem;
-        margin-top: 2rem;
-        text-decoration: none;
-        color: hsla(324, 100%, 99%, 0.8);
-        transition: all .4s;
-        @include small-desktop-up {
-            width: 35%;
-            min-height: 1rem;
-            padding: 0 2rem;
-        }
-        @include large-desktop-up {
-            margin-top: 2.4rem;
-            min-height: 3.2rem;
-            padding: 0 2rem;
-        }
-            &:hover {
-                width: 40%;
-                box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35), 0px 6px 24px rgba(175, 120, 206, 0.45);
-                color: $color-white;
-                cursor: pointer;
-                @include small-desktop-up {
-                    width: 45%;
-                    min-height: 2rem;
-                    padding: 0 2rem;
-                }
-            }
-            & img {
-                width: 0.1rem;
-            }
-            &:hover img {
-                transition: all 0.8s;
-                width: 1.6rem;
-                opacity: 1;
-                transform: rotateY(360deg);
-            }
-            & p {
-                color: inherit;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                padding: .4rem 0;
-                margin-right: 1rem;
-                transition: color .4s ease-in-out;
-                margin-left: 10px;
-            }
+    @include large-desktop-up {
+      margin-top: 2.4rem;
+      min-height: 3.2rem;
+      padding: 0 2rem;
     }
+    &:hover {
+      width: 40%;
+      box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35),
+        0px 6px 24px rgba(175, 120, 206, 0.45);
+      color: $color-white;
+      cursor: pointer;
+      @include small-desktop-up {
+        width: 45%;
+        min-height: 2rem;
+        padding: 0 2rem;
+      }
+    }
+    & img {
+      width: 0.1rem;
+    }
+    &:hover img {
+      transition: all 0.8s;
+      width: 1.6rem;
+      opacity: 1;
+      transform: rotateY(360deg);
+    }
+    & p {
+      color: inherit;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.4rem 0;
+      margin-right: 1rem;
+      transition: color 0.4s ease-in-out;
+      margin-left: 10px;
+    }
+  }
 }
 
 .hero-image {
-    position: relative;
-    &__lines {
-        width: 115vw;
-        height: auto;
-        position: absolute;
-        top: 50%;
-        left: 10%;
-        -webkit-transform:translate(-50%, -40%);
-        transform:translate(-50%, -40%);
-        @include small-desktop-up {
-            width: 135vw;
-            top: 60%;
-            left: 50%;
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%);
-        }
-        @include large-desktop-up {
-            width: 105vw;
-            top: 60%;
-            left: 50%;
-            -webkit-transform:translate(-48%, -50%);
-            transform:translate(-48%, -50%);
-        }
+  position: relative;
+  &__lines {
+    width: 115vw;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+    @include small-desktop-up {
+      width: 135vw;
+      top: 60%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
+    @include large-desktop-up {
+      width: 105vw;
+      top: 60%;
+      left: 50%;
+      -webkit-transform: translate(-48%, -50%);
+      transform: translate(-48%, -50%);
+    }
+  }
 }
