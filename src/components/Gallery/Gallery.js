@@ -14,7 +14,7 @@ import IMG04 from "../../images/gallery/04.jpg";
 const Gallery = () => {
     return(
         <section className="gallery" id="gallery">
-            <h2 className="gallery__heading">Fotogalerie</h2>
+            <h2 className="gallery__heading">Fotogalerie.</h2>
             <AwesomeSlider className="gallery__slider">
                 <div data-src={IMG01} />
                 <div data-src={IMG02} />

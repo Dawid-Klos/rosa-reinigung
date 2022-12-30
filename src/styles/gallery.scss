@@ -14,7 +14,7 @@
         }
         @include large-desktop-up {
             font-size: 2.6rem;
-            margin: 8rem 21rem -3rem 21rem;
+            margin: 8rem 21rem 0 21rem;
         }
     }
     &__slider {
@@ -43,8 +43,6 @@
         @include large-desktop-up {
             --slider-height-percentage: calc(50vh + 15%);
             --control-button-width: 20%;
-            --organic-arrow-thickness: 8px;
-            --organic-arrow-height: 48px;
         }
     }
 }
