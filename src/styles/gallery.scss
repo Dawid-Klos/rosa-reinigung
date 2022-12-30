@@ -1,0 +1,48 @@
+@import "../../src/styles/_variables.scss";
+
+.gallery {
+    max-height: 90vh;
+    &__heading {
+        font-family: $font-family-raleway;
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 116%;
+        margin: 10rem 0 0 9rem;
+        @include small-desktop-up {
+            margin: 8rem 5rem 0 5rem;
+            font-size: 2rem;
+        }
+        @include large-desktop-up {
+            font-size: 2.6rem;
+            margin: 8rem 21rem 0 21rem;
+        }
+    }
+    &__slider {
+        margin: 4rem auto;
+        --slider-height-percentage: calc(50vh + 15%);
+        --slider-transition-duration: 800ms;
+        --organic-arrow-thickness: 6px;
+        --organic-arrow-border-radius: 16px;
+        --organic-arrow-height: 32px;
+        --organic-arrow-color: #713b91;
+        --control-button-width: 10%;
+        --control-button-height: 25%;
+        --control-button-background: transparent;
+        --control-bullet-color: hsla(278, 42%, 40%, 0.4);
+        --control-bullet-active-color: #713b91;
+        --loader-bar-color: transparent;
+        --loader-bar-height: 1px;
+        --content-background-color: none;
+        @include small-desktop-up {
+            margin: 2rem auto;
+            --control-button-width: 24%;
+            --slider-height-percentage: calc(50vh + 10%);
+            --organic-arrow-thickness: 5px;
+            --organic-arrow-height: 28px;
+        }
+        @include large-desktop-up {
+            --slider-height-percentage: calc(50vh + 15%);
+            --control-button-width: 20%;
+        }
+    }
+}

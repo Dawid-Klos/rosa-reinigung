@@ -17,21 +17,25 @@
 
 .hero-content {
   margin-left: 8rem;
-  margin-top: 8rem;
+  margin-top: 2rem;
   max-width: 40rem;
   z-index: 1;
   @include small-desktop-up {
     margin-left: 4rem;
-    margin-top: 6rem;
     max-width: 26rem;
   }
   @include large-desktop-up {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-left: 13rem;
   }
   &__location {
     display: flex;
     align-items: center;
+    background-color: rgba(80, 78, 81, 0.05);
+    border-radius: 0.6rem;
+    width: fit-content;
+    padding: 0.1rem 1rem;
+    margin: -1rem 0 4rem 0;
     & img {
       width: 1.4rem;
       height: 1.4rem;
@@ -39,6 +43,7 @@
     }
     & p {
       color: hsla(280, 2%, 31%, 0.65);
+      font-size: 0.9rem;
       @include small-desktop-up {
         font-size: 0.8rem;
       }
