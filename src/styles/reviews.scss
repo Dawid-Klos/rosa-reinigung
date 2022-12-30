@@ -9,15 +9,15 @@
     &__heading {
         font-family: $font-family-raleway;
         font-weight: 600;
-        font-size: 3rem;
+        font-size: 2.2rem;
         line-height: 116%;
         margin: 10rem 0 0 9rem;
         @include small-desktop-up {
             margin: 8rem 5rem 0 5rem;
-            font-size: 2.4rem;
+            font-size: 2rem;
         }
         @include large-desktop-up {
-            font-size: 3.2rem;
+            font-size: 2.6rem;
             margin: 8rem 21rem -3rem 21rem;
         }
     }

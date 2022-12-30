@@ -11,7 +11,7 @@
     align-items: center;
     max-height: 3.6rem;
     padding: 0.6rem 9rem;
-    background: rgba(255, 250, 253, 0.75);
+    background: rgba(255, 250, 253, 0.65);
     box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(6px);
     @include small-desktop-up {
@@ -21,7 +21,7 @@
     }
     @include large-desktop-up {
         width: calc(100% - 42rem);
-        padding: 0.6rem 21rem;
+        padding: 0.8rem 21rem;
     }
     &__logo {
         width: 7.5rem;
@@ -29,10 +29,6 @@
         @include small-desktop-up {
             width: 6rem;
             height: 3.4rem;
-        }
-        @include large-desktop-up {
-            width: 9rem;
-            height: 5rem;
         }
     }
 }

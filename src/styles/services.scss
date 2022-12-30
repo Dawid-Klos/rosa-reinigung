@@ -18,21 +18,40 @@
   &__heading {
     font-family: $font-family-raleway;
     font-weight: 600;
-    font-size: 3rem;
-    margin: 4rem auto;
-    text-align: center;
+    font-size: 2.2rem;
+    margin: 1rem 0 0 9rem;
     @include small-desktop-up {
-      font-size: 2.4rem;
+      font-size: 2rem;
+      margin: 1rem 0 0 5rem;
+    }
+    @include large-desktop-up {
+      font-size: 2.6rem;
+      margin: 2rem 21rem -1rem 21rem;
     }
   }
-  &__image {
+  &__images-wrapper {
     width: 100vw;
-    margin-bottom: -20rem;
+    margin-bottom: -18rem;
+    position: relative;
     @include small-desktop-up {
-      margin-bottom: -14rem;
+      margin-bottom: -10rem;
     }
-    & img {
-      width: 100%;
+    @include large-desktop-up {
+      margin-bottom: -22rem;
+    }
+  }
+  &__lines {
+    width: 100%;
+  }
+  &__detail {
+    width: 22%;
+    height: auto;
+    top: 25%;
+    left: 16%;
+    transform: translate(-25%, -16%);
+    position: absolute;
+    @include small-desktop-up {
+      width: 25%;
     }
   }
 }
@@ -47,7 +66,7 @@
     margin: 4rem 5rem;
   }
   @include large-desktop-up {
-    margin: 4rem 15rem;
+    margin: 4rem 20rem;
     justify-content: space-around;
   }
   &--reverse {
@@ -72,7 +91,7 @@
   margin: 6rem 0 0 6rem;
   max-width: 32vw;
   @include small-desktop-up {
-    margin: 4rem 0;
+    margin: 3rem 0;
     max-width: 40vw;
   }
   @include large-desktop-up {
@@ -81,11 +100,13 @@
   &__title {
     max-width: 26rem;
     font-family: $font-family-raleway;
-    // font-size: 2.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
     @include small-desktop-up {
+      font-size: 1.6rem;
+    }
+    @include large-desktop-up {
       font-size: 2rem;
     }
   }
@@ -122,6 +143,9 @@
     cursor: pointer;
     border-radius: 0.6rem;
     box-shadow: 0px 24px 48px rgb(0 0 0 / 8%);
+    &:hover {
+      background-color: $color-purple-light;
+    }
   }
 }
 
