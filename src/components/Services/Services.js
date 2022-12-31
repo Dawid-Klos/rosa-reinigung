@@ -10,20 +10,20 @@ import HouseOrganisation from "./HouseOrganisation/HouseOrganisation";
 import MovingOut from "./MovingOut/MovingOut";
 
 const Services = () => {
-    return(
-        <section className="services">
-            <h2 className="services__heading">Unsere Dienstleistungen für Dich.</h2>
-            <div className="services__images-wrapper">
-                <img className="services__lines" src={Lines} alt="A woman falling through mess and cable on the floor" />
-                <img className="services__detail" src={Detail} alt="" />
-            </div>
-            <HouseCleaning />
-            <CorporateCleaning />
-            <WindowCleaning />
-            <HouseOrganisation />
-            <MovingOut />
-        </section>
-    )
-}
+  return (
+    <section className="services">
+      <h2 className="services__heading">Unsere Dienstleistungen für Dich.</h2>
+      <div className="services__images-wrapper">
+        <img className="services__lines" src={Lines} alt="A woman falling through mess and cable on the floor" />
+        <img className="services__detail" src={Detail} alt="" />
+      </div>
+      <HouseCleaning />
+      <CorporateCleaning />
+      <WindowCleaning />
+      <HouseOrganisation />
+      <MovingOut />
+    </section>
+  );
+};
 
 export default Services;
