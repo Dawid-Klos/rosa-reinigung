@@ -8,6 +8,7 @@ import CheckMarkIcon from "../../../images/icons/icon-check-mark.svg";
 import tasks from "./tasks.json";
 import Service from "../Service";
 
+import { tabName } from "../../../helpers/constants";
 const HouseCleaning = () => {
   const basicServiceTasks = tasks.basicServiceTasks;
   const extraServiceTasks = tasks.extraServiceTasks;
@@ -20,12 +21,12 @@ const HouseCleaning = () => {
       return;
     }
 
-    if (tab === "basic") {
-      setActiveTab("basic");
+    if (tab === tabName.basic) {
+      setActiveTab(tabName.basic);
     }
 
-    if (tab === "extra") {
-      setActiveTab("extra");
+    if (tab === tabName.extra) {
+      setActiveTab(tabName.extra);
     }
   };
 
@@ -33,9 +34,9 @@ const HouseCleaning = () => {
     <div className="house-cleaning">
       <div className="house-cleaning__buttons">
         <button
-          onClick={() => handleTabOpening("basic")}
+          onClick={() => handleTabOpening(tabName.basic)}
           className={`house-cleaning__button house-cleaning__button--basic ${
-            activeTab === "basic" ? "house-cleaning__button--active" : ""
+            activeTab === tabName.basic ? "house-cleaning__button--active" : ""
           }`}
           title="Klicken Sie hier, um die Basis-Reinigung zu sehen"
           type="button"
@@ -44,9 +45,9 @@ const HouseCleaning = () => {
         </button>
 
         <button
-          onClick={() => handleTabOpening("extra")}
+          onClick={() => handleTabOpening(tabName.extra)}
           className={`house-cleaning__button house-cleaning__button--extra ${
-            activeTab === "extra" ? "house-cleaning__button--active" : ""
+            activeTab === tabName.extra ? "house-cleaning__button--active" : ""
           }`}
           title="Klicken Sie hier, um Extra-Reinigung zu sehen"
           type="button"
@@ -56,10 +57,13 @@ const HouseCleaning = () => {
       </div>
       <div
         className={`house-cleaning__tab house-cleaning__tab--basic ${
-          activeTab === "basic" ? "house-cleaning__tab--active" : null
+          activeTab === tabName.basic ? "house-cleaning__tab--active" : null
         }`}
       >
-        <img src={BasicServiceIcon} alt="Two hands indicating the quality of the service" />
+        <img
+          src={BasicServiceIcon}
+          alt="Two hands indicating the quality of the service"
+        />
         <h4>Die BASIS-Reinigung</h4>
         <ul className="tab-list">
           {basicServiceTasks.map((task, i) => {
@@ -74,10 +78,13 @@ const HouseCleaning = () => {
       </div>
       <div
         className={`house-cleaning__tab house-cleaning__tab--extra ${
-          activeTab === "extra" ? "house-cleaning__tab--active" : null
+          activeTab === tabName.extra ? "house-cleaning__tab--active" : null
         }`}
       >
-        <img src={ExtraServiceIcon} alt="Two hands indicating the quality of the service" />
+        <img
+          src={ExtraServiceIcon}
+          alt="Two hands indicating the quality of the service"
+        />
         <h4>Die EXTRA-Reinigung</h4>
         <div className="tab-list">
           {extraServiceTasks.map((task, i) => {
