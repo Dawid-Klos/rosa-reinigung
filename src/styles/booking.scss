@@ -1,0 +1,152 @@
+@import "./_variables.scss";
+
+.booking {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10vw;
+    min-height: 100vh;
+
+    &__heading-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__heading {
+        font-family: $font-family-raleway;
+        font-size: 3rem;
+        margin: 0;
+
+        @include small-desktop-up {
+            font-size: 2rem;
+        }
+
+        @include large-desktop-up {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__desc {
+        font-size: 1rem;
+        color: $color-grey-light;
+
+        @include small-desktop-up {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__steps-wrapper {
+        width: 100vw;
+        position: relative;
+    }
+
+    &__lines {
+        position: absolute;
+        width: 90vw;
+        height: 55vw;
+        top: 0vw;
+        left: -1vw;
+        transform: translate(-1vw, -3.2vw);
+
+        @include small-desktop-up {
+            width: 95vw;
+            transform: translate(-1vw, 1.2vw);
+        }
+
+        @include large-desktop-up {
+            transform: translate(-1vw, -6.8vw);
+        }
+    }
+
+    &__steps {
+        width: 60vw;
+        height: auto;
+        position: absolute;
+        top: 30vw;
+        left: 50%;
+        transform: translate(-50%, -30vw);
+    }
+
+    &__steps-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5rem;
+        padding: 2rem;
+
+        @include small-desktop-up {
+            gap: 4rem;
+        }
+
+        @include large-desktop-up {
+            gap: 0;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-flow: column nowrap;
+        border-radius: 10px;
+        margin-top: 15vw;
+        box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.step {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.3;
+
+    &--active {
+        opacity: 1;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.8rem;
+        height: 2.8rem;
+        background-color: $color-purple;
+        border-radius: 50%;
+        box-shadow: 0px 4px 14px rgba(175, 120, 206, 0.5), 0px 4px 10px #AF78CE;
+
+        & img {
+            width: 1.4rem;
+            height: 1.4rem;
+
+            @include small-desktop-up {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1rem;
+        color: $color-grey-light;
+        margin-top: 0.8rem;
+        text-align: center;
+
+        @include small-desktop-up {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__dot {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: $color-grey-light;
+        margin-top: 1rem;
+
+        &--active {
+            background-color: $color-purple;
+            box-shadow: 0px 4px 14px rgba(175, 120, 206, 0.5), 0px 4px 10px #AF78CE;
+        }
+    }
+}
