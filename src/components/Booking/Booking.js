@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
-import StepOne from "./Steps/StepOne";
-import StepTwo from "./Steps/StepTwo";
+import AddressForm from "./Steps/AddressForm";
+import ServiceForm from "./Steps/ServiceForm";
+import DetailsForm from "./Steps/DetailsForm";
+import Checkout from "./Steps/Checkout";
 
+import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 import UserIcon from "../../images/icons/icon-user.svg";
 import ChoiceIcon from "../../images/icons/icon-choice.svg";
 import DetailsIcon from "../../images/icons/icon-details.svg";
@@ -11,18 +14,53 @@ import Lines from "../../images/img-line-booking.svg";
 
 import "../../styles/booking.scss";
 
+import { Formik, Form } from "formik";
+
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
-  const formSteps = [
-    {
-      stepNumber: 0,
-      component: <StepOne />,
-    },
-    {
-      stepNumber: 1,
-      component: <StepTwo />,
-    },
-  ];
+
+  const renderCurrentStep = (step) => {
+    switch (step) {
+      case 0:
+        return <AddressForm />;
+      case 1:
+        return <ServiceForm />;
+      case 2:
+        return <DetailsForm />;
+      case 3:
+        return <Checkout />;
+      default:
+        return <p>Error - Check the code!</p>;
+    }
+  };
+
+  const renderFormButtons = (step) => {
+    return step > 0 ? (
+      <div className="booking__button-wrapper">
+        <button
+          className="booking__button--ghost"
+          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate - 1 : prevstate))}
+        >
+          Previous Step
+        </button>
+        <button
+          className="booking__button"
+          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
+        >
+          <p>Weiter</p>
+          <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+        </button>
+      </div>
+    ) : (
+      <button
+        className="booking__button"
+        onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
+      >
+        <p>Weiter</p>
+        <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+      </button>
+    );
+  };
 
   const statusBarSteps = [
     {
@@ -70,17 +108,25 @@ const Booking = () => {
           </div>
         </div>
       </div>
-      <>
-        {formSteps.map((step) =>
-          step.stepNumber === currentStep ? (
-            <form className="booking__form" key={step.stepNumber}>
-              {step.component}
-            </form>
-          ) : null
-        )}
-      </>
-
-      <button onClick={() => setCurrentStep((prevstate) => prevstate + 1)}>Next</button>
+      <Formik
+        initialValues={{
+          name: "",
+          phone: "",
+          email: "",
+          houseNumber: "",
+          postcode: "",
+          city: "",
+        }}
+        onSubmit={async (values) => {
+          await new Promise((r) => setTimeout(r, 500));
+          alert(JSON.stringify(values, null, 4));
+        }}
+      >
+        <Form className="booking__form">
+          {renderCurrentStep(currentStep)}
+          {renderFormButtons(currentStep)}
+        </Form>
+      </Formik>
     </section>
   );
 };
