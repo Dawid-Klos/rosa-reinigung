@@ -7,14 +7,19 @@ import { Field } from "formik";
 const ServiceForm = () => {
   return (
     <>
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="name">
-          Name
+      <div className="booking__card" id="services">
+        Picked
+      </div>
+      <div role="group" aria-labelledby="services">
+        <label>
+          <Field type="radio" name="picked" value="One" />
+          Hausreinigung
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={NameIcon} alt="" />
-          <Field className="booking__field--input" id="name" name="name" placeholder="Matteo Müller" />
-        </div>
+        <label>
+          <Field type="radio" name="picked" value="Two" />
+          Two
+        </label>
+        {/* <div>Picked: {values.picked}</div> */}
       </div>
     </>
   );

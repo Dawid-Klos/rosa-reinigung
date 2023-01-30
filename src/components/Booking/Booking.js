@@ -36,15 +36,15 @@ const Booking = () => {
 
   const renderFormButtons = (step) => {
     return step > 0 ? (
-      <div className="booking__button-wrapper">
+      <div className="form__button-wrapper">
         <button
-          className="booking__button--ghost"
+          className="form__button--ghost"
           onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate - 1 : prevstate))}
         >
           Previous Step
         </button>
         <button
-          className="booking__button"
+          className="form__button"
           onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
         >
           <p>Weiter</p>
@@ -53,7 +53,7 @@ const Booking = () => {
       </div>
     ) : (
       <button
-        className="booking__button"
+        className="form__button"
         onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
       >
         <p>Weiter</p>
@@ -122,7 +122,7 @@ const Booking = () => {
           alert(JSON.stringify(values, null, 4));
         }}
       >
-        <Form className="booking__form">
+        <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
           {renderCurrentStep(currentStep)}
           {renderFormButtons(currentStep)}
         </Form>

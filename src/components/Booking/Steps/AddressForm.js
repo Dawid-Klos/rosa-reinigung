@@ -10,44 +10,44 @@ import { Field } from "formik";
 const AddressForm = () => {
   return (
     <>
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="name">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="name">
           Name
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={NameIcon} alt="" />
-          <Field className="booking__field--input" id="name" name="name" placeholder="Matteo Müller" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={NameIcon} alt="" />
+          <Field className="form__field--input" id="name" name="name" placeholder="Matteo Müller" />
         </div>
       </div>
 
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="email">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="email">
           Email
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={EmailIcon} alt="" />
-          <Field className="booking__field--input" id="email" name="email" placeholder="mateo@gmail.com" type="email" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={EmailIcon} alt="" />
+          <Field className="form__field--input" id="email" name="email" placeholder="mateo@gmail.com" type="email" />
         </div>
       </div>
 
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="phone">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="phone">
           Rufnummer
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={PhoneIcon} alt="" />
-          <Field className="booking__field--input" id="phone" name="phone" placeholder="0211 5684962" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={PhoneIcon} alt="" />
+          <Field className="form__field--input" id="phone" name="phone" placeholder="0211 5684962" />
         </div>
       </div>
 
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="houseNumber">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="houseNumber">
           Hausnummer und Straße
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={LocationIcon} alt="" />
           <Field
-            className="booking__field--input"
+            className="form__field--input"
             id="houseNumber"
             name="houseNumber"
             placeholder="Sankt Jakobikirche, Jakobikirchhof"
@@ -56,23 +56,23 @@ const AddressForm = () => {
         </div>
       </div>
 
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="postcode">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="postcode">
           Postanschrift
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
-          <Field className="booking__field--input" id="postcode" name="postcode" placeholder="20095" type="text" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={LocationIcon} alt="" />
+          <Field className="form__field--input" id="postcode" name="postcode" placeholder="20095" type="text" />
         </div>
       </div>
 
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="city">
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="city">
           Stadt
         </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
-          <Field className="booking__field--input" id="city" name="city" placeholder="Hamburg" type="text" />
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={LocationIcon} alt="" />
+          <Field className="form__field--input" id="city" name="city" placeholder="Hamburg" type="text" />
         </div>
       </div>
     </>
