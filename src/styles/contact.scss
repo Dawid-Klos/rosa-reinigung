@@ -69,6 +69,11 @@
         border-radius: 0.6rem;
         text-decoration: none;
 
+        &:hover {
+            background-color: hsla(278, 47%, 64%, 0.45);
+            transform: scale(104%);
+        }
+
         & img {
             width: 2rem;
             height: 2rem;
