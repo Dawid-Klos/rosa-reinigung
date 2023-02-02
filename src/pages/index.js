@@ -6,6 +6,7 @@ import Reviews from "../components/Reviews/Reviews";
 import Services from "../components/Services/Services";
 import Gallery from "../components/Gallery/Gallery";
 import Booking from "../components/Booking/Booking";
+import Contact from "../components/Contact/Contact";
 
 import "../styles/index.scss";
 
@@ -23,6 +24,8 @@ const IndexPage = () => {
       <Gallery />
       <a id="form"></a>
       <Booking />
+      <a id="contact"></a>
+      <Contact />
     </>
   );
 };

@@ -25,7 +25,7 @@ const Service = ({ title, description, isReversed, image, imageAlt, hasBackgroun
         {desc.length > 400 ? (
           <div className="service-content__container">
             <p className="service-content__description">
-              {desc.substring(0, 418)}{" "}
+              {desc.substring(0, 418)}
               <span className="service-content__description--extra-text">{desc.substring(418)}</span>
             </p>
             <button className="service-content__button" onClick={handleText} type="button">
