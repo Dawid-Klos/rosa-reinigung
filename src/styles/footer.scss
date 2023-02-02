@@ -1,1 +1,24 @@
 @import "../styles/variables";
+
+.footer {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsla(332deg, 77%, 85%, 0.2);
+    min-height: 2vh;
+    max-height: 4vh;
+    padding: 1rem;
+
+    &__img {
+        width: 6em;
+        height: 6rem;
+    }
+
+    &__copyrights {
+        font-size: 0.8rem;
+    }
+}
