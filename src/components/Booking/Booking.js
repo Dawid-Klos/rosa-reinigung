@@ -22,9 +22,9 @@ const Booking = () => {
   const renderCurrentStep = (step) => {
     switch (step) {
       case 0:
-        return <AddressForm />;
+        return <AddressForm values={Formik.values} />;
       case 1:
-        return <ServiceForm />;
+        return <ServiceForm values={Formik.values} />;
       case 2:
         return <DetailsForm />;
       case 3:
@@ -116,6 +116,8 @@ const Booking = () => {
           houseNumber: "",
           postcode: "",
           city: "",
+          picked: "",
+          toggle: false,
         }}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));

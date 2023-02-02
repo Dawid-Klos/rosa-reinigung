@@ -10,45 +10,62 @@ import MovingOutCleaningIcon from "../../../images/icons/icon-form-cleaning-afte
 import MovingHouseCleaning from "../../../images/icons/icon-form-moving-house.svg";
 
 const ServiceForm = (values) => {
+  const cardValues = [
+    {
+      id: 0,
+      title: "Hausreinigung",
+      icon: HouseCleaningIcon,
+      value: 0,
+    },
+    {
+      id: 1,
+      title: "Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.",
+      icon: CompanyCleaningIcon,
+      value: 1,
+    },
+    {
+      id: 2,
+      title: "Fensterreinigung",
+      icon: WindowsCleaningIcon,
+      value: 2,
+    },
+    {
+      id: 3,
+      title: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+      icon: HouseOrganisationIcon,
+      value: 3,
+    },
+    {
+      id: 4,
+      title: "Aufräumen nach dem Auszug",
+      icon: MovingOutCleaningIcon,
+      value: 4,
+    },
+    {
+      id: 5,
+      title: "Umzüge",
+      icon: MovingHouseCleaning,
+      value: 5,
+    },
+  ];
+
   return (
     <>
       <h3 className="services-cards__heading" id="services">
-        Drücken Sie auf den Dienst, für den Sie sich interessieren.
+        Klicken Sie auf den Dienst, der Sie interessiert, um ihn auszuwählen.
       </h3>
       <div className="services-cards" role="group" aria-labelledby="services">
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={HouseCleaningIcon} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="0" />
-          <p className="services-cards__title">Hausreinigung</p>
-        </label>
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={CompanyCleaningIcon} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="1" />
-          <p className="services-cards__title">Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.</p>
-        </label>
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={WindowsCleaningIcon} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="2" />
-          <p className="services-cards__title">Fensterreinigung</p>
-        </label>
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={HouseOrganisationIcon} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="3" />
-          <p className="services-cards__title">Entrümpelung (Decluttering) / Haushaltsorganisation</p>
-        </label>
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={MovingOutCleaningIcon} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="4" />
-          <p className="services-cards__title">Aufräumen nach dem Auszug</p>
-        </label>
-        <label className="services-cards__label">
-          <img className="services-cards__icon" src={MovingHouseCleaning} alt="" />
-          <Field className="services-cards__field" type="radio" name="picked" value="5" />
-          <p className="services-cards__title">Umzüge</p>
-        </label>
+        {cardValues.map((card) => (
+          <label className="services-cards__label" key={card.id}>
+            <img className="services-cards__icon" src={card.icon} alt="" />
+            <Field className="services-cards__field" type="radio" name="picked" value={card.value} />
+            <p className="services-cards__title">{card.title}</p>
+          </label>
+        ))}
       </div>
       <span className="services-cards__status">
-        Ausgewählter Dienst: {values.picked === "" ? "Nicht ausgewählt" : values.picked}
+        Ausgewählter Dienst: {!values.picked ? "Nicht ausgewählt" : values.picked}
+        {console.log(values)}
       </span>
     </>
   );
