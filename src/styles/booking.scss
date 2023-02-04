@@ -61,31 +61,6 @@
             transform: translate(-1vw, -6.8vw);
         }
     }
-
-    &__steps {
-        width: 60vw;
-        height: auto;
-        position: absolute;
-        top: 30vw;
-        left: 50%;
-        transform: translate(-50%, -30vw);
-    }
-
-    &__steps-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 5rem;
-        padding: 2rem;
-
-        @include small-desktop-up {
-            gap: 4rem;
-        }
-
-        @include large-desktop-up {
-            gap: 0;
-        }
-    }
-
 }
 
 .form {
@@ -100,7 +75,11 @@
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
 
     @include small-desktop-up {
-        margin-top: 12vh;
+        margin-top: 18vw;
+    }
+
+    @include large-desktop-up {
+        margin-top: 8vw;
     }
 
     &>:last-child {
@@ -164,7 +143,7 @@
         min-height: 3.6rem;
         text-decoration: none;
         color: hsla(324, 100%, 99%, 0.8);
-        transition: min-width 1.4s;
+        transition: min-width .6s;
 
         @include small-desktop-up {
             min-width: 35%;
@@ -203,14 +182,13 @@
         }
 
         &:hover {
-            width: 0%;
+            min-width: 45%;
             box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35),
                 0px 6px 24px rgba(175, 120, 206, 0.45);
             color: $color-white;
             cursor: pointer;
 
             @include small-desktop-up {
-                width: 45%;
                 min-height: 2rem;
                 padding: 0 2rem;
             }
@@ -221,7 +199,7 @@
         }
 
         &:hover img {
-            transition: all 0.8s;
+            transition: width 0.8s, transform 0.8s;
             width: 1.6rem;
             opacity: 1;
             transform: rotateY(360deg);
@@ -276,125 +254,6 @@
 
         & a {
             color: $color-purple;
-        }
-    }
-}
-
-.services-cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding: 1rem 4rem;
-
-    &__heading {
-        font-family: $font-family-raleway;
-        font-weight: 500;
-        font-size: 1.2rem;
-        margin: 1rem;
-    }
-
-    &__label {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1rem 1rem;
-        margin: 1rem;
-        background-color: $color-white;
-        border-radius: 0.6rem;
-        box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
-        cursor: pointer;
-        border: 2px solid transparent;
-
-        &:focus-within {
-            border: 2px solid $color-purple;
-            box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
-        }
-
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-
-    &__title {
-        width: 75%;
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    &__icon {
-        width: 3rem;
-        height: 3rem;
-        padding-top: 1rem;
-        filter: drop-shadow(0px 4px 14px rgba(175, 120, 206, 0.5)) drop-shadow(0px 4px 10px #AF78CE);
-    }
-
-    &__field {}
-
-    &__status {
-
-        background-color: rgba(80, 78, 81, 0.05);
-        border-radius: 0.6rem;
-        padding: 0.8rem 1rem;
-        margin: 1rem;
-        font-size: 1rem;
-        color: $color-grey;
-        text-align: center;
-    }
-}
-
-.step {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.3;
-
-    &--active {
-        opacity: 1;
-    }
-
-    &__icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 2.8rem;
-        height: 2.8rem;
-        background-color: $color-purple;
-        border-radius: 50%;
-        box-shadow: 0px 4px 14px rgba(175, 120, 206, 0.5), 0px 4px 10px #AF78CE;
-
-        & img {
-            width: 1.4rem;
-            height: 1.4rem;
-
-            @include small-desktop-up {
-                width: 1.2rem;
-                height: 1.2rem;
-            }
-        }
-    }
-
-    &__title {
-        font-size: 1rem;
-        color: $color-grey-light;
-        margin-top: 0.8rem;
-        text-align: center;
-
-        @include small-desktop-up {
-            font-size: 0.9rem;
-        }
-    }
-
-    &__dot {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background-color: $color-grey-light;
-        margin-top: 1rem;
-
-        &--active {
-            background-color: $color-purple;
-            box-shadow: 0px 4px 14px rgba(175, 120, 206, 0.5), 0px 4px 10px #AF78CE;
         }
     }
 }

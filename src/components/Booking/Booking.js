@@ -13,6 +13,7 @@ import SuccessIcon from "../../images/icons/icon-success.svg";
 import Lines from "../../images/img-line-booking.svg";
 
 import "../../styles/booking.scss";
+import "../../styles/steps.scss";
 
 import { Formik, Form } from "formik";
 
@@ -94,8 +95,8 @@ const Booking = () => {
 
       <div className="booking__steps-wrapper">
         <img className="booking__lines" src={Lines} alt="" />
-        <div className="booking__steps">
-          <div className="booking__steps-bar">
+        <div className="steps-container">
+          <div className="steps-bar">
             {statusBarSteps.map((step) => (
               <div className={`step ${step.stepNumber === currentStep ? "step--active" : ""}`} key={step.stepNumber}>
                 <div className="step__icon">
