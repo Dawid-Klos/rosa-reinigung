@@ -5,8 +5,16 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 10vw;
+    margin: 10vw 0;
     min-height: 100vh;
+
+    @include small-desktop-up {
+        margin: 12vw 0;
+    }
+
+    @include large-desktop-up {
+        margin: 6vw 0;
+    }
 
     &__heading-wrapper {
         display: flex;
@@ -69,7 +77,7 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 0.6rem;
     margin-top: 20vh;
     background-color: $color-white;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
@@ -83,7 +91,7 @@
     }
 
     &>:last-child {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     &__service {
@@ -112,9 +120,10 @@
         justify-content: center;
         align-items: flex-start;
         width: 100%;
-        padding: 0.6rem 4rem;
+        padding: 0.6rem 0;
 
         &--label {
+            font-size: 0.9rem;
             padding: 0.6rem 0;
         }
 
@@ -168,14 +177,13 @@
         }
 
         &:focus {
-            width: 0%;
+            min-width: 45%;
             box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35),
                 0px 6px 24px rgba(175, 120, 206, 0.45);
             color: $color-white;
             cursor: pointer;
 
             @include small-desktop-up {
-                width: 45%;
                 min-height: 2rem;
                 padding: 0 2rem;
             }
@@ -249,7 +257,7 @@
 
     &__policy-text {
         margin-left: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: $color-grey-light;
 
         & a {
