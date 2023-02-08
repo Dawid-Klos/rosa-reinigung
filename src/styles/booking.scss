@@ -81,13 +81,16 @@
     margin-top: 20vh;
     background-color: $color-white;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    min-width: 35vw;
 
     @include small-desktop-up {
         margin-top: 18vw;
+        min-width: 40vw;
     }
 
     @include large-desktop-up {
         margin-top: 8vw;
+        min-width: 26vw;
     }
 
     &>:last-child {
@@ -135,7 +138,8 @@
     }
 
     &__button-wrapper {
-        min-width: 60%;
+        // min-width: 90%;
+        min-width: 30vw;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
