@@ -6,7 +6,7 @@ import WarningIcon from "../../../images/icons/icon-warning.svg";
 import CheckIcon from "../../../images/icons/icon-check-mark.svg";
 import Lines from "../../../images/img-line-move-out.svg";
 
-const HouseOrganisation = () => {
+const MovingService = () => {
   const pointsAndWarningMessage = (
     <div className="moving-out">
       <ul className="moving-out__points">
@@ -55,4 +55,4 @@ const HouseOrganisation = () => {
   return <Service {...props} />;
 };
 
-export default HouseOrganisation;
+export default MovingService;

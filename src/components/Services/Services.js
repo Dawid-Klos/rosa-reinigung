@@ -7,7 +7,7 @@ import HouseCleaning from "./HouseCleaning/HouseCleaning";
 import CorporateCleaning from "./CorporateCleaning/CorporateCleaning";
 import WindowCleaning from "./WindowCleaning/WindowCleaning";
 import HouseOrganisation from "./HouseOrganisation/HouseOrganisation";
-import MovingOut from "./MovingOut/MovingOut";
+import MovingService from "./MovingService/MovingService";
 
 const Services = () => {
   return (
@@ -21,7 +21,7 @@ const Services = () => {
       <CorporateCleaning />
       <WindowCleaning />
       <HouseOrganisation />
-      <MovingOut />
+      <MovingService />
     </section>
   );
 };
