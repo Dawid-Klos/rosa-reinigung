@@ -1,75 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FORM_DETAILS_VARIANTS } from "../../../helpers/formData";
 
-import NameIcon from "../../../images/icons/icon-form-name.svg";
-import PhoneIcon from "../../../images/icons/icon-form-phone.svg";
-import LocationIcon from "../../../images/icons/icon-form-location.svg";
+import { Field, useField } from "formik";
 
-import { Field } from "formik";
+const DetailsForm = ({ service }) => {
+  const [values, setValues] = useState(null);
 
-const DetailsForm = () => {
+  const DatePicker = ({ name = "" }) => {
+    const [field, meta, helpers] = useField(name);
+
+    const { value } = meta;
+    const { setValue } = helpers;
+
+    return <input {...field} type="date" selected={value} onChange={(date) => setValue(date)} />;
+  };
+
+  useEffect(() => {
+    setValues(FORM_DETAILS_VARIANTS[service]);
+    console.log(service);
+  }, [service]);
+
   return (
     <>
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="name">
-          Name
-        </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={NameIcon} alt="" />
-          <Field className="booking__field--input" id="name" name="name" placeholder="Jakbson von Kubelek" />
-        </div>
-      </div>
-
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="phone">
-          Rufnummer
-        </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={PhoneIcon} alt="" />
-          <Field className="booking__field--input" id="phone" name="phone" placeholder="012345678" />
-        </div>
-      </div>
-
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="house-number">
-          Hausnummer und Straße
-        </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
-          <Field
-            className="booking__field--input"
-            id="house-number"
-            name="house-number"
-            placeholder="jane@acme.com"
-            type="text"
-          />
-        </div>
-      </div>
-
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="postcode">
-          Postanschrift
-        </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
-          <Field
-            className="booking__field--input"
-            id="postcode"
-            name="postcode"
-            placeholder="22041–22769"
-            type="text"
-          />
-        </div>
-      </div>
-
-      <div className="booking__field">
-        <label className="booking__field--label" htmlFor="city">
-          Stadt
-        </label>
-        <div className="booking__input-wrapper">
-          <img className="booking__field--icon" src={LocationIcon} alt="" />
-          <Field className="booking__field--input" id="city" name="city" placeholder="Hamburg" type="text" />
-        </div>
-      </div>
+      {values ? (
+        values.map((field) => (
+          <div className="form__field" key={field.id}>
+            <label className="form__field--label" htmlFor={field.htmlFor}>
+              {field.label}
+            </label>
+            <div className="form__input-wrapper">
+              <img className="form__field--icon" src={field.icon} alt="" />
+              <Field
+                className="form__field--input"
+                id={field.htmlFor}
+                name={field.htmlFor}
+                type={field.htmlFor}
+                placeholder={field.placeholder}
+              />
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>An error occured</div>
+      )}
+      <DatePicker name="date" />
     </>
   );
 };

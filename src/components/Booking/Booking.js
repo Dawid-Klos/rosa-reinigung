@@ -19,15 +19,20 @@ import { Formik, Form } from "formik";
 
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [pickedService, setPickedService] = useState(null);
+
+  const pickService = React.useCallback((picked) => {
+    setPickedService(picked);
+  }, []);
 
   const renderCurrentStep = (step) => {
     switch (step) {
       case 0:
-        return <AddressForm values={Formik.values} />;
+        return <AddressForm />;
       case 1:
-        return <ServiceForm values={Formik.values} />;
+        return <ServiceForm service={pickedService} pickService={pickService} />;
       case 2:
-        return <DetailsForm />;
+        return <DetailsForm service={pickedService} />;
       case 3:
         return <Checkout />;
       default:
@@ -40,12 +45,14 @@ const Booking = () => {
       <div className="form__button-wrapper">
         <button
           className="form__button--ghost"
+          type="button"
           onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate - 1 : prevstate))}
         >
-          Previous Step
+          vorheriger Schritt
         </button>
         <button
           className="form__button"
+          type="button"
           onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
         >
           <p>Weiter</p>
@@ -55,6 +62,7 @@ const Booking = () => {
     ) : (
       <button
         className="form__button"
+        type="button"
         onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
       >
         <p>Weiter</p>
