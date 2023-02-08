@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
-import EmailIcon from "../../../images/icons/icon-form-email.svg";
-import NameIcon from "../../../images/icons/icon-form-name.svg";
-import PhoneIcon from "../../../images/icons/icon-form-phone.svg";
-import LocationIcon from "../../../images/icons/icon-form-location.svg";
+import { addressFieldsValues } from "../../../helpers/formData";
 import TickIcon from "../../../images/icons/icon-check-mark.svg";
 
 import { Field } from "formik";
@@ -15,60 +12,9 @@ const AddressForm = () => {
     setIsChecked((prev) => !prev);
   };
 
-  const formFieldsValues = [
-    {
-      id: 0,
-      label: "Name",
-      icon: NameIcon,
-      htmlFor: "name",
-      placeholder: "Matteo Müller",
-      type: "text",
-    },
-    {
-      id: 1,
-      label: "Email",
-      icon: EmailIcon,
-      htmlFor: "email",
-      placeholder: "mateo@gmail.com",
-      type: "email",
-    },
-    {
-      id: 2,
-      label: "Rufnummer",
-      icon: PhoneIcon,
-      htmlFor: "phone",
-      placeholder: "0211 5684962",
-      type: "tel",
-    },
-    {
-      id: 3,
-      label: "Hausnummer und Straße",
-      icon: LocationIcon,
-      htmlFor: "houseNumber",
-      placeholder: "Sankt Jakobikirche, Jakobikirchhof",
-      type: "text",
-    },
-    {
-      id: 4,
-      label: "Postanschrift",
-      icon: LocationIcon,
-      htmlFor: "postcode",
-      placeholder: "20095",
-      type: "text",
-    },
-    {
-      id: 5,
-      label: "Stadt",
-      icon: LocationIcon,
-      htmlFor: "city",
-      placeholder: "Hamburg",
-      type: "text",
-    },
-  ];
-
   return (
     <>
-      {formFieldsValues.map((field) => (
+      {addressFieldsValues.map((field) => (
         <div className="form__field" key={field.id}>
           <label className="form__field--label" htmlFor={field.htmlFor}>
             {field.label}
