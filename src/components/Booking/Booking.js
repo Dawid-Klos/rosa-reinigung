@@ -4,7 +4,9 @@ import AddressForm from "./Steps/AddressForm";
 import ServiceForm from "./Steps/ServiceForm";
 import DetailsForm from "./Steps/DetailsForm";
 import Checkout from "./Steps/Checkout";
-import { statusBarSteps } from "../../helpers/formData";
+
+import { statusBarSteps, STEP_FIELDS } from "../../helpers/formData";
+import { stepOneSchema, stepTwoSchema } from "./ValidationSchema";
 
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 import Lines from "../../images/img-line-booking.svg";
@@ -17,18 +19,22 @@ import { Formik, Form } from "formik";
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [pickedService, setPickedService] = useState(null);
+  const [currentSchema, setCurrentSchema] = useState(stepOneSchema);
 
   const pickService = React.useCallback((picked) => {
     setPickedService(picked);
   }, []);
 
-  const renderCurrentStep = (step) => {
+  const renderCurrentStep = (step, errors, touched) => {
     switch (step) {
       case 0:
-        return <AddressForm />;
+        setCurrentSchema(stepOneSchema);
+        return <AddressForm errors={errors} touched={touched} />;
       case 1:
-        return <ServiceForm service={pickedService} pickService={pickService} />;
+        setCurrentSchema(stepTwoSchema);
+        return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
       case 2:
+        setCurrentSchema();
         return <DetailsForm service={pickedService} />;
       case 3:
         return <Checkout />;
@@ -37,20 +43,39 @@ const Booking = () => {
     }
   };
 
-  const renderFormButtons = (step) => {
+  const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
+    validateForm().then((errors) => {
+      if (Object.keys(errors).length !== 0) {
+        console.log(errors);
+        STEP_FIELDS[currentStep].forEach((field) => {
+          setFieldTouched(field);
+        });
+      } else {
+        if (currentStep < 0 || currentStep > 3) return;
+        console.log("no errors");
+        if (reverse === "reverse") {
+          setCurrentStep((step) => step - 1);
+        } else {
+          setCurrentStep((step) => step + 1);
+        }
+      }
+    });
+  };
+
+  const renderFormButtons = (step, validateForm, setFieldTouched) => {
     return step > 0 ? (
       <div className="form__button-wrapper">
         <button
           className="form__button--ghost"
           type="button"
-          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate - 1 : prevstate))}
+          onClick={() => handleCurrentStep("reverse", validateForm, setFieldTouched)}
         >
           vorheriger Schritt
         </button>
         <button
           className="form__button"
           type="submit"
-          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
+          onClick={() => handleCurrentStep("", validateForm, setFieldTouched)}
         >
           <p>Weiter</p>
           <img src={ArrowRightIcon} alt="Arrow pointing to right" />
@@ -60,12 +85,34 @@ const Booking = () => {
       <button
         className="form__button"
         type="button"
-        onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
+        onClick={() => handleCurrentStep("", validateForm, setFieldTouched)}
       >
         <p>Weiter</p>
         <img src={ArrowRightIcon} alt="Arrow pointing to right" />
       </button>
     );
+  };
+
+  const initialValues = {
+    name: "",
+    phone: "",
+    email: "",
+    street: "",
+    city: "",
+    picked: "",
+    termsOfService: false,
+    date: "",
+    frequency: "",
+    houseSize: "",
+    cleaningProducts: "",
+    timeOfService: "",
+    buildingType: "",
+    numberOfWindows: "",
+    areaToOrganize: "",
+    houseStatus: "",
+    additionalServices: "",
+    movingStreet: "",
+    movingCity: "",
   };
 
   return (
@@ -92,36 +139,19 @@ const Booking = () => {
         </div>
       </div>
       <Formik
-        initialValues={{
-          name: "",
-          phone: "",
-          email: "",
-          street: "",
-          city: "",
-          picked: "",
-          policy: false,
-          date: "",
-          frequency: "",
-          houseSize: "",
-          cleaningProducts: "",
-          timeOfService: "",
-          buildingType: "",
-          numberOfWindows: "",
-          areaToOrganize: "",
-          houseStatus: "",
-          additionalServices: "",
-          movingStreet: "",
-          movingCity: "",
-        }}
+        initialValues={initialValues}
+        validationSchema={currentSchema}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));
           alert(JSON.stringify(values, null, 4));
         }}
       >
-        <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
-          {renderCurrentStep(currentStep)}
-          {renderFormButtons(currentStep)}
-        </Form>
+        {({ validateForm, handleSubmit, errors, touched, setFieldTouched }) => (
+          <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
+            {renderCurrentStep(currentStep, errors, touched)}
+            {renderFormButtons(currentStep, validateForm, setFieldTouched)}
+          </Form>
+        )}
       </Formik>
     </section>
   );

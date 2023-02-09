@@ -115,6 +115,13 @@
             border: 2px solid $color-purple;
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
         }
+
+        // &:focus-within+.form__error {
+        //     border: 2px solid red;
+        //     box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
+
+        // }
+
     }
 
     &__field {
@@ -145,6 +152,13 @@
                 color: hsla(280, 2%, 31%, .5);
             }
         }
+    }
+
+    &__error {
+        width: 100%;
+        padding: 0.6rem 0 0 0;
+        text-align: center;
+        color: red;
     }
 
     &__date-picker {
@@ -284,6 +298,12 @@
             color: $color-purple;
         }
     }
+}
+
+// Error class 
+.error {
+    border: 2px solid red !important;
+    box-shadow: 0px 0px 8px rgba(209, 6, 40, 0.6) !important;
 }
 
 // Override react-date picker default styles

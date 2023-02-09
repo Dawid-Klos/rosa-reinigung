@@ -4,7 +4,7 @@ import { Field } from "formik";
 
 import { cardsData, SERVICES_TYPES } from "../../../helpers/formData";
 
-const ServiceForm = ({ service, pickService }) => {
+const ServiceForm = ({ service, pickService, errors, touched }) => {
   return (
     <>
       <h3 className="services-cards__heading" id="services">
@@ -22,6 +22,7 @@ const ServiceForm = ({ service, pickService }) => {
       <span className="services-cards__status">
         Ausgewählter Dienst: {!service ? "Nicht ausgewählt" : SERVICES_TYPES[service]}
       </span>
+      {errors.picked && touched.picked ? <span className="form__error">{errors.picked}</span> : null}
     </>
   );
 };

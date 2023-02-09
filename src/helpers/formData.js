@@ -29,6 +29,13 @@ export const SERVICES_TYPES = {
   movingService: "Umzüge",
 };
 
+export const STEP_FIELDS = {
+  0: ["name", "email", "phone", "street", "city", "termsOfService"],
+  1: ["picked"],
+  2: [],
+  3: [],
+};
+
 export const cardsData = [
   {
     id: 0,
