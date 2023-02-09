@@ -10,12 +10,12 @@ import MovingHouseCleaning from "../images/icons/icon-form-moving-house.svg";
 import WindowsCleaningIcon from "../images/icons/icon-form-windows.svg";
 
 export const SERVICES_TYPES = {
-  0: "Hausreinigung",
-  1: "Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.",
-  2: "Fensterreinigung",
-  3: "Entrümpelung (Decluttering) / Haushaltsorganisation",
-  4: "Aufräumen nach dem Auszug",
-  5: "Umzüge",
+  houseCleaning: "Hausreinigung",
+  companyCleaning: "Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.",
+  windowsCleaning: "Fensterreinigung",
+  houseOrganisation: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+  movingOutCleaning: "Aufräumen nach dem Auszug",
+  movingService: "Umzüge",
 };
 
 export const cardsData = [

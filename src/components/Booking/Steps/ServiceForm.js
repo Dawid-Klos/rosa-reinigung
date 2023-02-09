@@ -2,7 +2,7 @@ import React from "react";
 
 import { Field } from "formik";
 
-import { cardsData } from "../../../helpers/formData";
+import { cardsData, SERVICES_TYPES } from "../../../helpers/formData";
 
 const ServiceForm = ({ service, pickService }) => {
   return (
@@ -20,8 +20,7 @@ const ServiceForm = ({ service, pickService }) => {
         ))}
       </div>
       <span className="services-cards__status">
-        Ausgewählter Dienst: {!service ? "Nicht ausgewählt" : service}
-        {console.log(service, "<-- picked")}
+        Ausgewählter Dienst: {!service ? "Nicht ausgewählt" : SERVICES_TYPES[service]}
       </span>
     </>
   );
