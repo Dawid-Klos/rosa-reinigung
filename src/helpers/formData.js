@@ -12,6 +12,13 @@ import UserIcon from "../images/icons/icon-user.svg";
 import ChoiceIcon from "../images/icons/icon-choice.svg";
 import DetailsIcon from "../images/icons/icon-details.svg";
 import SuccessIcon from "../images/icons/icon-success.svg";
+import TimeIcon from "../images/icons/icon-form-time.svg";
+import ProductsIcon from "../images/icons/icon-form-products.svg";
+import NumbersIcons from "../images/icons/icon-form-number.svg";
+import HouseSizeIcon from "../images/icons/icon-form-house-size.svg";
+import HouseAreaIcon from "../images/icons/icon-form-house-area.svg";
+import FrequencyIcon from "../images/icons/icon-form-frequency.svg";
+import ExtraServiceIcon from "../images/icons/icon-form-extra-services.svg";
 
 export const SERVICES_TYPES = {
   houseCleaning: "Hausreinigung",
@@ -132,7 +139,7 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 0,
       label: "Häufigkeit der Reinigung",
-      icon: NameIcon,
+      icon: FrequencyIcon,
       htmlFor: "frequency",
       placeholder: "z. B. einmaliger, wöchentlicher oder zweiwöchentlicher Dienst",
       type: "text",
@@ -140,7 +147,7 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 1,
       label: "Größe der Wohnung",
-      icon: NameIcon,
+      icon: HouseSizeIcon,
       htmlFor: "houseSize",
       placeholder: "z. B. Anzahl der Bäder, Etagen und Größe der Wohnung in m2",
       type: "text",
@@ -148,7 +155,7 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 2,
       label: "Haben Sie einen Staubsauger und Ihre eigenen Reinigungsmittel?",
-      icon: PhoneIcon,
+      icon: ProductsIcon,
       htmlFor: "cleaningProducts",
       placeholder: "z.B. angeben, was Sie besitzen",
       type: "text",
@@ -156,7 +163,7 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 3,
       label: "Welcher Zeitrahmen wäre für Sie günstig?",
-      icon: PhoneIcon,
+      icon: TimeIcon,
       htmlFor: "timeOfService",
       placeholder: "Welcher Zeitrahmen wäre für Sie günstig?",
       type: "date",
@@ -166,23 +173,23 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 0,
       label: "Art des Gebäudes",
-      icon: NameIcon,
+      icon: HouseAreaIcon,
       htmlFor: "buildingType",
       placeholder: "Einmaliger, wöchentlicher oder vierzehntägiger Dienst",
       type: "text",
     },
     {
-      id: 0,
+      id: 1,
       label: "Häufigkeit der Reinigung",
-      icon: NameIcon,
+      icon: FrequencyIcon,
       htmlFor: "frequency",
       placeholder: "Einmaliger, wöchentlicher oder vierzehntägiger Dienst",
       type: "text",
     },
     {
-      id: 3,
+      id: 2,
       label: "Zeitpunkt der Durchführung",
-      icon: PhoneIcon,
+      icon: TimeIcon,
       htmlFor: "timeOfService",
       placeholder: "Welcher Zeitrahmen wäre für Sie günstig?",
       type: "text",
@@ -191,26 +198,26 @@ export const FORM_DETAILS_VARIANTS = {
   windowsCleaning: [
     {
       id: 0,
-      label: "Art des Gebäudes",
-      icon: NameIcon,
+      label: "Der Ort, an dem Ihre Fenster gereinigt werden sollen",
+      icon: HouseAreaIcon,
       htmlFor: "buildingType",
-      placeholder: "Der Ort, an dem Ihre Fenster gereinigt werden sollen: Zuhause, im Büro, in der Schule?",
+      placeholder: "Zuhause, im Büro, in der Schule?",
       type: "text",
     },
     {
       id: 1,
-      label: "Anzahl der Fenster",
-      icon: NameIcon,
+      label: "Geben Sie die Größe in m2 und die Anzahl der Fenster an",
+      icon: NumbersIcons,
       htmlFor: "numberOfWindows",
-      placeholder: "Geben Sie die Größe in m2 und die Anzahl der Fenster an",
+      placeholder: "z.B. 4 Fenster, 34m2",
       type: "text",
     },
     {
       id: 2,
-      label: "Zeitpunkt der Durchführung",
-      icon: PhoneIcon,
+      label: "Welcher Zeitrahmen wäre für Sie günstig?",
+      icon: TimeIcon,
       htmlFor: "timeOfService",
-      placeholder: "Welcher Zeitrahmen wäre für Sie günstig?",
+      placeholder: "z. B. 9 Uhr bis 17 Uhr.",
       type: "text",
     },
   ],
@@ -218,7 +225,7 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 0,
       label: "Welchen Bereich in Ihrer Wohnung möchten Sie organisieren?",
-      icon: NameIcon,
+      icon: HouseAreaIcon,
       htmlFor: "areaToOrganize",
       placeholder: "ganzes Haus, Garderobe, Küche, usw.",
       type: "text",
@@ -228,43 +235,51 @@ export const FORM_DETAILS_VARIANTS = {
     {
       id: 0,
       label: "Größe der Wohnung",
-      icon: NameIcon,
+      icon: HouseSizeIcon,
       htmlFor: "houseSize",
-      placeholder: "Geben Sie die Anzahl der Bäder, die Anzahl der Stockwerke und die Größe der Wohnung in m2 an",
+      placeholder: "z. B. Anzahl der Bäder, Etagen und Größe der Wohnung in m2",
       type: "text",
     },
     {
       id: 1,
-      label: "Zustand der Wohnung",
-      icon: NameIcon,
+      label: "Steht die Wohnung komplett leer?",
+      icon: HouseAreaIcon,
       htmlFor: "houseStatus",
-      placeholder: "Steht die Wohnung komplett leer?",
+      placeholder: "z.B. leer bis auf die Schlafzimmermöbel",
       type: "text",
     },
     {
       id: 2,
-      label: "Reinigungsmittel",
-      icon: PhoneIcon,
+      label: "Haben Sie einen Staubsauger und Ihre eigenen Reinigungsmittel?",
+      icon: ProductsIcon,
       htmlFor: "cleaningProducts",
-      placeholder: "Haben Sie einen Staubsauger und Ihre eigenen Reinigungsmittel?",
+      placeholder: "z.B. Ich habe nur einen Staubsauger",
       type: "text",
     },
     {
       id: 3,
-      label: "Zusätzliche Anforderungen",
-      icon: PhoneIcon,
+      label: "Müssen wir auch den Kühlschrank, den Ofen und das Innere der Schränke reinigen?",
+      icon: ExtraServiceIcon,
       htmlFor: "additionalServices",
-      placeholder: "Müssen wir auch den Kühlschrank, den Ofen und das Innere der Schränke reinigen?",
+      placeholder: "z.B. Backofen und Kühlschrank",
       type: "text",
     },
   ],
   movingService: [
     {
       id: 0,
-      label: "Zieladresse",
-      icon: NameIcon,
-      htmlFor: "houseSize",
-      placeholder: "Geben Sie die Zieladresse an, an die Sie umziehen möchten",
+      label: "Straße und Hausnummer der Zieladresse",
+      icon: HouseAreaIcon,
+      htmlFor: "movingStreet",
+      placeholder: "z. B. Sankt Jakobikirche, Jakobikirchhof",
+      type: "text",
+    },
+    {
+      id: 0,
+      label: "Postleitzahl und Ort der Zieladresse",
+      icon: HouseAreaIcon,
+      htmlFor: "movingCity",
+      placeholder: "z. B. 20095, Hamburg",
       type: "text",
     },
   ],

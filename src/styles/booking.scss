@@ -139,6 +139,11 @@
             width: 100%;
             color: $color-grey-light;
             padding: 0 1rem;
+
+            &::placeholder {
+                opacity: 1;
+                color: hsla(280, 2%, 31%, .5);
+            }
         }
     }
 

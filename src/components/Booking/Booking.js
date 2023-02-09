@@ -49,7 +49,7 @@ const Booking = () => {
         </button>
         <button
           className="form__button"
-          type="button"
+          type="submit"
           onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
         >
           <p>Weiter</p>
@@ -97,7 +97,6 @@ const Booking = () => {
           phone: "",
           email: "",
           street: "",
-          postcode: "",
           city: "",
           picked: "",
           policy: false,
@@ -111,6 +110,8 @@ const Booking = () => {
           areaToOrganize: "",
           houseStatus: "",
           additionalServices: "",
+          movingStreet: "",
+          movingCity: "",
         }}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));
