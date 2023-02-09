@@ -5,8 +5,8 @@ import ServiceForm from "./Steps/ServiceForm";
 import DetailsForm from "./Steps/DetailsForm";
 import Checkout from "./Steps/Checkout";
 
-import { statusBarSteps, STEP_FIELDS } from "../../helpers/formData";
-import { stepOneSchema, stepTwoSchema } from "./ValidationSchema";
+import { statusBarSteps, STEP_FIELDS, initialData } from "../../helpers/formData";
+import { stepOneSchema, stepTwoSchema, stepThreeSchema } from "./ValidationSchema";
 
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 import Lines from "../../images/img-line-booking.svg";
@@ -34,7 +34,7 @@ const Booking = () => {
         setCurrentSchema(stepTwoSchema);
         return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
       case 2:
-        setCurrentSchema();
+        setCurrentSchema(stepThreeSchema);
         return <DetailsForm service={pickedService} />;
       case 3:
         return <Checkout />;
@@ -93,28 +93,6 @@ const Booking = () => {
     );
   };
 
-  const initialValues = {
-    name: "",
-    phone: "",
-    email: "",
-    street: "",
-    city: "",
-    picked: "",
-    termsOfService: false,
-    date: "",
-    frequency: "",
-    houseSize: "",
-    cleaningProducts: "",
-    timeOfService: "",
-    buildingType: "",
-    numberOfWindows: "",
-    areaToOrganize: "",
-    houseStatus: "",
-    additionalServices: "",
-    movingStreet: "",
-    movingCity: "",
-  };
-
   return (
     <section className="booking">
       <div className="booking__heading-wrapper">
@@ -139,7 +117,7 @@ const Booking = () => {
         </div>
       </div>
       <Formik
-        initialValues={initialValues}
+        initialValues={initialData}
         validationSchema={currentSchema}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));

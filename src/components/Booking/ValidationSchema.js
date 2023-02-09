@@ -22,3 +22,5 @@ export const stepTwoSchema = Yup.object().shape({
     .min(0, "Sie müssen einen der Dienste auswählen, um fortzufahren")
     .required("Sie müssen einen der Dienste auswählen, um fortzufahren"),
 });
+
+export const stepThreeSchema = Yup.object().shape({});
