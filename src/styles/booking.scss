@@ -146,7 +146,7 @@
         width: 100%;
         color: $color-grey-light;
         padding: 0 1rem;
-
+        align-self: flex-end;
     }
 
     &__button-wrapper {
@@ -279,4 +279,11 @@
             color: $color-purple;
         }
     }
+}
+
+// Override react-date picker default styles
+.react-datepicker-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
