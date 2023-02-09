@@ -3,7 +3,7 @@ import React from "react";
 import "../../styles/hero.scss";
 import LocationIcon from "../../images/icons/icon-location.svg";
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
-import HeroImage from "../../images/img-line-hero.png";
+import HeroImage from "../../images/img-line-detail.png";
 
 const Hero = () => {
   return (

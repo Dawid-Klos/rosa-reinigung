@@ -18,8 +18,11 @@
 }
 
 .hero-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   margin-left: 8rem;
-  margin-top: 2rem;
+  margin-top: -2rem;
   max-width: 40rem;
   z-index: 1;
 
@@ -29,7 +32,7 @@
   }
 
   @include large-desktop-up {
-    margin-top: 3rem;
+    margin-top: -3rem;
     margin-left: 13rem;
   }
 
@@ -40,7 +43,7 @@
     border-radius: 0.6rem;
     width: fit-content;
     padding: 0.1rem 1rem;
-    margin: -1rem 0 6rem 0;
+    margin: 1rem 0;
 
     & img {
       width: 1.4rem;
@@ -87,6 +90,7 @@
   &__description {
     line-height: 1.8rem;
     color: hsla(280, 2%, 31%, 0.65);
+    max-width: 40vw;
 
     @include small-desktop-up {
       line-height: 1.5rem;
@@ -106,7 +110,7 @@
     border-radius: 0.6rem;
     min-height: 3.6rem;
     padding: 0.2rem 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-decoration: none;
     color: hsla(324, 100%, 99%, 0.8);
     transition: all 0.4s;
@@ -165,28 +169,29 @@
   position: relative;
 
   &__lines {
-    width: 115vw;
+    width: 160vw;
     height: auto;
     position: absolute;
     top: 50%;
-    left: 10%;
-    -webkit-transform: translate(-50%, -40%);
-    transform: translate(-50%, -40%);
+    left: 50%;
+    transform: translate(-50%, -34%);
 
     @include small-desktop-up {
-      width: 135vw;
-      top: 60%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+      width: 170vw;
+      top: 55%;
+      transform: translate(-50%, -38%);
+    }
+
+    @media screen and (min-width: 1366px) and (max-width: 1439px) {
+      width: 150vw;
+      top: 50%;
+      transform: translate(-43%, -35%);
     }
 
     @include large-desktop-up {
-      width: 105vw;
-      top: 60%;
-      left: 50%;
-      -webkit-transform: translate(-48%, -50%);
-      transform: translate(-48%, -50%);
+      width: 125vw;
+      top: 55%;
+      transform: translate(-48%, -39%);
     }
   }
 }
