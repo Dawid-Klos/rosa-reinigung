@@ -33,7 +33,7 @@ const AddressForm = () => {
 
       <div className="form__policy">
         <label className="form__tick-box">
-          <Field className="form__tick-box--field" type="checkbox" onClick={handleCheckBox} name="toggle" />
+          <Field className="form__tick-box--field" type="checkbox" onClick={handleCheckBox} name="policy" />
           {isChecked === true ? <img src={TickIcon} alt="" /> : null}
         </label>
         <p className="form__policy-text">

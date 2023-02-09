@@ -130,6 +130,11 @@
             padding: 0.6rem 0;
         }
 
+        &--icon {
+            width: 2rem;
+            height: auto;
+        }
+
         &--input {
             width: 100%;
             color: $color-grey-light;
@@ -137,8 +142,14 @@
         }
     }
 
+    &__date-picker {
+        width: 100%;
+        color: $color-grey-light;
+        padding: 0 1rem;
+
+    }
+
     &__button-wrapper {
-        // min-width: 90%;
         min-width: 30vw;
         display: flex;
         flex-flow: row nowrap;

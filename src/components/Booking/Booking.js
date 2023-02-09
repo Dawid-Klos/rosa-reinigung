@@ -4,12 +4,9 @@ import AddressForm from "./Steps/AddressForm";
 import ServiceForm from "./Steps/ServiceForm";
 import DetailsForm from "./Steps/DetailsForm";
 import Checkout from "./Steps/Checkout";
+import { statusBarSteps } from "../../helpers/formData";
 
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
-import UserIcon from "../../images/icons/icon-user.svg";
-import ChoiceIcon from "../../images/icons/icon-choice.svg";
-import DetailsIcon from "../../images/icons/icon-details.svg";
-import SuccessIcon from "../../images/icons/icon-success.svg";
 import Lines from "../../images/img-line-booking.svg";
 
 import "../../styles/booking.scss";
@@ -71,29 +68,6 @@ const Booking = () => {
     );
   };
 
-  const statusBarSteps = [
-    {
-      stepNumber: 0,
-      icon: UserIcon,
-      title: "Unternehmen",
-    },
-    {
-      stepNumber: 1,
-      icon: ChoiceIcon,
-      title: "Unsere Leistungen",
-    },
-    {
-      stepNumber: 2,
-      icon: DetailsIcon,
-      title: "Servicedetails",
-    },
-    {
-      stepNumber: 3,
-      icon: SuccessIcon,
-      title: "Senden",
-    },
-  ];
-
   return (
     <section className="booking">
       <div className="booking__heading-wrapper">
@@ -122,11 +96,21 @@ const Booking = () => {
           name: "",
           phone: "",
           email: "",
-          houseNumber: "",
+          street: "",
           postcode: "",
           city: "",
           picked: "",
-          toggle: false,
+          policy: false,
+          date: "",
+          frequency: "",
+          houseSize: "",
+          cleaningProducts: "",
+          timeOfService: "",
+          buildingType: "",
+          numberOfWindows: "",
+          areaToOrganize: "",
+          houseStatus: "",
+          additionalServices: "",
         }}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));

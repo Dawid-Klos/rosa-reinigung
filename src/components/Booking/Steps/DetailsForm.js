@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { FORM_DETAILS_VARIANTS } from "../../../helpers/formData";
 
+import CalendarIcon from "../../../images/icons/icon-calendar.svg";
+import de from "date-fns/locale/de";
+import "react-datepicker/dist/react-datepicker.css";
+
+import DatePicker, { registerLocale } from "react-datepicker";
 import { Field, useField } from "formik";
+
+registerLocale("de", de);
 
 const DetailsForm = ({ service }) => {
   const [values, setValues] = useState(null);
 
-  const DatePicker = ({ name = "" }) => {
+  const MyDatePicker = ({ name = "" }) => {
     const [field, meta, helpers] = useField(name);
 
     const { value } = meta;
     const { setValue } = helpers;
 
-    return <input {...field} type="date" selected={value} onChange={(date) => setValue(date)} />;
+    return <DatePicker className="form__date-picker" {...field} selected={value} onChange={(date) => setValue(date)} />;
   };
 
   useEffect(() => {
@@ -43,7 +50,15 @@ const DetailsForm = ({ service }) => {
       ) : (
         <div>An error occured</div>
       )}
-      <DatePicker name="date" />
+      <div className="form__field">
+        <label className="form__field--label" htmlFor="date">
+          Datum der Zustellung
+        </label>
+        <div className="form__input-wrapper">
+          <img className="form__field--icon" src={CalendarIcon} alt="" />
+          <MyDatePicker locale="de" name="date" />
+        </div>
+      </div>
     </>
   );
 };
