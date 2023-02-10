@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { addressFieldsValues } from "../../../helpers/formData";
 import TickIcon from "../../../images/icons/icon-check-mark.svg";
 
 import { Field } from "formik";
 
-const AddressForm = ({ errors, touched }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckBox = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+const AddressForm = ({ errors, touched, values }) => {
   return (
     <>
       {addressFieldsValues.map((field) => (
@@ -36,8 +30,8 @@ const AddressForm = ({ errors, touched }) => {
 
       <div className="form__policy">
         <label className="form__tick-box">
-          <Field className="form__tick-box--field" type="checkbox" onClick={handleCheckBox} name="termsOfService" />
-          {isChecked === true ? <img src={TickIcon} alt="" /> : null}
+          <Field className="form__tick-box--field" type="checkbox" name="termsOfService" />
+          {values.termsOfService ? <img src={TickIcon} alt="" /> : null}
         </label>
         <p className="form__policy-text">
           Ich habe die <a href="/politik">Datenschutzerklärung</a> gelesen und erkläre mich damit einverstanden.

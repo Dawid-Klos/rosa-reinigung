@@ -23,8 +23,8 @@ const DetailsForm = ({ service }) => {
   };
 
   useEffect(() => {
-    setValues(FORM_DETAILS_VARIANTS[service]);
     console.log(service);
+    setValues(FORM_DETAILS_VARIANTS[service]);
   }, [service]);
 
   return (

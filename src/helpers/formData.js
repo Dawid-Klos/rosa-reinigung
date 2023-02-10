@@ -32,33 +32,31 @@ export const SERVICES_TYPES = {
 export const STEP_FIELDS = {
   0: ["name", "email", "phone", "street", "city", "termsOfService"],
   1: ["picked"],
-  2: [],
+  2: ["date"],
   3: [],
 };
 
-export const initialData = [
-  {
-    name: "",
-    phone: "",
-    email: "",
-    street: "",
-    city: "",
-    picked: "",
-    termsOfService: false,
-    date: "",
-    frequency: "",
-    houseSize: "",
-    cleaningProducts: "",
-    timeOfService: "",
-    buildingType: "",
-    numberOfWindows: "",
-    areaToOrganize: "",
-    houseStatus: "",
-    additionalServices: "",
-    movingStreet: "",
-    movingCity: "",
-  },
-];
+export const initialData = {
+  name: "",
+  phone: "",
+  email: "",
+  street: "",
+  city: "",
+  picked: "",
+  termsOfService: false,
+  date: "",
+  frequency: "",
+  houseSize: "",
+  cleaningProducts: "",
+  timeOfService: "",
+  buildingType: "",
+  numberOfWindows: "",
+  areaToOrganize: "",
+  houseStatus: "",
+  additionalServices: "",
+  movingStreet: "",
+  movingCity: "",
+};
 
 export const cardsData = [
   {

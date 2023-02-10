@@ -108,20 +108,13 @@
         width: calc(100% - 4rem);
         background-color: hsla(332, 77%, 85%, 0.12);
         border-radius: 0.6rem;
-        padding: 1rem 2rem;
+        padding: 0.2rem 2rem;
         border: 2px solid transparent;
 
         &:focus-within {
             border: 2px solid $color-purple;
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
         }
-
-        // &:focus-within+.form__error {
-        //     border: 2px solid red;
-        //     box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
-
-        // }
-
     }
 
     &__field {
@@ -145,7 +138,7 @@
         &--input {
             width: 100%;
             color: $color-grey-light;
-            padding: 0 1rem;
+            padding: 1rem;
 
             &::placeholder {
                 opacity: 1;
@@ -157,8 +150,9 @@
     &__error {
         width: 100%;
         padding: 0.6rem 0 0 0;
-        text-align: center;
-        color: red;
+        text-align: left;
+        font-size: 0.8rem;
+        color: #d63636bd;
     }
 
     &__date-picker {
@@ -302,8 +296,8 @@
 
 // Error class 
 .error {
-    border: 2px solid red !important;
-    box-shadow: 0px 0px 8px rgba(209, 6, 40, 0.6) !important;
+    border: 2px solid #d636369c;
+    box-shadow: 0px 0px 8px rgba(209, 6, 40, 0.6);
 }
 
 // Override react-date picker default styles
@@ -311,4 +305,5 @@
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    padding: 1rem;
 }

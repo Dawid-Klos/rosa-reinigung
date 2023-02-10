@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import AddressForm from "./Steps/AddressForm";
 import ServiceForm from "./Steps/ServiceForm";
@@ -25,16 +25,29 @@ const Booking = () => {
     setPickedService(picked);
   }, []);
 
-  const renderCurrentStep = (step, errors, touched) => {
-    switch (step) {
+  useEffect(() => {
+    switch (currentStep) {
       case 0:
         setCurrentSchema(stepOneSchema);
-        return <AddressForm errors={errors} touched={touched} />;
+        break;
       case 1:
         setCurrentSchema(stepTwoSchema);
-        return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
+        break;
       case 2:
         setCurrentSchema(stepThreeSchema);
+        break;
+      default:
+        setCurrentSchema(stepOneSchema);
+    }
+  }, [currentStep]);
+
+  const renderCurrentStep = (errors, touched, values) => {
+    switch (currentStep) {
+      case 0:
+        return <AddressForm errors={errors} touched={touched} values={values} />;
+      case 1:
+        return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
+      case 2:
         return <DetailsForm service={pickedService} />;
       case 3:
         return <Checkout />;
@@ -46,13 +59,11 @@ const Booking = () => {
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
     validateForm().then((errors) => {
       if (Object.keys(errors).length !== 0) {
-        console.log(errors);
         STEP_FIELDS[currentStep].forEach((field) => {
           setFieldTouched(field);
         });
       } else {
         if (currentStep < 0 || currentStep > 3) return;
-        console.log("no errors");
         if (reverse === "reverse") {
           setCurrentStep((step) => step - 1);
         } else {
@@ -62,8 +73,8 @@ const Booking = () => {
     });
   };
 
-  const renderFormButtons = (step, validateForm, setFieldTouched) => {
-    return step > 0 ? (
+  const renderFormButtons = (validateForm, setFieldTouched) => {
+    return currentStep > 0 ? (
       <div className="form__button-wrapper">
         <button
           className="form__button--ghost"
@@ -124,10 +135,10 @@ const Booking = () => {
           alert(JSON.stringify(values, null, 4));
         }}
       >
-        {({ validateForm, handleSubmit, errors, touched, setFieldTouched }) => (
+        {({ validateForm, setFieldTouched, errors, touched, values }) => (
           <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
-            {renderCurrentStep(currentStep, errors, touched)}
-            {renderFormButtons(currentStep, validateForm, setFieldTouched)}
+            {renderCurrentStep(errors, touched, values)}
+            {renderFormButtons(validateForm, setFieldTouched)}
           </Form>
         )}
       </Formik>

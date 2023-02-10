@@ -12,7 +12,11 @@ const ServiceForm = ({ service, pickService, errors, touched }) => {
       </h3>
       <div className="services-cards" role="group" aria-labelledby="services">
         {cardsData.map((card) => (
-          <label className="services-cards__label" key={card.id} onClick={() => pickService(card.value)}>
+          <label
+            className={`services-cards__label ${service === card.value ? "services-cards__label--focus" : ""}`}
+            key={card.id}
+            onClick={() => pickService(card.value)}
+          >
             <img className="services-cards__icon" src={card.icon} alt="" />
             <Field className="services-cards__field" type="radio" name="picked" value={card.value} />
             <p className="services-cards__title">{card.title}</p>

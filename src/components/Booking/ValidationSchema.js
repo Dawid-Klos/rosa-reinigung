@@ -23,4 +23,6 @@ export const stepTwoSchema = Yup.object().shape({
     .required("Sie müssen einen der Dienste auswählen, um fortzufahren"),
 });
 
-export const stepThreeSchema = Yup.object().shape({});
+export const stepThreeSchema = Yup.object().shape({
+  date: Yup.date().required("Um fortzufahren, müssen Sie das Datum der Dienstleistung auswählen"),
+});
