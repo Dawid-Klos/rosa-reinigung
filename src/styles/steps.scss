@@ -147,3 +147,24 @@
         text-align: center;
     }
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: block;
+    margin: 4rem;
+    border: 0.8rem solid #504E51;
+    border-top: 0.8rem solid #733C92;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    animation: spin 1.3s linear infinite;
+}

@@ -15,6 +15,7 @@ import "../../styles/booking.scss";
 import "../../styles/steps.scss";
 
 import { Formik, Form } from "formik";
+import emailjs from "@emailjs/browser";
 
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -48,22 +49,22 @@ const Booking = () => {
       case 1:
         return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
       case 2:
-        return <DetailsForm service={pickedService} />;
+        return <DetailsForm errors={errors} touched={touched} service={pickedService} />;
       case 3:
-        return <Checkout />;
+        return <Checkout values={values} />;
       default:
         return <p>Error - Check the code!</p>;
     }
   };
 
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
+    if (currentStep < 0 || currentStep >= 2) return;
     validateForm().then((errors) => {
       if (Object.keys(errors).length !== 0) {
         STEP_FIELDS[currentStep].forEach((field) => {
           setFieldTouched(field);
         });
       } else {
-        if (currentStep < 0 || currentStep > 3) return;
         if (reverse === "reverse") {
           setCurrentStep((step) => step - 1);
         } else {
@@ -73,36 +74,26 @@ const Booking = () => {
     });
   };
 
-  const renderFormButtons = (validateForm, setFieldTouched) => {
-    return currentStep > 0 ? (
-      <div className="form__button-wrapper">
-        <button
-          className="form__button--ghost"
-          type="button"
-          onClick={() => handleCurrentStep("reverse", validateForm, setFieldTouched)}
-        >
-          vorheriger Schritt
-        </button>
-        <button
-          className="form__button"
-          type="submit"
-          onClick={() => handleCurrentStep("", validateForm, setFieldTouched)}
-        >
-          <p>Weiter</p>
-          <img src={ArrowRightIcon} alt="Arrow pointing to right" />
-        </button>
-      </div>
-    ) : (
-      <button
-        className="form__button"
-        type="button"
-        onClick={() => handleCurrentStep("", validateForm, setFieldTouched)}
-      >
-        <p>Weiter</p>
-        <img src={ArrowRightIcon} alt="Arrow pointing to right" />
-      </button>
-    );
-  };
+  // const handleSubmit = async (values, setSubmitting, currentStep) => {
+  //   console.log("the form being submitted...");
+  //   if (currentStep !== 2) return;
+  //   try {
+  //     // emailjs
+  //     //   .send(
+  //     //     process.env.GATSBY_SERVICE_ID,
+  //     //     process.env.GATSBY_TEMPLATE_ID,
+  //     //     values,
+  //     //     process.env.GATSBY_PUBLIC_KEY
+  //     //   )
+  //     //   .then(() => {
+  //     //     console.log("Mail sent!");
+  //     //   });
+  //     console.log("Mail sent!");
+  //     setSubmitting(false);
+  //   } catch (err) {
+  //     console.log("An error occured, ", err);
+  //   }
+  // };
 
   return (
     <section className="booking">
@@ -130,15 +121,53 @@ const Booking = () => {
       <Formik
         initialValues={initialData}
         validationSchema={currentSchema}
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 4));
+        onSubmit={async (values, { setSubmitting }) => {
+          console.log("the form being submitted...");
+          try {
+            // emailjs
+            //   .send(
+            //     process.env.GATSBY_SERVICE_ID,
+            //     process.env.GATSBY_TEMPLATE_ID,
+            //     values,
+            //     process.env.GATSBY_PUBLIC_KEY
+            //   )
+            //   .then(() => {
+            //     console.log("Mail sent!");
+            //   });
+            console.log("Mail sent!");
+            console.log(values);
+            setSubmitting(false);
+            setCurrentStep(3);
+          } catch (err) {
+            console.log("An error occured, ", err);
+          }
         }}
       >
-        {({ validateForm, setFieldTouched, errors, touched, values }) => (
+        {({ validateForm, setFieldTouched, submitForm, isSubmitting, errors, touched, values }) => (
           <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
             {renderCurrentStep(errors, touched, values)}
-            {renderFormButtons(validateForm, setFieldTouched)}
+            {currentStep > 2 ? null : (
+              <div className="form__button-wrapper">
+                {currentStep === 0 ? null : (
+                  <button
+                    className="form__button--ghost"
+                    type="button"
+                    onClick={() => handleCurrentStep("reverse", validateForm, setFieldTouched)}
+                  >
+                    vorheriger Schritt
+                  </button>
+                )}
+                <button
+                  className="form__button"
+                  type="button"
+                  disabled={isSubmitting}
+                  onClick={currentStep === 2 ? submitForm : () => handleCurrentStep("", validateForm, setFieldTouched)}
+                >
+                  <p>{currentStep === 2 ? "Einreichen" : "Weiter"}</p>
+                  <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+                </button>
+              </div>
+            )}
           </Form>
         )}
       </Formik>

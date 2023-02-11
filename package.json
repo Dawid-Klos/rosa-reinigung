@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "formik": "^2.2.9",
     "gatsby": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",

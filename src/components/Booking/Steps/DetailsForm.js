@@ -10,7 +10,7 @@ import { Field, useField } from "formik";
 
 registerLocale("de", de);
 
-const DetailsForm = ({ service }) => {
+const DetailsForm = ({ service, errors, touched }) => {
   const [values, setValues] = useState(null);
 
   const MyDatePicker = ({ name = "" }) => {
@@ -58,6 +58,7 @@ const DetailsForm = ({ service }) => {
           <img className="form__field--icon" src={CalendarIcon} alt="" />
           <MyDatePicker locale="de" name="date" />
         </div>
+        {errors.date && touched.date ? <span className="form__error">{errors.date}</span> : null}
       </div>
     </>
   );
