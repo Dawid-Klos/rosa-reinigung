@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Logo from "../../images/logo.svg";
 import "../../styles/navbar.scss";
 
+import { debounce } from "../../helpers/debounce";
+
 const Navbar = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
+
+    setPrevScrollPos(currentScrollPos);
+  }, 100);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${visible ? "" : "navbar--hidden"}`}>
       <img className="navbar__logo" src={Logo} alt="Rosa Reinigung company logo" />
       <nav className="nav">
         <a className="nav__link" href="#home">
