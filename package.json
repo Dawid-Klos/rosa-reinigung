@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "formik": "^2.2.9",
     "gatsby": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",
@@ -26,7 +27,10 @@
     "normalize-scss": "^7.0.1",
     "react": "^18.2.0",
     "react-awesome-slider": "^4.1.0",
+    "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.56.1"
+    "react-social-media-embed": "^2.3.4",
+    "sass": "^1.56.1",
+    "yup": "^1.0.0"
   }
 }

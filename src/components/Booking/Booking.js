@@ -1,89 +1,99 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import AddressForm from "./Steps/AddressForm";
 import ServiceForm from "./Steps/ServiceForm";
 import DetailsForm from "./Steps/DetailsForm";
 import Checkout from "./Steps/Checkout";
 
+import { statusBarSteps, STEP_FIELDS, initialData } from "../../helpers/formData";
+import { stepOneSchema, stepTwoSchema, stepThreeSchema } from "./ValidationSchema";
+
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
-import UserIcon from "../../images/icons/icon-user.svg";
-import ChoiceIcon from "../../images/icons/icon-choice.svg";
-import DetailsIcon from "../../images/icons/icon-details.svg";
-import SuccessIcon from "../../images/icons/icon-success.svg";
 import Lines from "../../images/img-line-booking.svg";
 
 import "../../styles/booking.scss";
+import "../../styles/steps.scss";
 
 import { Formik, Form } from "formik";
+import emailjs from "@emailjs/browser";
 
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [pickedService, setPickedService] = useState(null);
+  const [currentSchema, setCurrentSchema] = useState(stepOneSchema);
 
-  const renderCurrentStep = (step) => {
-    switch (step) {
+  const pickService = React.useCallback((picked) => {
+    setPickedService(picked);
+  }, []);
+
+  useEffect(() => {
+    switch (currentStep) {
       case 0:
-        return <AddressForm values={Formik.values} />;
+        setCurrentSchema(stepOneSchema);
+        break;
       case 1:
-        return <ServiceForm values={Formik.values} />;
+        setCurrentSchema(stepTwoSchema);
+        break;
       case 2:
-        return <DetailsForm />;
+        setCurrentSchema(stepThreeSchema);
+        break;
+      default:
+        setCurrentSchema(stepOneSchema);
+    }
+  }, [currentStep]);
+
+  const renderCurrentStep = (errors, touched, values) => {
+    switch (currentStep) {
+      case 0:
+        return <AddressForm errors={errors} touched={touched} values={values} />;
+      case 1:
+        return <ServiceForm errors={errors} touched={touched} service={pickedService} pickService={pickService} />;
+      case 2:
+        return <DetailsForm errors={errors} touched={touched} service={pickedService} />;
       case 3:
-        return <Checkout />;
+        return <Checkout values={values} />;
       default:
         return <p>Error - Check the code!</p>;
     }
   };
 
-  const renderFormButtons = (step) => {
-    return step > 0 ? (
-      <div className="form__button-wrapper">
-        <button
-          className="form__button--ghost"
-          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate - 1 : prevstate))}
-        >
-          Previous Step
-        </button>
-        <button
-          className="form__button"
-          onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
-        >
-          <p>Weiter</p>
-          <img src={ArrowRightIcon} alt="Arrow pointing to right" />
-        </button>
-      </div>
-    ) : (
-      <button
-        className="form__button"
-        onClick={() => setCurrentStep((prevstate) => (prevstate <= 3 ? prevstate + 1 : prevstate))}
-      >
-        <p>Weiter</p>
-        <img src={ArrowRightIcon} alt="Arrow pointing to right" />
-      </button>
-    );
+  const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
+    if (currentStep < 0 || currentStep >= 2) return;
+    validateForm().then((errors) => {
+      if (Object.keys(errors).length !== 0) {
+        STEP_FIELDS[currentStep].forEach((field) => {
+          setFieldTouched(field);
+        });
+      } else {
+        if (reverse === "reverse") {
+          setCurrentStep((step) => step - 1);
+        } else {
+          setCurrentStep((step) => step + 1);
+        }
+      }
+    });
   };
 
-  const statusBarSteps = [
-    {
-      stepNumber: 0,
-      icon: UserIcon,
-      title: "Unternehmen",
-    },
-    {
-      stepNumber: 1,
-      icon: ChoiceIcon,
-      title: "Unsere Leistungen",
-    },
-    {
-      stepNumber: 2,
-      icon: DetailsIcon,
-      title: "Servicedetails",
-    },
-    {
-      stepNumber: 3,
-      icon: SuccessIcon,
-      title: "Senden",
-    },
-  ];
+  // const handleSubmit = async (values, setSubmitting, currentStep) => {
+  //   console.log("the form being submitted...");
+  //   if (currentStep !== 2) return;
+  //   try {
+  //     // emailjs
+  //     //   .send(
+  //     //     process.env.GATSBY_SERVICE_ID,
+  //     //     process.env.GATSBY_TEMPLATE_ID,
+  //     //     values,
+  //     //     process.env.GATSBY_PUBLIC_KEY
+  //     //   )
+  //     //   .then(() => {
+  //     //     console.log("Mail sent!");
+  //     //   });
+  //     console.log("Mail sent!");
+  //     setSubmitting(false);
+  //   } catch (err) {
+  //     console.log("An error occured, ", err);
+  //   }
+  // };
 
   return (
     <section className="booking">
@@ -94,8 +104,8 @@ const Booking = () => {
 
       <div className="booking__steps-wrapper">
         <img className="booking__lines" src={Lines} alt="" />
-        <div className="booking__steps">
-          <div className="booking__steps-bar">
+        <div className="steps-container">
+          <div className="steps-bar">
             {statusBarSteps.map((step) => (
               <div className={`step ${step.stepNumber === currentStep ? "step--active" : ""}`} key={step.stepNumber}>
                 <div className="step__icon">
@@ -109,25 +119,57 @@ const Booking = () => {
         </div>
       </div>
       <Formik
-        initialValues={{
-          name: "",
-          phone: "",
-          email: "",
-          houseNumber: "",
-          postcode: "",
-          city: "",
-          picked: "",
-          toggle: false,
-        }}
-        onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 4));
+        initialValues={initialData}
+        validationSchema={currentSchema}
+        onSubmit={async (values, { setSubmitting }) => {
+          console.log("the form being submitted...");
+          try {
+            // emailjs
+            //   .send(
+            //     process.env.GATSBY_SERVICE_ID,
+            //     process.env.GATSBY_TEMPLATE_ID,
+            //     values,
+            //     process.env.GATSBY_PUBLIC_KEY
+            //   )
+            //   .then(() => {
+            //     console.log("Mail sent!");
+            //   });
+            console.log("Mail sent!");
+            console.log(values);
+            setSubmitting(false);
+            setCurrentStep(3);
+          } catch (err) {
+            console.log("An error occured, ", err);
+          }
         }}
       >
-        <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
-          {renderCurrentStep(currentStep)}
-          {renderFormButtons(currentStep)}
-        </Form>
+        {({ validateForm, setFieldTouched, submitForm, isSubmitting, errors, touched, values }) => (
+          <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
+            {renderCurrentStep(errors, touched, values)}
+            {currentStep > 2 ? null : (
+              <div className="form__button-wrapper">
+                {currentStep === 0 ? null : (
+                  <button
+                    className="form__button--ghost"
+                    type="button"
+                    onClick={() => handleCurrentStep("reverse", validateForm, setFieldTouched)}
+                  >
+                    vorheriger Schritt
+                  </button>
+                )}
+                <button
+                  className="form__button"
+                  type="button"
+                  disabled={isSubmitting}
+                  onClick={currentStep === 2 ? submitForm : () => handleCurrentStep("", validateForm, setFieldTouched)}
+                >
+                  <p>{currentStep === 2 ? "Einreichen" : "Weiter"}</p>
+                  <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+                </button>
+              </div>
+            )}
+          </Form>
+        )}
       </Formik>
     </section>
   );
