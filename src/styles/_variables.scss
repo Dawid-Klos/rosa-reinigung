@@ -15,46 +15,44 @@ $font-family-raleway: 'Raleway', sans-serif;
 
 // Mixins
 @mixin small-mobile-up {
-    @media (min-width: 280px) {
-      @content;
-    }
+  @media only screen and (min-width: 280px) and (max-width: 1023px) {
+    @content;
   }
-  @mixin mobile-up {
-    @media (min-width: 320px) {
-      @content;
-    }
-  }
-  @mixin mobile-up {
-    @media (min-width: 480px) {
-      @content;
-    }
-  }
-@mixin mobile-up {
-    @media (min-width: 481px) {
-      @content;
-    }
-  }
-  
-  @mixin tablet-up{
-    @media (min-width: 768px){
-        @content;
-    }
-  }
+}
 
-  @mixin small-desktop-up{
-    @media (min-width: 1024px) and (max-width: 1399px){
-        @content;
-    }
+@mixin medium-mobile {
+  @media only screen and (min-width: 480px) and (max-width: 599px) {
+    @content;
   }
+}
 
-  @mixin desktop-up{
-    @media (min-width: 1440px){
-        @content;
-    }
+@mixin large-mobile {
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+    @content;
   }
+}
 
-  @mixin large-desktop-up{
-    @media (min-width: 1920px){
-        @content;
-    }
+
+@mixin tablet-up {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
   }
+}
+
+@mixin small-desktop-up {
+  @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media only screen and (min-width: 1920px) {
+    @content;
+  }
+}

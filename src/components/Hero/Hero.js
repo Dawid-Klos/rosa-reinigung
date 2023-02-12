@@ -4,8 +4,13 @@ import "../../styles/hero.scss";
 import LocationIcon from "../../images/icons/icon-location.svg";
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 import HeroImage from "../../images/img-line-hero.png";
+import HeroImageMobile from "../../images/img-line-hero-mobile.png";
+
+import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1023px)" });
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -31,7 +36,7 @@ const Hero = () => {
       <div className="hero-image">
         <img
           className="hero-image__lines"
-          src={HeroImage}
+          src={isMobile ? HeroImageMobile : HeroImage}
           alt="Owner of Rosa Reinigung, surrounded by a pink line that circles around her"
         />
       </div>

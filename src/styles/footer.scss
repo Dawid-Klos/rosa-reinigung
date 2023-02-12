@@ -2,15 +2,13 @@
 
 .footer {
     width: 100%;
-    position: sticky;
-    bottom: 0;
-    left: 0;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background: hsla(332deg, 77%, 85%, 0.2);
     min-height: 2vh;
-    max-height: 4vh;
+    max-height: 6vh;
     padding: 1rem;
 
     &__img {
