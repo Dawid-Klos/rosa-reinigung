@@ -8,6 +8,10 @@
   border-radius: 0.6rem;
   position: relative;
 
+  @include small-mobile-up {
+    margin: 4.6rem 0.6rem;
+  }
+
   @include small-desktop-up {
     margin: 5.6rem 1rem -1rem 1rem;
   }
@@ -25,6 +29,10 @@
   margin-top: -2rem;
   max-width: 40rem;
   z-index: 1;
+
+  @include small-mobile-up {
+    margin: 1rem;
+  }
 
   @include small-desktop-up {
     margin-left: 4rem;
@@ -77,6 +85,11 @@
     line-height: 116%;
     margin: 0;
 
+    @include small-mobile-up {
+      font-size: 2rem;
+      min-width: 10rem;
+    }
+
     @include small-desktop-up {
       font-size: 3rem;
       min-width: 26rem;
@@ -91,6 +104,11 @@
     line-height: 1.8rem;
     color: hsla(280, 2%, 31%, 0.65);
     max-width: 40vw;
+
+    @include small-mobile-up {
+      line-height: 1.4rem;
+      max-width: 60vw;
+    }
 
     @include small-desktop-up {
       line-height: 1.5rem;
@@ -167,6 +185,10 @@
 
 .hero-image {
   position: relative;
+
+  @include small-mobile-up {
+    display: none;
+  }
 
   &__lines {
     width: 160vw;
