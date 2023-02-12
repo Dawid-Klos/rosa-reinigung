@@ -1,5 +1,15 @@
 @import "./variables";
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .steps-container {
     width: 60vw;
     height: auto;
@@ -148,13 +158,36 @@
     }
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+.checkout {
+
+    &__message-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    100% {
-        transform: rotate(360deg);
+    &__title {
+        font-family: $font-family-raleway;
+        font-size: 1.8rem;
+        font-weight: 600;
+
+        @include small-desktop-up {
+            font-size: 1.6rem;
+        }
+
+        @include large-desktop-up {
+            font-size: 2rem;
+        }
+    }
+
+    &__message {
+        font-size: 1rem;
+        color: $color-grey-light;
+
+        @include small-desktop-up {
+            font-size: 0.9rem;
+        }
     }
 }
 

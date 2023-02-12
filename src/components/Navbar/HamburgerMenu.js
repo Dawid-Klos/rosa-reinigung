@@ -26,12 +26,12 @@ export default function HamburgerMenu() {
         <a className="mobile-nav__link" href="#gallery" onClick={() => setIsOpen(!isOpen)}>
           Fotogalerie
         </a>
+        <a className="mobile-nav__link mobile-nav__link--special" href="#form" onClick={() => setIsOpen(!isOpen)}>
+          Terminvereinbarung
+        </a>
         <a className="mobile-nav__link" href="#contact" onClick={() => setIsOpen(!isOpen)}>
           Kontakt
         </a>
-        <button className="mobile-nav__link--button" type="button" onClick={() => setIsOpen(!isOpen)}>
-          <a href="#form">Terminvereinbarung</a>
-        </button>
       </nav>
     </>
   );

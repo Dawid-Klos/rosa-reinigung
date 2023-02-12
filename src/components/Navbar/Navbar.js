@@ -24,7 +24,7 @@ const Navbar = () => {
     if (isMobile) return;
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
+  }, [prevScrollPos, visible, handleScroll, isMobile]);
 
   return (
     <header className={`navbar ${!visible && "navbar--hidden"}`}>
