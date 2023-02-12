@@ -21,6 +21,7 @@ const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [pickedService, setPickedService] = useState(null);
   const [currentSchema, setCurrentSchema] = useState(stepOneSchema);
+  const [submitErrors, setSubmitErrors] = useState(null);
 
   const pickService = React.useCallback((picked) => {
     setPickedService(picked);
@@ -51,9 +52,9 @@ const Booking = () => {
       case 2:
         return <DetailsForm errors={errors} touched={touched} service={pickedService} />;
       case 3:
-        return <Checkout values={values} />;
+        return <Checkout values={values} submitErrors={submitErrors} />;
       default:
-        return <p>Error - Check the code!</p>;
+        return <p>Error - please refresh the page and try again!</p>;
     }
   };
 
@@ -74,26 +75,24 @@ const Booking = () => {
     });
   };
 
-  // const handleSubmit = async (values, setSubmitting, currentStep) => {
-  //   console.log("the form being submitted...");
-  //   if (currentStep !== 2) return;
-  //   try {
-  //     // emailjs
-  //     //   .send(
-  //     //     process.env.GATSBY_SERVICE_ID,
-  //     //     process.env.GATSBY_TEMPLATE_ID,
-  //     //     values,
-  //     //     process.env.GATSBY_PUBLIC_KEY
-  //     //   )
-  //     //   .then(() => {
-  //     //     console.log("Mail sent!");
-  //     //   });
-  //     console.log("Mail sent!");
-  //     setSubmitting(false);
-  //   } catch (err) {
-  //     console.log("An error occured, ", err);
-  //   }
-  // };
+  const handleSubmit = (values, setSubmitting) => {
+    console.log("the form being submitted...");
+    try {
+      emailjs
+        .send(process.env.GATSBY_SERVICE_ID, process.env.GATSBY_TEMPLATE_ID, values, process.env.GATSBY_PUBLIC_KEY)
+        .then(() => {
+          console.log("Mail sent!");
+          setSubmitErrors(false);
+          setSubmitting(false);
+          setCurrentStep(3);
+        });
+    } catch (err) {
+      setSubmitErrors(err);
+      console.log("submit errors", err);
+      console.log("An error occured, ", err);
+      setCurrentStep(3);
+    }
+  };
 
   return (
     <section className="booking">
@@ -121,30 +120,10 @@ const Booking = () => {
       <Formik
         initialValues={initialData}
         validationSchema={currentSchema}
-        onSubmit={async (values, { setSubmitting }) => {
-          console.log("the form being submitted...");
-          try {
-            // emailjs
-            //   .send(
-            //     process.env.GATSBY_SERVICE_ID,
-            //     process.env.GATSBY_TEMPLATE_ID,
-            //     values,
-            //     process.env.GATSBY_PUBLIC_KEY
-            //   )
-            //   .then(() => {
-            //     console.log("Mail sent!");
-            //   });
-            console.log("Mail sent!");
-            console.log(values);
-            setSubmitting(false);
-            setCurrentStep(3);
-          } catch (err) {
-            console.log("An error occured, ", err);
-          }
-        }}
+        onSubmit={(values, { setSubmitting }) => handleSubmit(values, setSubmitting)}
       >
         {({ validateForm, setFieldTouched, submitForm, isSubmitting, errors, touched, values }) => (
-          <Form className={`form ${currentStep === 1 ? "form__service" : ""}`}>
+          <Form className={`form ${currentStep === 1 || currentStep === 3 ? "form__service" : ""}`}>
             {renderCurrentStep(errors, touched, values)}
             {currentStep > 2 ? null : (
               <div className="form__button-wrapper">

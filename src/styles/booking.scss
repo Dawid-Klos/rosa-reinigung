@@ -125,9 +125,11 @@
         width: 100%;
         padding: 0.6rem 0;
 
+
         &--label {
             font-size: 0.9rem;
             padding: 0.6rem 0;
+
         }
 
         &--icon {
@@ -139,6 +141,7 @@
             width: 100%;
             color: $color-grey-light;
             padding: 1rem;
+            cursor: pointer;
 
             &::placeholder {
                 opacity: 1;
@@ -160,6 +163,7 @@
         color: $color-grey-light;
         padding: 0 1rem;
         align-self: flex-end;
+        cursor: pointer;
     }
 
     &__button-wrapper {
@@ -258,6 +262,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
+        align-self: flex-start;
     }
 
     &__tick-box {
