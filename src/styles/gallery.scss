@@ -18,6 +18,26 @@
     font-size: 2.2rem;
     margin: 2rem 8rem 0 8rem;
 
+    @include small-mobile-up {
+      margin: 1rem 1rem;
+      font-size: 1.6rem;
+      text-align: left;
+    }
+
+    @include medium-mobile {
+      font-size: 2rem;
+    }
+
+    @include large-mobile {
+      margin: 1rem 2rem;
+      font-size: 2rem;
+    }
+
+    @include tablet-up {
+      font-size: 2.4rem;
+      margin: 1.6rem 2rem;
+    }
+
     @include small-desktop-up {
       margin: 2rem 4rem 0 4rem;
       font-size: 2rem;
@@ -48,6 +68,22 @@
     --loader-bar-height: 1px;
     --content-background-color: none;
 
+    @include small-mobile-up {
+      --slider-height-percentage: 300%;
+    }
+
+    @include medium-mobile {
+      --slider-height-percentage: 250%;
+    }
+
+    @include large-mobile {
+      --slider-height-percentage: 200%;
+    }
+
+    @include tablet-up {
+      --slider-height-percentage: 150%;
+    }
+
     @include small-desktop-up {
       margin: 2rem auto;
       --control-button-width: 24%;
@@ -58,7 +94,13 @@
 
     @include large-desktop-up {
       --slider-height-percentage: 55%;
-      --control-button-width: 20%;
+      --control-button-width: 60%;
     }
+  }
+
+  &__post {}
+
+  &__frame {
+    width: 200px;
   }
 }
