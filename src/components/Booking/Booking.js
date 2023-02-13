@@ -59,18 +59,17 @@ const Booking = () => {
   };
 
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
-    if (currentStep < 0 || currentStep >= 2) return;
+    if (currentStep < 0 || currentStep >= 3) return;
+    if (reverse === "reverse") {
+      setCurrentStep((step) => step - 1);
+    }
     validateForm().then((errors) => {
       if (Object.keys(errors).length !== 0) {
         STEP_FIELDS[currentStep].forEach((field) => {
           setFieldTouched(field);
         });
       } else {
-        if (reverse === "reverse") {
-          setCurrentStep((step) => step - 1);
-        } else {
-          setCurrentStep((step) => step + 1);
-        }
+        setCurrentStep((step) => step + 1);
       }
     });
   };
