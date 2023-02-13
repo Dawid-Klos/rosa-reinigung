@@ -49,6 +49,10 @@
     max-width: none;
   }
 
+  @include large-mobile {
+    margin: 0 1.6rem;
+  }
+
   @include small-desktop-up {
     margin-left: 4rem;
     max-width: 26rem;
@@ -75,6 +79,12 @@
       top: 5%;
       left: 36%;
       transform: translate(-50%, -50%);
+    }
+
+    @include large-mobile {
+      top: 5%;
+      left: 0%;
+      transform: translate(5%, -50%);
     }
 
     & img {
@@ -128,8 +138,20 @@
       text-align: center;
     }
 
+    @include medium-mobile {
+      font-size: 2.6rem;
+    }
+
+    @include large-mobile {
+      font-size: 2.6rem;
+    }
+
     @include tablet-up {
       font-size: 3rem;
+    }
+
+    @include large-mobile {
+      font-size: 2.8rem;
     }
 
     @include small-desktop-up {
@@ -281,8 +303,6 @@
     left: 50%;
     transform: translate(-50%, -34%);
 
-
-
     @include small-mobile-up {
       width: calc(240px + 20vw);
       transform: none;
@@ -295,6 +315,10 @@
       transform: none;
       position: unset;
       margin: -0.6rem 0;
+    }
+
+    @include large-mobile {
+      margin: -1.6rem 0;
     }
 
     @include tablet-up {

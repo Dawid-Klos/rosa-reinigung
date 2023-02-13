@@ -29,6 +29,11 @@
         max-height: 1.8rem;
     }
 
+    @include large-mobile {
+        width: calc(100% - 4rem);
+        padding: 1rem 2rem;
+    }
+
     @include tablet-up {
         width: calc(100% - 4rem);
         padding: 1.6rem 2rem;

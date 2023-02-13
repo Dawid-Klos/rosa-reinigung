@@ -33,6 +33,15 @@
             text-align: left;
         }
 
+        @include medium-mobile {
+            font-size: 2rem;
+        }
+
+        @include large-mobile {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
+
         @include tablet-up {
             font-size: 2.4rem;
             margin: 1.6rem 2rem;
