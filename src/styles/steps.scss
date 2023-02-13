@@ -97,8 +97,7 @@
         text-align: center;
 
         @include small-mobile-up {
-            font-size: 0.8rem;
-            display: none;
+            font-size: 0.7rem;
         }
 
         @include small-desktop-up {

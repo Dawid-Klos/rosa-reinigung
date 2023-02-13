@@ -31,6 +31,7 @@
             margin: 1rem 1rem;
             font-size: 1.6rem;
             text-align: left;
+            margin-bottom: 4rem;
         }
 
         @include medium-mobile {
@@ -227,7 +228,7 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-        --slider-height-percentage: 125%;
+        --slider-height-percentage: 150%;
         --control-button-width: 0%;
         --organic-arrow-height: 0;
     }

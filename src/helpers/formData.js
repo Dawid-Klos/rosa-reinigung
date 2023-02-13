@@ -102,21 +102,25 @@ export const statusBarSteps = [
     stepNumber: 0,
     icon: UserIcon,
     title: "Unternehmen",
+    mobileTitle: "Untern- ehmen",
   },
   {
     stepNumber: 1,
     icon: ChoiceIcon,
     title: "Unsere Leistungen",
+    mobileTitle: "Unsere Leistungen",
   },
   {
     stepNumber: 2,
     icon: DetailsIcon,
     title: "Servicedetails",
+    mobileTitle: "Service- details",
   },
   {
     stepNumber: 3,
     icon: SuccessIcon,
     title: "Senden",
+    mobileTitle: "Senden",
   },
 ];
 
