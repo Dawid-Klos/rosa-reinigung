@@ -37,7 +37,7 @@ const Hero = () => {
         <img
           className="hero-image__lines"
           src={isMobile ? HeroImageMobile : HeroImage}
-          alt="Owner of Rosa Reinigung, surrounded by a pink line that circles around her"
+          alt="Inhaberin des Unternehmens Rosa Reiniggung, das professionelle Reinigungsdienste anbietet"
         />
       </div>
     </section>

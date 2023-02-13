@@ -44,7 +44,7 @@ const Contact = () => {
         <address className="contact-details__wrapper">
           {contactDetails.map((detail) => (
             <a className="contact-details__contact" href={detail.href} key={detail.id}>
-              <img src={detail.icon} alt="" />
+              <img src={detail.icon} alt="" loading="lazy" />
               <p>{detail.label}</p>
             </a>
           ))}

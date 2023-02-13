@@ -39,7 +39,7 @@ const Service = ({ title, description, isReversed, image, imageAlt, hasBackgroun
       </div>
 
       <div className="service__img-wrapper">
-        <img className="service__img" src={image} alt={imageAlt} />
+        <img className="service__img" src={image} alt={imageAlt} loading="lazy" />
       </div>
 
       {hasBackground ? (

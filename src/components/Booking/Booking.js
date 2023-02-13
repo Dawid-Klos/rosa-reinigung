@@ -102,7 +102,7 @@ const Booking = () => {
       </div>
 
       <div className="booking__steps-wrapper">
-        <img className="booking__lines" src={Lines} alt="" />
+        <img className="booking__lines" src={Lines} alt="" loading="lazy" />
         <div className="steps-container">
           <div className="steps-bar">
             {statusBarSteps.map((step) => (

@@ -29,8 +29,8 @@ const AddressForm = ({ errors, touched, values }) => {
       ))}
 
       <div className="form__policy">
-        <label className="form__tick-box">
-          <Field className="form__tick-box--field" type="checkbox" name="termsOfService" />
+        <label className="form__tick-box" htmlFor="termsOfService">
+          <Field className="form__tick-box--field" type="checkbox" id="termsOfService" name="termsOfService" />
           {values.termsOfService ? <img src={TickIcon} alt="" /> : null}
         </label>
         <p className="form__policy-text">

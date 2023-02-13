@@ -66,7 +66,7 @@
   &__location {
     display: flex;
     align-items: center;
-    background-color: rgba(80, 78, 81, 0.05);
+    background-color: rgba(80, 78, 81, 0.10);
     border-radius: 0.6rem;
     width: fit-content;
     padding: 0.1rem 1rem;
@@ -305,6 +305,7 @@
 
     @include small-mobile-up {
       width: calc(240px + 20vw);
+      height: auto;
       transform: none;
       position: unset;
       margin: -0.6rem 0;
@@ -312,6 +313,7 @@
 
     @include medium-mobile {
       width: 400px;
+      height: auto;
       transform: none;
       position: unset;
       margin: -0.6rem 0;
@@ -323,6 +325,7 @@
 
     @include tablet-up {
       width: calc(240px + 30vw);
+      height: auto;
       transform: none;
       position: unset;
       margin: -0.6rem 0;

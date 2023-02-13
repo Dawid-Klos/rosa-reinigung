@@ -138,9 +138,11 @@
 
   &__img-wrapper {
     max-width: 50%;
+    height: auto;
 
     @include small-mobile-up {
       max-width: 100%;
+      height: auto;
       margin: 0 auto;
     }
 
@@ -160,6 +162,7 @@
 
   &__img {
     max-width: 100%;
+    height: auto;
   }
 
   &__lines {

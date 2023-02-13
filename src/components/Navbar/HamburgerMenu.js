@@ -8,6 +8,7 @@ export default function HamburgerMenu() {
         className={`hamburger hamburger--spin ${isOpen && "is-active"}`}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Menü öffnen"
       >
         <div className="hamburger-box">
           <div className="hamburger-inner"></div>
