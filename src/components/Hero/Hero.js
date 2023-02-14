@@ -3,8 +3,8 @@ import React from "react";
 import "../../styles/hero.scss";
 import LocationIcon from "../../images/icons/icon-location.svg";
 import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
-import HeroImage from "../../images/img-line-hero.png";
-import HeroImageMobile from "../../images/img-line-hero-mobile.png";
+import HeroImage from "../../images/img-line-hero.webp";
+import HeroImageMobile from "../../images/img-line-hero-mobile.webp";
 
 import { useMediaQuery } from "react-responsive";
 

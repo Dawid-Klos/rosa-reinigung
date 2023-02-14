@@ -27,7 +27,9 @@ const Booking = () => {
   const pickService = React.useCallback((picked) => {
     setPickedService(picked);
   }, []);
-  const isMobile = useMediaQuery({ query: "max-width:1023px" });
+
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 412px)" });
+
   useEffect(() => {
     switch (currentStep) {
       case 0:
@@ -110,7 +112,7 @@ const Booking = () => {
                 <div className="step__icon">
                   <img src={step.icon} alt="" />
                 </div>
-                <span className="step__title">{isMobile ? step.mobileTitle : step.title}</span>
+                <span className="step__title">{isSmallMobile ? step.mobileTitle : step.title}</span>
                 <span className={`step__dot ${step.stepNumber === currentStep ? "step__dot--active" : ""}`}></span>
               </div>
             ))}

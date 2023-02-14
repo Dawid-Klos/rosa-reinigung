@@ -196,7 +196,7 @@
   }
 
   @include large-desktop-up {
-    max-width: 24vw;
+    max-width: 28rem;
   }
 
   &__title {
@@ -220,6 +220,8 @@
 
     @include tablet-up {
       font-size: 1.8rem;
+      max-width: 75%;
+      margin: 0 auto;
     }
 
     @include small-desktop-up {
@@ -263,7 +265,6 @@
   &__container {
     display: flex;
     flex-flow: column nowrap;
-    margin: 0 0.6rem;
   }
 
   &__button {

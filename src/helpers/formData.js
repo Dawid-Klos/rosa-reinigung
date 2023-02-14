@@ -24,9 +24,9 @@ export const SERVICES_TYPES = {
   houseCleaning: "Hausreinigung",
   companyCleaning: "Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.",
   windowsCleaning: "Fensterreinigung",
-  houseOrganisation: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+  houseOrganisation: "Professionelle Hausorganisation",
   movingOutCleaning: "Aufräumen nach dem Auszug",
-  movingService: "Umzüge",
+  movingService: "Haushalt",
 };
 
 export const STEP_FIELDS = {
@@ -79,7 +79,7 @@ export const cardsData = [
   },
   {
     id: 3,
-    title: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+    title: "Professionelle Hausorganisation",
     icon: HouseOrganisationIcon,
     value: "houseOrganisation",
   },

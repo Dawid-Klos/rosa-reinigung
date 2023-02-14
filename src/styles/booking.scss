@@ -8,7 +8,7 @@
     margin: 10vw 0;
 
     @include small-desktop-up {
-        margin: 12vw 0;
+        margin: 16vh 0 0 0;
     }
 
     @include large-desktop-up {
@@ -63,10 +63,12 @@
         @include small-mobile-up {
             font-size: 0.9rem;
             text-align: center;
+            padding: 0.6rem;
         }
 
         @include tablet-up {
             font-size: 1rem;
+
         }
 
         @include small-desktop-up {
@@ -126,6 +128,12 @@
         margin-top: 22vh;
     }
 
+    @include tablet-up {
+        padding: 2rem;
+        background-color: $color-white;
+        box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    }
+
     @include small-desktop-up {
         margin-top: 18vw;
         min-width: 40vw;
@@ -153,6 +161,11 @@
         border-radius: 0.6rem;
         padding: 0.2rem 2rem;
         border: 2px solid transparent;
+
+        @include small-mobile-up {
+            width: calc(100% - 1.2rem);
+            padding: 0.2rem 0.6rem;
+        }
 
         &:focus-within {
             border: 2px solid $color-purple;
@@ -194,6 +207,7 @@
 
             @include small-mobile-up {
                 padding: 0.8rem;
+                padding: 1rem 0.6rem;
             }
 
             &::placeholder {
