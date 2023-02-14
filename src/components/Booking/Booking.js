@@ -16,6 +16,7 @@ import "../../styles/steps.scss";
 
 import { Formik, Form } from "formik";
 import emailjs from "@emailjs/browser";
+import { useMediaQuery } from "react-responsive";
 
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -23,9 +24,13 @@ const Booking = () => {
   const [currentSchema, setCurrentSchema] = useState(stepOneSchema);
   const [submitErrors, setSubmitErrors] = useState(null);
 
+  const [loading, setLoading] = useState(false);
+
   const pickService = React.useCallback((picked) => {
     setPickedService(picked);
   }, []);
+
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 412px)" });
 
   useEffect(() => {
     switch (currentStep) {
@@ -59,37 +64,47 @@ const Booking = () => {
   };
 
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
-    if (currentStep < 0 || currentStep >= 2) return;
+    if (currentStep < 0 || currentStep >= 3) return;
+    if (reverse === "reverse") {
+      setCurrentStep((step) => step - 1);
+    }
     validateForm().then((errors) => {
       if (Object.keys(errors).length !== 0) {
         STEP_FIELDS[currentStep].forEach((field) => {
           setFieldTouched(field);
         });
       } else {
-        if (reverse === "reverse") {
-          setCurrentStep((step) => step - 1);
-        } else {
-          setCurrentStep((step) => step + 1);
-        }
+        setCurrentStep((step) => step + 1);
       }
     });
   };
 
   const handleSubmit = (values, setSubmitting) => {
     console.log("the form being submitted...");
+    setLoading(true);
     try {
       emailjs
         .send(process.env.GATSBY_SERVICE_ID, process.env.GATSBY_TEMPLATE_ID, values, process.env.GATSBY_PUBLIC_KEY)
-        .then(() => {
-          console.log("Mail sent!");
-          setSubmitErrors(false);
-          setSubmitting(false);
-          setCurrentStep(3);
+        .then((res) => {
+          if (res.status === 200) {
+            console.log("Mail sent!");
+            setSubmitErrors(false);
+            setSubmitting(false);
+            setLoading(false);
+            setCurrentStep(3);
+          } else {
+            setSubmitErrors(res.status);
+            console.log("submit errors", res.status);
+            console.log("A HTTP error occured, ", res.status);
+            setLoading(false);
+            setCurrentStep(3);
+          }
         });
     } catch (err) {
       setSubmitErrors(err);
       console.log("submit errors", err);
       console.log("An error occured, ", err);
+      setLoading(false);
       setCurrentStep(3);
     }
   };
@@ -102,7 +117,7 @@ const Booking = () => {
       </div>
 
       <div className="booking__steps-wrapper">
-        <img className="booking__lines" src={Lines} alt="" />
+        <img className="booking__lines" src={Lines} alt="" loading="lazy" />
         <div className="steps-container">
           <div className="steps-bar">
             {statusBarSteps.map((step) => (
@@ -110,7 +125,7 @@ const Booking = () => {
                 <div className="step__icon">
                   <img src={step.icon} alt="" />
                 </div>
-                <span className="step__title">{step.title}</span>
+                <span className="step__title">{isSmallMobile ? step.mobileTitle : step.title}</span>
                 <span className={`step__dot ${step.stepNumber === currentStep ? "step__dot--active" : ""}`}></span>
               </div>
             ))}
@@ -124,8 +139,8 @@ const Booking = () => {
       >
         {({ validateForm, setFieldTouched, submitForm, isSubmitting, errors, touched, values }) => (
           <Form className={`form ${currentStep === 1 || currentStep === 3 ? "form__service" : ""}`}>
-            {renderCurrentStep(errors, touched, values)}
-            {currentStep > 2 ? null : (
+            {loading ? <span className="spinner"></span> : renderCurrentStep(errors, touched, values)}
+            {currentStep > 2 || loading ? null : (
               <div className="form__button-wrapper">
                 {currentStep === 0 ? null : (
                   <button

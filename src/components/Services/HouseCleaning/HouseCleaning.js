@@ -60,10 +60,7 @@ const HouseCleaning = () => {
           activeTab === tabName.basic ? "house-cleaning__tab--active" : null
         }`}
       >
-        <img
-          src={BasicServiceIcon}
-          alt="Two hands indicating the quality of the service"
-        />
+        <img src={BasicServiceIcon} alt="Two hands indicating the quality of the service" loading="lazy" />
         <h4>Die BASIS-Reinigung</h4>
         <ul className="tab-list">
           {basicServiceTasks.map((task, i) => {
@@ -81,10 +78,7 @@ const HouseCleaning = () => {
           activeTab === tabName.extra ? "house-cleaning__tab--active" : null
         }`}
       >
-        <img
-          src={ExtraServiceIcon}
-          alt="Two hands indicating the quality of the service"
-        />
+        <img src={ExtraServiceIcon} alt="Two hands indicating the quality of the service" loading="lazy" />
         <h4>Die EXTRA-Reinigung</h4>
         <div className="tab-list">
           {extraServiceTasks.map((task, i) => {

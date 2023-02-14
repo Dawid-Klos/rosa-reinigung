@@ -14,9 +14,13 @@ const Checkout = ({ submitErrors }) => {
         setLoading(false);
       }, 2000);
     } else {
-      setLoading(true);
+      setLoading(false);
     }
   }, [submitErrors]);
+
+  // TODO: Check if success status works properlu
+  // TODO: Set up an icon for fail + message
+  // TODO: Check how it works
 
   return (
     <div className="checkout">

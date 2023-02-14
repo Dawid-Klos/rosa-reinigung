@@ -24,9 +24,9 @@ export const SERVICES_TYPES = {
   houseCleaning: "Hausreinigung",
   companyCleaning: "Reinigung von Büros, Arztpraxen, Theatern, Schulen usw.",
   windowsCleaning: "Fensterreinigung",
-  houseOrganisation: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+  houseOrganisation: "Professionelle Hausorganisation",
   movingOutCleaning: "Aufräumen nach dem Auszug",
-  movingService: "Umzüge",
+  movingService: "Haushalt",
 };
 
 export const STEP_FIELDS = {
@@ -79,7 +79,7 @@ export const cardsData = [
   },
   {
     id: 3,
-    title: "Entrümpelung (Decluttering) / Haushaltsorganisation",
+    title: "Professionelle Hausorganisation",
     icon: HouseOrganisationIcon,
     value: "houseOrganisation",
   },
@@ -91,7 +91,7 @@ export const cardsData = [
   },
   {
     id: 5,
-    title: "Umzüge",
+    title: "Haushalt",
     icon: MovingHouseCleaning,
     value: "movingService",
   },
@@ -102,21 +102,25 @@ export const statusBarSteps = [
     stepNumber: 0,
     icon: UserIcon,
     title: "Unternehmen",
+    mobileTitle: "Untern- ehmen",
   },
   {
     stepNumber: 1,
     icon: ChoiceIcon,
     title: "Unsere Leistungen",
+    mobileTitle: "Unsere Leistungen",
   },
   {
     stepNumber: 2,
     icon: DetailsIcon,
     title: "Servicedetails",
+    mobileTitle: "Service- details",
   },
   {
     stepNumber: 3,
     icon: SuccessIcon,
     title: "Senden",
+    mobileTitle: "Senden",
   },
 ];
 
@@ -304,7 +308,7 @@ export const FORM_DETAILS_VARIANTS = {
       type: "text",
     },
     {
-      id: 0,
+      id: 1,
       label: "Postleitzahl und Ort der Zieladresse",
       icon: HouseAreaIcon,
       htmlFor: "movingCity",

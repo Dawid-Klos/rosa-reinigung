@@ -2,6 +2,7 @@
 
 .hero {
   display: flex;
+  justify-content: space-between;
   min-height: 85vh;
   margin: 6rem 1rem 1rem 1rem;
   background-color: $color-pink-light;
@@ -9,17 +10,18 @@
   position: relative;
   font-size: 0.8rem;
 
+
   @include small-mobile-up {
     justify-content: space-evenly;
     flex-flow: column-reverse nowrap;
-    margin: 4.6rem 0.6rem;
+    margin: 4.6rem 0.6rem 0 0.6rem;
     min-height: 90vh;
   }
 
   @include tablet-up {
     justify-content: space-evenly;
     flex-flow: column-reverse nowrap;
-    margin: 4.6rem 1rem;
+    margin: 6.6rem 1rem;
     padding: 2rem;
     min-height: 85vh;
   }
@@ -49,6 +51,10 @@
     max-width: none;
   }
 
+  @include large-mobile {
+    margin: 0 1.6rem;
+  }
+
   @include small-desktop-up {
     margin-left: 4rem;
     max-width: 26rem;
@@ -62,7 +68,7 @@
   &__location {
     display: flex;
     align-items: center;
-    background-color: rgba(80, 78, 81, 0.05);
+    background-color: rgba(80, 78, 81, 0.10);
     border-radius: 0.6rem;
     width: fit-content;
     padding: 0.1rem 1rem;
@@ -75,6 +81,12 @@
       top: 5%;
       left: 36%;
       transform: translate(-50%, -50%);
+    }
+
+    @include large-mobile {
+      top: 5%;
+      left: 0%;
+      transform: translate(5%, -50%);
     }
 
     & img {
@@ -128,8 +140,20 @@
       text-align: center;
     }
 
+    @include medium-mobile {
+      font-size: 2.6rem;
+    }
+
+    @include large-mobile {
+      font-size: 2.6rem;
+    }
+
     @include tablet-up {
       font-size: 3rem;
+    }
+
+    @include large-mobile {
+      font-size: 2.8rem;
     }
 
     @include small-desktop-up {
@@ -268,58 +292,20 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   @include small-mobile-up {
     margin-top: 4rem;
   }
 
   &__lines {
-    width: 160vw;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -34%);
-
-
+    width: 50vw;
+    height: 50vw;
 
     @include small-mobile-up {
-      width: calc(240px + 20vw);
-      transform: none;
-      position: unset;
-      margin: -0.6rem 0;
-    }
-
-    @include medium-mobile {
-      width: 400px;
-      transform: none;
-      position: unset;
-      margin: -0.6rem 0;
-    }
-
-    @include tablet-up {
-      width: calc(240px + 30vw);
-      transform: none;
-      position: unset;
-      margin: -0.6rem 0;
-    }
-
-    @include small-desktop-up {
-      width: 170vw;
-      top: 55%;
-      transform: translate(-50%, -38%);
-    }
-
-    @media screen and (min-width: 1366px) and (max-width: 1439px) {
-      width: 150vw;
-      top: 50%;
-      transform: translate(-43%, -35%);
-    }
-
-    @include large-desktop-up {
-      width: 125vw;
-      top: 55%;
-      transform: translate(-48%, -39%);
+      width: 100%;
+      height: 100%;
     }
   }
+
 }

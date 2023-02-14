@@ -4,7 +4,7 @@ import "../../styles/services.scss";
 import Lines from "../../images/img-line-services.svg";
 import Detail from "../../images/img-services-detail.svg";
 import HouseCleaning from "./HouseCleaning/HouseCleaning";
-import CorporateCleaning from "./CorporateCleaning/CorporateCleaning";
+import CompanyCleaning from "./CompanyCleaning/CompanyCleaning";
 import WindowCleaning from "./WindowCleaning/WindowCleaning";
 import HouseOrganisation from "./HouseOrganisation/HouseOrganisation";
 import MovingService from "./MovingService/MovingService";
@@ -18,7 +18,7 @@ const Services = () => {
         <img className="services__detail" src={Detail} alt="" />
       </div>
       <HouseCleaning />
-      <CorporateCleaning />
+      <CompanyCleaning />
       <WindowCleaning />
       <HouseOrganisation />
       <MovingService />

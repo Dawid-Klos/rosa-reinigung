@@ -17,6 +17,13 @@
     top: 30vw;
     left: 50%;
     transform: translate(-50%, -29.6vw);
+
+    @include small-mobile-up {
+        width: 95vw;
+        top: 36vw;
+    }
+
+    @include medium-mobile {}
 }
 
 .steps-bar {
@@ -24,6 +31,13 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5rem;
     padding: 2rem;
+
+    @include small-mobile-up {
+        gap: 0.6rem;
+        padding: 0.6rem;
+        background-color: $color-purple-lighter;
+        border-radius: 0.6rem;
+    }
 
     @include small-desktop-up {
         gap: 4rem;
@@ -55,9 +69,19 @@
         border-radius: 50%;
         box-shadow: 0px 4px 14px rgba(175, 120, 206, 0.5), 0px 4px 10px #AF78CE;
 
+        @include small-mobile-up {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
         & img {
             width: 1.4rem;
             height: 1.4rem;
+
+            @include small-mobile-up {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
 
             @include small-desktop-up {
                 width: 1.2rem;
@@ -72,6 +96,10 @@
         margin-top: 0.4rem;
         text-align: center;
 
+        @include small-mobile-up {
+            font-size: 0.7rem;
+        }
+
         @include small-desktop-up {
             font-size: 0.9rem;
         }
@@ -83,6 +111,11 @@
         border-radius: 50%;
         background-color: $color-grey-light;
         margin-top: 1rem;
+
+        @include small-mobile-up {
+            width: 0.6rem;
+            height: 0.6rem;
+        }
 
         &--active {
             background-color: $color-purple;
@@ -96,11 +129,30 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 1rem 4rem;
 
+    @include small-mobile-up {
+        width: 100vw;
+        justify-items: stretch;
+        padding: 1rem 0rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     &__heading {
         font-family: $font-family-raleway;
         font-weight: 500;
         font-size: 1.2rem;
         margin: 1rem;
+
+        @include small-mobile-up {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            margin: 2rem 0 0 0;
+        }
+
+        @include medium-mobile {
+            width: 90%;
+            margin: 0 auto;
+        }
     }
 
     &__label {
@@ -117,6 +169,12 @@
         border: 2px solid transparent;
         max-width: 12vw;
         transition: transform .2s, border .4s;
+
+        @include small-mobile-up {
+            max-width: 40vw;
+            margin: 0.6rem;
+            padding: 0.6rem;
+        }
 
         @include small-desktop-up {
             max-width: 16vw;
@@ -136,6 +194,10 @@
     &__title {
         font-size: 1rem;
         text-align: center;
+
+        @include small-mobile-up {
+            font-size: 0.8rem;
+        }
     }
 
     &__icon {
@@ -143,6 +205,11 @@
         height: 3rem;
         padding-top: 1rem;
         filter: drop-shadow(0px 4px 14px rgba(175, 120, 206, 0.5)) drop-shadow(0px 4px 10px #AF78CE);
+
+        @include small-mobile-up {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 
     &__field {}
@@ -172,6 +239,24 @@
         font-size: 1.8rem;
         font-weight: 600;
 
+        @include small-mobile-up {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        @include medium-mobile {
+            font-size: 2rem;
+        }
+
+        @include large-mobile {
+            font-size: 2rem;
+        }
+
+        @include tablet-up {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
+
         @include small-desktop-up {
             font-size: 1.6rem;
         }
@@ -181,9 +266,19 @@
         }
     }
 
+    &__img {
+        @include small-mobile-up {
+            width: 100%;
+        }
+    }
+
     &__message {
         font-size: 1rem;
         color: $color-grey-light;
+
+        @include small-mobile-up {
+            text-align: center;
+        }
 
         @include small-desktop-up {
             font-size: 0.9rem;

@@ -41,7 +41,7 @@ const MovingService = () => {
   );
 
   const props = {
-    title: "Umzüge",
+    title: "Haushalt",
     description:
       "Die Vorstellung, die nächsten Wochen auf Pappkartons zu leben, kann einem Kopfschmerzen bereiten. Es lohnt sich also, diese Aufgabe den Profis anzuvertrauen, damit Sie Ihre neue Wohnung in vollen Zügen genießen können - und vor allem, damit Ihre neue Wohnung von Anfang an in Ordnung ist. Dergesamte Umfang des Umzugsdienstes umfasst:",
     isReversed: false,

@@ -28,7 +28,11 @@ const Navbar = () => {
 
   return (
     <header className={`navbar ${!visible && "navbar--hidden"}`}>
-      <img className="navbar__logo" src={Logo} alt="Rosa Reinigung company logo" />
+      <img
+        className="navbar__logo"
+        src={Logo}
+        alt="Logo von Rosa Reiniggung, einem Unternehmen, das professionelle Reinigungsdienste anbietet."
+      />
       {isMobile ? (
         <HamburgerMenu />
       ) : (

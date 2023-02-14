@@ -5,44 +5,81 @@
     display: none;
     opacity: 0;
   }
+
   10% {
     display: flex;
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
 .services {
+  @include small-mobile-up {
+    margin-top: 9rem;
+  }
+
   &__heading {
     font-family: $font-family-raleway;
     font-weight: 600;
     font-size: 2.2rem;
     margin: 4rem 0 0 9rem;
+
+    @include small-mobile-up {
+      margin: 1rem 1rem;
+      font-size: 1.6rem;
+      text-align: left;
+    }
+
+    @include medium-mobile {
+      font-size: 2rem;
+    }
+
+    @include large-mobile {
+      margin: 1rem 2rem;
+      font-size: 2rem;
+    }
+
+    @include tablet-up {
+      margin: 1rem 2rem;
+      font-size: 2rem;
+    }
+
     @include small-desktop-up {
       font-size: 2rem;
       margin: 4rem 0 0 5rem;
     }
+
     @include large-desktop-up {
       font-size: 2.6rem;
       margin: 10rem 21rem -1rem 21rem;
     }
   }
+
   &__images-wrapper {
     width: 100vw;
     margin-bottom: -18rem;
     position: relative;
+
+    @include small-mobile-up {
+      display: none;
+    }
+
     @include small-desktop-up {
       margin-bottom: -10rem;
     }
+
     @include large-desktop-up {
       margin-bottom: -22rem;
     }
   }
+
   &__lines {
     width: 100%;
   }
+
   &__detail {
     width: 22%;
     height: auto;
@@ -50,6 +87,11 @@
     left: 16%;
     transform: translate(-25%, -16%);
     position: absolute;
+
+    @include small-mobile-up {
+      display: none;
+    }
+
     @include small-desktop-up {
       width: 25%;
     }
@@ -62,23 +104,67 @@
   align-items: flex-start;
   margin: 4rem 9rem;
   position: relative;
+
+  @include small-mobile-up {
+    flex-flow: column-reverse nowrap;
+    margin: 4rem 1rem;
+  }
+
+  @include large-mobile {
+    margin: 4rem 2rem;
+  }
+
+  @include tablet-up {
+    margin: 6rem 2rem;
+  }
+
   @include small-desktop-up {
     margin: 4rem 5rem;
   }
+
   @include large-desktop-up {
     margin: 4rem 20rem;
     justify-content: space-around;
   }
+
   &--reverse {
     margin-top: 5rem;
     flex-direction: row-reverse;
+
+    @include small-mobile-up {
+      flex-flow: column-reverse nowrap;
+    }
   }
+
   &__img-wrapper {
     max-width: 50%;
+    height: auto;
+
+    @include small-mobile-up {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    @include medium-mobile {
+      max-width: 85%;
+    }
+
+    @include large-mobile {
+      max-width: 70%;
+    }
+
+    @include tablet-up {
+      max-width: 65%;
+      margin: -2rem auto;
+    }
   }
+
   &__img {
     max-width: 100%;
+    height: auto;
   }
+
   &__lines {
     width: 100vw;
     position: absolute;
@@ -86,6 +172,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+
+    @include small-mobile-up {
+      display: none;
+    }
   }
 }
 
@@ -94,51 +184,93 @@
   max-width: 32vw;
   padding: 1rem 0;
   align-self: center;
+
+  @include small-mobile-up {
+    margin: 0;
+    max-width: none;
+  }
+
   @include small-desktop-up {
     margin: 3rem 0;
     max-width: 40vw;
   }
+
   @include large-desktop-up {
-    max-width: 24vw;
+    max-width: 28rem;
   }
+
   &__title {
     max-width: 26rem;
     font-family: $font-family-raleway;
     font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
+
+    @include small-mobile-up {
+      text-align: center;
+      margin-top: -1rem;
+      font-size: 1.6rem;
+      margin: 1rem 0;
+      max-width: none;
+    }
+
+    @include large-mobile {
+      font-size: 1.6rem;
+    }
+
+    @include tablet-up {
+      font-size: 1.8rem;
+      max-width: 75%;
+      margin: 0 auto;
+    }
+
     @include small-desktop-up {
       font-size: 1.6rem;
     }
+
     @include large-desktop-up {
       font-size: 2rem;
     }
   }
+
   &__description {
     font-size: 1rem;
     color: $color-grey-light;
     line-height: 24px;
+
+    @include small-mobile-up {
+      font-size: 0.9rem;
+    }
+
+    @include tablet-up {
+      font-size: 1rem;
+    }
+
     @include small-desktop-up {
       font-size: 0.9rem;
     }
+
     &--extra-text {
       display: none;
       opacity: 0;
     }
+
     &--show-extra-text {
       display: inline;
       opacity: 1;
       animation: show-up 0.5s;
     }
   }
+
   &__container {
     display: flex;
     flex-flow: column nowrap;
   }
+
   &__button {
     background-color: $color-purple-lighter;
     color: $color-grey-light;
-    width: calc(40% - 1rem);
+    width: calc(40% - 2rem);
     padding: 1rem;
     align-self: flex-end;
     font-family: $font-family-raleway;
@@ -147,6 +279,24 @@
     cursor: pointer;
     border-radius: 0.6rem;
     box-shadow: 0px 24px 48px rgb(0 0 0 / 8%);
+
+    @include small-mobile-up {
+      width: calc(60% - 2rem);
+      padding: 1rem;
+      align-self: center;
+      margin-top: 1rem;
+    }
+
+    @include large-mobile {
+      width: calc(40% - 2rem);
+      padding: 1rem;
+    }
+
+    @include tablet-up {
+      width: calc(40% - 2rem);
+      padding: 1rem;
+    }
+
     &:hover {
       background-color: $color-purple-light;
     }
@@ -156,6 +306,17 @@
 .house-cleaning {
   width: 100%;
   margin-top: 2rem;
+
+  @include large-mobile {
+    width: 75%;
+    margin: 2rem auto;
+  }
+
+  @include tablet-up {
+    width: 70%;
+    margin: 2rem auto;
+  }
+
   &__buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -163,6 +324,7 @@
     background-color: #ffffff;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
   }
+
   &__button {
     font-family: $font-family-raleway;
     font-size: 1.2rem;
@@ -171,23 +333,42 @@
     text-transform: capitalize;
     padding: 1rem;
     cursor: pointer;
+
+    @include small-mobile-up {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    @include large-mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet-up {
+      font-size: 1rem;
+    }
+
     @include small-desktop-up {
       font-size: 1rem;
     }
+
     &:hover {
       transition: background-color 0.25s;
       background-color: $color-grey-lighter;
     }
+
     &--active {
       background-color: $color-purple-light;
     }
+
     &--basic {
       border-radius: 0.6rem 0 0 0.6rem;
     }
+
     &--extra {
       border-radius: 0 0.6rem 0.6rem 0;
     }
   }
+
   &__tab {
     display: none;
     flex-flow: column nowrap;
@@ -198,15 +379,23 @@
     padding: 1rem;
     border-radius: 0.6rem;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+
     & img {
       width: 6rem;
       height: 6rem;
     }
+
     & h4 {
       font-family: $font-family-raleway;
       font-weight: 500;
       font-size: 1.5rem;
+
+      @include small-mobile-up {
+        font-size: 1.2rem;
+        text-align: center;
+      }
     }
+
     &--active {
       display: flex;
       animation: show-up 0.5s ease-in-out;
@@ -218,18 +407,31 @@
   display: grid;
   padding: 0;
   margin: 0;
+
   & p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
+
   &__row {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     max-height: 2.4rem;
+
+    @include small-mobile-up {
+      margin: 0.1rem 0;
+    }
+
     & img {
       width: 1rem;
       height: 1rem;
+
+      @include small-mobile-up {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
     }
+
     & p {
       margin-left: 0.4rem;
       font-size: 0.8rem;
@@ -248,18 +450,30 @@
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   border-radius: 0.6rem;
+
+  @include small-mobile-up {
+    padding: 1rem;
+  }
+
   &__warning {
     display: flex;
     justify-content: flex-start;
     padding: 0.5rem 0;
+
+    @include small-mobile-up {
+      padding: 0 0 0.6rem 0;
+    }
   }
+
   &__img {
     margin-right: 1rem;
   }
+
   &__text {
     font-size: 1rem;
     margin: 0;
   }
+
   &__info {
     margin: 0;
   }
@@ -270,26 +484,50 @@
     display: grid;
     padding: 0;
     margin: 0;
+
+
+    @include large-mobile {
+      margin: 0 3rem;
+    }
+
+    @include tablet-up {
+      justify-content: center;
+    }
   }
+
   &__point {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     max-height: 2.4rem;
+
     @include small-desktop-up {
       max-height: 1.8rem;
     }
+
     & img {
       width: 1rem;
       height: 1rem;
     }
+
     & p {
       margin-left: 0.4rem;
       font-size: 0.8rem;
       line-height: 1rem;
       color: $color-grey-light;
+
+      @include small-mobile-up {
+        font-size: 0.8rem;
+        margin-left: 0.2rem;
+      }
+
+      @include tablet-up {
+        font-size: 0.9rem;
+        margin-left: 0.6rem;
+      }
     }
   }
+
   &__message {
     background-color: $color-purple-lighter;
     color: $color-grey-light;
@@ -300,18 +538,22 @@
     margin-top: 2rem;
     border-radius: 0.6rem;
   }
+
   &__warning {
     display: flex;
     justify-content: flex-start;
     padding-bottom: 0.5rem;
   }
+
   &__img {
     margin-right: 1rem;
   }
+
   &__text {
     font-size: 1rem;
     margin: 0;
   }
+
   &__info {
     margin: 0;
   }

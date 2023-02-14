@@ -6,9 +6,20 @@
     margin: 6rem 1rem 1rem 1rem;
     padding: 8rem;
     position: relative;
-    // gap: 6rem;
     background-color: hsla(278, 47%, 64%, 0.15);
     border-radius: 0.6rem;
+
+    @include small-mobile-up {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.6rem;
+        margin: 1rem;
+        gap: 3rem;
+        margin-top: 16vh;
+    }
+
+    @include tablet-up {
+        margin-top: 8vh;
+    }
 
     @include small-desktop-up {
         margin: 6rem 1rem 1rem 1rem;
@@ -21,11 +32,19 @@
         padding: 8rem 15rem;
     }
 
+
+
     &__image-wrapper {
         position: absolute;
         top: 55%;
         left: 50%;
         transform: translate(-50%, 0%);
+
+        @include tablet-up {
+            top: 0%;
+            left: 75%;
+            transform: translate(-50%, 30%);
+        }
 
         @include small-desktop-up {
             top: 55%;
@@ -40,6 +59,16 @@
         width: 24vw;
         height: 24vw;
 
+        @include small-mobile-up {
+            display: none;
+        }
+
+        @include tablet-up {
+            display: inline;
+            width: 40vw;
+            height: 40vw;
+        }
+
         @include large-desktop-up {
             width: 20vw;
             height: auto;
@@ -53,6 +82,24 @@
         font-family: $font-family-raleway;
         font-size: 3rem;
         margin: 0;
+
+        @include small-mobile-up {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        @include medium-mobile {
+            font-size: 2rem;
+        }
+
+        @include large-mobile {
+            font-size: 2rem;
+        }
+
+        @include tablet-up {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
 
         @include small-desktop-up {
             font-size: 2rem;
@@ -70,6 +117,20 @@
         align-items: flex-start;
         max-width: 80%;
         margin: 1rem 0;
+
+        @include small-mobile-up {
+            max-width: 90%;
+        }
+
+        @include medium-mobile {
+            max-width: 75%;
+            margin: 1rem auto;
+        }
+
+        @include tablet-up {
+            max-width: 50%;
+            margin: 1rem;
+        }
     }
 
     &__contact {
@@ -83,6 +144,10 @@
         border-radius: 0.6rem;
         text-decoration: none;
 
+        @include small-mobile-up {
+            width: 90%;
+        }
+
         &:hover {
             background-color: hsla(278, 47%, 64%, 0.45);
             transform: scale(104%);
@@ -92,10 +157,34 @@
             width: 2rem;
             height: 2rem;
             margin-right: 1rem;
+
+            @include small-mobile-up {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-right: 0.6rem;
+            }
+
+            @include tablet-up {
+                width: 1.8rem;
+                height: 1.8rem;
+                margin-right: 1rem;
+            }
         }
 
         & p {
             color: $color-grey;
+
+            @include small-mobile-up {
+                font-size: 0.7rem;
+            }
+
+            @include medium-mobile {
+                font-size: 0.8rem;
+            }
+
+            @include tablet-up {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -106,6 +195,24 @@
         font-family: $font-family-raleway;
         font-size: 3rem;
         margin: 0;
+
+        @include small-mobile-up {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        @include medium-mobile {
+            font-size: 2rem;
+        }
+
+        @include large-mobile {
+            font-size: 2rem;
+        }
+
+        @include tablet-up {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
 
         @include small-desktop-up {
             font-size: 2rem;
@@ -118,6 +225,22 @@
 
     &__text {
         color: $color-grey-light;
+
+        @include small-mobile-up {
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 1.6rem 0;
+        }
+
+        @include medium-mobile {
+            font-size: 1rem;
+        }
+
+        @include tablet-up {
+            width: 75%;
+            margin: 1rem auto;
+        }
+
     }
 
     &__points {
@@ -125,6 +248,12 @@
         gap: 1rem;
         padding: 0;
         margin: 0;
+
+        @include tablet-up {
+            width: 75%;
+            margin: 0 auto;
+            gap: 0;
+        }
     }
 
     &__point {
@@ -132,6 +261,10 @@
         justify-content: flex-start;
         align-items: center;
         max-height: 2.4rem;
+
+        @include small-mobile-up {
+            max-height: 3.6rem;
+        }
 
         @include small-desktop-up {
             max-height: 1.8rem;

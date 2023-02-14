@@ -23,6 +23,23 @@
         max-height: 1.6rem;
     }
 
+    @include medium-mobile {
+        width: calc(100% - 2.4rem);
+        padding: 1.2rem;
+        max-height: 1.8rem;
+    }
+
+    @include large-mobile {
+        width: calc(100% - 4rem);
+        padding: 1rem 2rem;
+    }
+
+    @include tablet-up {
+        width: calc(100% - 4rem);
+        padding: 1.6rem 2rem;
+        max-height: 2.2rem;
+    }
+
     @include small-desktop-up {
         width: calc(100% - 10rem);
         padding: 0.6rem 5rem;
@@ -46,6 +63,16 @@
         @include small-mobile-up {
             width: 4.8rem;
             height: 2.7rem;
+        }
+
+        @include medium-mobile {
+            width: 5.6rem;
+            height: auto;
+        }
+
+        @include tablet-up {
+            width: 7rem;
+            height: auto;
         }
 
         @include small-desktop-up {
@@ -183,6 +210,10 @@
         text-decoration: none;
         padding: 1rem;
 
+        @include tablet-up {
+            font-size: 2.4rem;
+        }
+
         &--special {
             color: $color-purple-light;
         }
@@ -232,6 +263,10 @@
             transition-duration: 0.15s;
             transition-timing-function: ease;
             background-color: $color-grey;
+
+            @include tablet-up {
+                width: 3rem;
+            }
         }
     }
 }
@@ -242,6 +277,10 @@
     height: 24px;
     display: inline-block;
     position: relative;
+
+    @include tablet-up {
+        width: 3rem;
+    }
 }
 
 .hamburger-inner {
@@ -257,6 +296,10 @@
     transition-duration: 0.15s;
     transition-timing-function: ease;
 
+    @include tablet-up {
+        width: 3rem;
+    }
+
     &::before {
         content: "";
         display: block;
@@ -269,6 +312,10 @@
         transition-property: transform;
         transition-duration: 0.15s;
         transition-timing-function: ease;
+
+        @include tablet-up {
+            width: 3rem;
+        }
     }
 
     &::after {
@@ -283,6 +330,10 @@
         transition-property: transform;
         transition-duration: 0.15s;
         transition-timing-function: ease;
+
+        @include tablet-up {
+            width: 3rem;
+        }
     }
 }
 

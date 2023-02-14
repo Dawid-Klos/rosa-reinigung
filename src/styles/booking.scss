@@ -6,10 +6,9 @@
     justify-content: flex-start;
     align-items: center;
     margin: 10vw 0;
-    // min-height: 100vh;
 
     @include small-desktop-up {
-        margin: 12vw 0;
+        margin: 16vh 0 0 0;
     }
 
     @include large-desktop-up {
@@ -28,6 +27,26 @@
         font-size: 3rem;
         margin: 0;
 
+        @include small-mobile-up {
+            margin: 1rem 1rem;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        @include medium-mobile {
+            font-size: 2rem;
+        }
+
+        @include large-mobile {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
+
+        @include tablet-up {
+            margin: 1rem 2rem;
+            font-size: 2rem;
+        }
+
         @include small-desktop-up {
             font-size: 2rem;
         }
@@ -40,6 +59,17 @@
     &__desc {
         font-size: 1rem;
         color: $color-grey-light;
+
+        @include small-mobile-up {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0.6rem;
+        }
+
+        @include tablet-up {
+            font-size: 1rem;
+
+        }
 
         @include small-desktop-up {
             font-size: 0.9rem;
@@ -59,6 +89,10 @@
         left: -1vw;
         transform: translate(-1vw, -3.2vw);
         z-index: -1;
+
+        @include small-mobile-up {
+            display: none;
+        }
 
         @include small-desktop-up {
             width: 95vw;
@@ -82,6 +116,23 @@
     background-color: $color-white;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
     min-width: 35vw;
+
+    @include small-mobile-up {
+        padding: 1rem;
+        background-color: transparent;
+        box-shadow: none;
+        margin-top: 20vh;
+    }
+
+    @include medium-mobile {
+        margin-top: 22vh;
+    }
+
+    @include tablet-up {
+        padding: 2rem;
+        background-color: $color-white;
+        box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+    }
 
     @include small-desktop-up {
         margin-top: 18vw;
@@ -111,6 +162,11 @@
         padding: 0.2rem 2rem;
         border: 2px solid transparent;
 
+        @include small-mobile-up {
+            width: calc(100% - 1.2rem);
+            padding: 0.2rem 0.6rem;
+        }
+
         &:focus-within {
             border: 2px solid $color-purple;
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
@@ -125,16 +181,22 @@
         width: 100%;
         padding: 0.6rem 0;
 
-
         &--label {
             font-size: 0.9rem;
             padding: 0.6rem 0;
 
+            @include small-mobile-up {
+                font-size: 0.8rem;
+            }
         }
 
         &--icon {
             width: 2rem;
             height: auto;
+
+            @include small-mobile-up {
+                width: 1.6rem;
+            }
         }
 
         &--input {
@@ -142,6 +204,11 @@
             color: $color-grey-light;
             padding: 1rem;
             cursor: pointer;
+
+            @include small-mobile-up {
+                padding: 0.8rem;
+                padding: 1rem 0.6rem;
+            }
 
             &::placeholder {
                 opacity: 1;
@@ -156,6 +223,10 @@
         text-align: left;
         font-size: 0.8rem;
         color: #d63636bd;
+
+        @include small-mobile-up {
+            font-size: 0.7rem;
+        }
     }
 
     &__date-picker {
@@ -172,6 +243,12 @@
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
+
+        @include small-mobile-up {
+            width: 90%;
+            flex-flow: column-reverse nowrap;
+            gap: 2rem;
+        }
     }
 
     &__button {
@@ -185,6 +262,11 @@
         text-decoration: none;
         color: hsla(324, 100%, 99%, 0.8);
         transition: min-width .6s;
+
+        @include small-mobile-up {
+            min-width: 100%;
+            transition: none;
+        }
 
         @include small-desktop-up {
             min-width: 35%;
@@ -215,6 +297,10 @@
             color: $color-white;
             cursor: pointer;
 
+            @include small-mobile-up {
+                box-shadow: none;
+            }
+
             @include small-desktop-up {
                 min-height: 2rem;
                 padding: 0 2rem;
@@ -228,6 +314,11 @@
             color: $color-white;
             cursor: pointer;
 
+            @include small-mobile-up {
+                min-width: 75%;
+                box-shadow: none;
+            }
+
             @include small-desktop-up {
                 min-height: 2rem;
                 padding: 0 2rem;
@@ -236,6 +327,10 @@
 
         & img {
             width: 0.1rem;
+
+            @include small-mobile-up {
+                display: none;
+            }
         }
 
         &:hover img {
@@ -243,6 +338,10 @@
             width: 1.6rem;
             opacity: 1;
             transform: rotateY(360deg);
+
+            @include small-mobile-up {
+                transition: none;
+            }
         }
 
         & p {
@@ -271,6 +370,10 @@
         background-color: $color-pink-light;
         border-radius: 0.2rem;
         position: relative;
+
+        @include small-mobile-up {
+            padding: 0.1rem;
+        }
 
         &--field {
             width: 1.4rem;
