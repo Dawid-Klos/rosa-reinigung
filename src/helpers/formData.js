@@ -91,7 +91,7 @@ export const cardsData = [
   },
   {
     id: 5,
-    title: "Umzüge",
+    title: "Haushalt",
     icon: MovingHouseCleaning,
     value: "movingService",
   },
@@ -308,7 +308,7 @@ export const FORM_DETAILS_VARIANTS = {
       type: "text",
     },
     {
-      id: 0,
+      id: 1,
       label: "Postleitzahl und Ort der Zieladresse",
       icon: HouseAreaIcon,
       htmlFor: "movingCity",
