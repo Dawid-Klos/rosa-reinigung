@@ -1,15 +1,22 @@
 @import "../styles/variables";
 
 .footer {
-    width: 100%;
-    height: auto;
+    width: calc(100% - 2rem);
     display: flex;
     justify-content: center;
     align-items: center;
     background: hsla(332deg, 77%, 85%, 0.2);
-    min-height: 2vh;
-    max-height: 6vh;
+    min-height: 6vh;
     padding: 1rem;
+
+    @include small-mobile-up {
+        flex-flow: column nowrap;
+        margin-top: 16vh;
+    }
+
+    @include tablet-up {
+        margin-top: 8vh;
+    }
 
     &__img {
         width: 6em;
@@ -18,5 +25,15 @@
 
     &__copyrights {
         font-size: 0.8rem;
+
+        @include small-mobile-up {
+            text-align: center;
+            font-size: 0.7rem;
+            margin: 0;
+        }
+
+        @include medium-mobile {
+            font-size: 0.8rem;
+        }
     }
 }
