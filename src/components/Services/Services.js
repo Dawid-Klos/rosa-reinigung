@@ -11,7 +11,7 @@ import MovingService from "./MovingService/MovingService";
 
 const Services = () => {
   return (
-    <section className="services">
+    <section className="services" id="services">
       <h2 className="services__heading">Unsere Dienstleistungen für Dich.</h2>
       <div className="services__images-wrapper">
         <img className="services__lines" src={Lines} alt="A woman falling through mess and cable on the floor" />

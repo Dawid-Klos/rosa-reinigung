@@ -12,7 +12,7 @@ const Hero = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1023px)" });
 
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-content">
         <div className="hero-content__location">
           <img src={LocationIcon} alt="Location icon" />
