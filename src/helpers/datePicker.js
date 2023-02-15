@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import { DatePicker, registerLocale } from "react-datepicker";
 import de from "date-fns/locale/de";
 import "react-datepicker/dist/react-datepicker.css";
+
 import { useField } from "formik";
+
 registerLocale("de", de);
 
 const MyDatePicker = ({ name = "" }) => {
@@ -13,13 +15,15 @@ const MyDatePicker = ({ name = "" }) => {
   const { setValue } = helpers;
 
   return (
-    <DatePicker
-      className="form__date-picker"
-      {...field}
-      locale="de"
-      selected={value}
-      onChange={(date) => setValue(date)}
-    />
+    <Suspense fallback={<span className="spinner"></span>}>
+      <DatePicker
+        className="form__date-picker"
+        {...field}
+        locale="de"
+        selected={value}
+        onChange={(date) => setValue(date)}
+      />
+    </Suspense>
   );
 };
 
