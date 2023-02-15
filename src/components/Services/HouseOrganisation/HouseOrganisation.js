@@ -9,7 +9,7 @@ const HouseOrganisation = () => {
     <div className="house-organisation">
       <div className="house-organisation__warning">
         <img className="house-organisation__img" src={WarningIcon} alt="Warning sign" />
-        <p className="house-organisation__text">Achtung!</p>
+        <p className="house-organisation__text">Informationen.</p>
       </div>
       <p className="house-organisation__info">
         Wir arbeiten mit einer Renovierungsfirma und einer Elektrofirma zusammen. Wir können Ihr Interieur von Grund auf

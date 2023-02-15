@@ -2,25 +2,13 @@ import React, { useEffect, useState } from "react";
 import { FORM_DETAILS_VARIANTS } from "../../../helpers/formData";
 
 import CalendarIcon from "../../../images/icons/icon-calendar.svg";
-import de from "date-fns/locale/de";
-import "react-datepicker/dist/react-datepicker.css";
 
-import DatePicker, { registerLocale } from "react-datepicker";
-import { Field, useField } from "formik";
-
-registerLocale("de", de);
+import { Field } from "formik";
 
 const DetailsForm = ({ service, errors, touched }) => {
   const [values, setValues] = useState(null);
 
-  const MyDatePicker = ({ name = "" }) => {
-    const [field, meta, helpers] = useField(name);
-
-    const { value } = meta;
-    const { setValue } = helpers;
-
-    return <DatePicker className="form__date-picker" {...field} selected={value} onChange={(date) => setValue(date)} />;
-  };
+  const DatePicker = React.lazy(() => import("../../../helpers/datePicker"));
 
   useEffect(() => {
     console.log(service);
@@ -56,7 +44,7 @@ const DetailsForm = ({ service, errors, touched }) => {
         </label>
         <div className="form__input-wrapper">
           <img className="form__field--icon" src={CalendarIcon} alt="" />
-          <MyDatePicker locale="de" name="date" />
+          <DatePicker name="date" />
         </div>
         {errors.date && touched.date ? <span className="form__error">{errors.date}</span> : null}
       </div>

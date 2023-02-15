@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 
 import NotFoundImg from "../images/404.svg";
 
+import { SEO } from "../components/seo";
+
 const pageStyles = {
   color: "#232129",
   padding: "1rem",
@@ -59,4 +61,6 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head = () => <title>404 - Seite nicht gefunden</title>;
+export const Head = () => {
+  return <SEO title="404 - Seite nicht gefunden" />;
+};
