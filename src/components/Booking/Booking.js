@@ -57,7 +57,7 @@ const Booking = () => {
       case 2:
         return <DetailsForm errors={errors} touched={touched} service={pickedService} />;
       case 3:
-        return <Checkout values={values} submitErrors={submitErrors} />;
+        return <Checkout submitErrors={submitErrors} />;
       default:
         return <p>Error - please refresh the page and try again!</p>;
     }
@@ -80,33 +80,26 @@ const Booking = () => {
   };
 
   const handleSubmit = (values, setSubmitting) => {
-    console.log("the form being submitted...");
     setLoading(true);
-    try {
-      emailjs
-        .send(process.env.GATSBY_SERVICE_ID, process.env.GATSBY_TEMPLATE_ID, values, process.env.GATSBY_PUBLIC_KEY)
-        .then((res) => {
-          if (res.status === 200) {
-            console.log("Mail sent!");
-            setSubmitErrors(false);
-            setSubmitting(false);
-            setLoading(false);
-            setCurrentStep(3);
-          } else {
-            setSubmitErrors(res.status);
-            console.log("submit errors", res.status);
-            console.log("A HTTP error occured, ", res.status);
-            setLoading(false);
-            setCurrentStep(3);
-          }
-        });
-    } catch (err) {
-      setSubmitErrors(err);
-      console.log("submit errors", err);
-      console.log("An error occured, ", err);
-      setLoading(false);
-      setCurrentStep(3);
-    }
+    emailjs
+      .send(process.env.GATSBY_SERVICE_ID, process.env.GATSBY_TEMPLATE_ID, values, process.env.GATSBY_PUBLIC_KEY)
+      .then((res) => {
+        if (res.status === 200) {
+          setSubmitErrors(false);
+          setSubmitting(false);
+          setLoading(false);
+          setCurrentStep(3);
+        } else {
+          setSubmitErrors(res.status);
+          setLoading(false);
+          setCurrentStep(3);
+        }
+      })
+      .catch((err) => {
+        setSubmitErrors(err);
+        setLoading(false);
+        setCurrentStep(3);
+      });
   };
 
   return (
