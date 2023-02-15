@@ -11,6 +11,7 @@ import Footer from "../components/Footer/Footer";
 
 import HeroImage from "../images/img-line-hero.webp";
 import HeroImageMobile from "../images/img-line-hero-mobile.webp";
+import { SEO } from "../components/seo";
 
 import "../styles/index.scss";
 
@@ -37,7 +38,7 @@ export const Head = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1023px)" });
   return (
     <>
-      <title>Rosa Reinigung</title>
+      <SEO />
       {isMobile ? (
         <link rel="preload" fetchpriority="high" as="image" href={HeroImageMobile} type="image/webp"></link>
       ) : (
