@@ -9,23 +9,22 @@ import Booking from "../components/Booking/Booking";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 
+import HeroImage from "../images/img-line-hero.webp";
+import HeroImageMobile from "../images/img-line-hero-mobile.webp";
+
 import "../styles/index.scss";
+
+import { useMediaQuery } from "react-responsive";
 
 const IndexPage = () => {
   return (
     <>
-      <a id="home"></a>
       <Navbar />
       <Hero />
-      <a id="reviews"></a>
       <Reviews />
-      <a id="services"></a>
       <Services />
-      <a id="gallery"></a>
       <Gallery />
-      <a id="form"></a>
       <Booking />
-      <a id="contact"></a>
       <Contact />
       <Footer />
     </>
@@ -34,17 +33,16 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => (
-  <>
-    <title>Rosa Reinigung</title>
-    // Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet.
-    <link rel="preload" fetchpriority="high" as="image" href="../images/img-line-hero.webp" type="image/webp"></link>
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href="../images/img-line-hero-mobile.webp"
-      type="image/webp"
-    ></link>
-  </>
-);
+export const Head = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1023px)" });
+  return (
+    <>
+      <title>Rosa Reinigung</title>
+      {isMobile ? (
+        <link rel="preload" fetchpriority="high" as="image" href={HeroImageMobile} type="image/webp"></link>
+      ) : (
+        <link rel="preload" fetchpriority="high" as="image" href={HeroImage} type="image/webp"></link>
+      )}
+    </>
+  );
+};

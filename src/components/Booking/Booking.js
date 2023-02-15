@@ -103,7 +103,7 @@ const Booking = () => {
   };
 
   return (
-    <section className="booking">
+    <section className="booking" id="form">
       <div className="booking__heading-wrapper">
         <h2 className="booking__heading">Vereinbaren Sie einen Termin.</h2>
         <p className="booking__desc">Wahlen Sie die Art Der Dienstleistungen und beantworten Sie dann einige Fragen.</p>
