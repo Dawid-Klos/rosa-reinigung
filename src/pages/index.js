@@ -34,4 +34,17 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Rosa Reinigung</title>;
+export const Head = () => (
+  <>
+    <title>Rosa Reinigung</title>
+    // Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet.
+    <link rel="preload" fetchpriority="high" as="image" href="../images/img-line-hero.webp" type="image/webp"></link>
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="../images/img-line-hero-mobile.webp"
+      type="image/webp"
+    ></link>
+  </>
+);
