@@ -59,4 +59,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head = () => <title>Rosa-Reinigung - Seite nicht gefunden</title>;
+export const Head = () => <title>404 - Seite nicht gefunden</title>;
