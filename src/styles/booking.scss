@@ -218,7 +218,7 @@
     }
 
     &__error {
-        width: 100%;
+        max-width: 100%;
         padding: 0.6rem 0 0 0;
         text-align: left;
         font-size: 0.8rem;
@@ -230,9 +230,9 @@
     }
 
     &__date-picker {
-        width: 100%;
+        max-width: 30%;
         color: $color-grey-light;
-        padding: 0 1rem;
+        padding: 1rem 0.6rem;
         align-self: flex-end;
         cursor: pointer;
     }
@@ -370,6 +370,11 @@
         background-color: $color-pink-light;
         border-radius: 0.2rem;
         position: relative;
+
+        &:focus-within {
+            border: 2px solid $color-purple;
+            box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
+        }
 
         @include small-mobile-up {
             padding: 0.1rem;
