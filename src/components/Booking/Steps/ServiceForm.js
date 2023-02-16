@@ -15,10 +15,15 @@ const ServiceForm = ({ service, pickService, errors, touched }) => {
           <label
             className={`services-cards__label ${service === card.value ? "services-cards__label--focus" : ""}`}
             key={card.id}
-            onClick={() => pickService(card.value)}
           >
             <img className="services-cards__icon" src={card.icon} alt="" />
-            <Field className="services-cards__field" type="radio" name="picked" value={card.value} />
+            <Field
+              className="services-cards__field"
+              type="radio"
+              name="picked"
+              value={card.value}
+              onClick={() => pickService(card.value)}
+            />
             <p className="services-cards__title">{card.title}</p>
           </label>
         ))}
