@@ -228,7 +228,9 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-        --slider-height-percentage: 150%;
+        // Apparently, 150% is not enough on 280px or there is some other issue
+        // --slider-height-percentage: 150%;
+        --slider-height-percentage: 180%;
         --control-button-width: 0%;
         --organic-arrow-height: 0;
     }
