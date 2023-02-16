@@ -13,8 +13,6 @@ const ServiceForm = ({ service, pickService, errors, touched }) => {
       <div className="services-cards" role="group" aria-labelledby="services">
         {cardsData.map((card) => (
           <label
-            tabIndex="0"
-            accessKey="l"
             className={`services-cards__label ${service === card.value ? "services-cards__label--focus" : ""}`}
             key={card.id}
             onClick={() => pickService(card.value)}

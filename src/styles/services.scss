@@ -163,6 +163,26 @@
   &__img {
     width: 500px;
     height: 500px;
+
+    @include small-mobile-up {
+      height: 250px;
+      width: 250px;
+    }
+
+    @include medium-mobile {
+      height: 300px;
+      width: 300px;
+    }
+
+    @include large-mobile {
+      height: 360px;
+      width: 360px;
+    }
+
+    @include tablet-up {
+      height: 440px;
+      width: 440px;
+    }
   }
 
   &__lines {
@@ -221,7 +241,7 @@
     @include tablet-up {
       font-size: 1.8rem;
       max-width: 75%;
-      margin: 0 auto;
+      margin: 1.6rem auto;
     }
 
     @include small-desktop-up {
