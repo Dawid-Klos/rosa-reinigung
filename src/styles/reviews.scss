@@ -36,6 +36,7 @@
 
         @include medium-mobile {
             font-size: 2rem;
+            margin-bottom: 2rem;
         }
 
         @include large-mobile {
@@ -228,15 +229,13 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-        // Apparently, 150% is not enough on 280px or there is some other issue
-        // --slider-height-percentage: 150%;
-        --slider-height-percentage: 180%;
+        --slider-height-percentage: 135%;
         --control-button-width: 0%;
         --organic-arrow-height: 0;
     }
 
     @include medium-mobile {
-        --slider-height-percentage: 75%;
+        --slider-height-percentage: 90%;
     }
 
     @include large-mobile {

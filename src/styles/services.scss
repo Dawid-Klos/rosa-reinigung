@@ -141,8 +141,10 @@
     height: auto;
 
     @include small-mobile-up {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-width: 100%;
-      height: auto;
       margin: 0 auto;
     }
 
