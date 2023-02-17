@@ -119,12 +119,13 @@
         margin: 1rem 0;
 
         @include small-mobile-up {
-            max-width: 90%;
+            margin: 0.6rem auto;
+            max-width: 95%;
+            align-items: center;
         }
 
         @include medium-mobile {
-            max-width: 75%;
-            margin: 1rem auto;
+            max-width: 90%;
         }
 
         @include tablet-up {
@@ -145,7 +146,12 @@
         text-decoration: none;
 
         @include small-mobile-up {
-            width: 90%;
+            width: calc(100% - 2rem);
+            // max-width: 90%;
+        }
+
+        @include medium-mobile {
+            max-width: 85%;
         }
 
         &:hover {
