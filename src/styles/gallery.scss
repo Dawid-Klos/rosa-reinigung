@@ -69,7 +69,8 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-      --slider-height-percentage: 300%;
+      --slider-height-percentage: 330%;
+
     }
 
     @include medium-mobile {
@@ -94,7 +95,7 @@
     }
 
     @include large-desktop-up {
-      --slider-height-percentage: 55%;
+      --slider-height-percentage: 50%;
       --control-button-width: 60%;
     }
   }
@@ -103,5 +104,46 @@
 
   &__frame {
     width: 200px;
+  }
+}
+
+.awssld {
+  &__wrapper {
+    @include small-mobile-up {
+      position: relative;
+    }
+
+  }
+
+  &__bullets {
+    @include small-mobile-up {
+      margin-top: 2rem;
+    }
+
+  }
+
+  &__controls {
+    @include small-mobile-up {
+      width: 75%;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      justify-content: space-between;
+      visibility: visible;
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+    }
+
+    @include medium-mobile {
+      width: 90%;
+      transform: translate(-50%, -30%);
+    }
+
+    & button {
+      @include small-mobile-up {
+        position: static;
+      }
+    }
   }
 }

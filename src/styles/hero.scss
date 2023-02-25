@@ -2,14 +2,12 @@
 
 .hero {
   display: flex;
-  justify-content: space-between;
-  min-height: 85vh;
-  margin: 6rem 1rem 1rem 1rem;
+  justify-content: space-around;
+  padding: 5% 5%;
+  margin: 7rem 2rem 2rem 2rem;
   background-color: $color-pink-light;
   border-radius: 0.6rem;
   position: relative;
-  font-size: 0.8rem;
-
 
   @include small-mobile-up {
     justify-content: space-evenly;
@@ -28,10 +26,12 @@
 
   @include small-desktop-up {
     margin: 5.6rem 1rem -1rem 1rem;
+    padding: 10% 5%;
   }
 
   @include large-desktop-up {
-    margin: 7rem 8rem 0 8rem;
+    padding: 2% 12% 10% 12%;
+    margin: 7rem 1rem;
   }
 }
 
@@ -39,9 +39,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  margin-left: 8rem;
-  margin-top: -2rem;
-  max-width: 40rem;
   z-index: 1;
 
   @include small-mobile-up {
@@ -55,15 +52,6 @@
     margin: 0 1.6rem;
   }
 
-  @include small-desktop-up {
-    margin-left: 4rem;
-    max-width: 26rem;
-  }
-
-  @include large-desktop-up {
-    margin-top: -3rem;
-    margin-left: 13rem;
-  }
 
   &__location {
     display: flex;
@@ -87,6 +75,10 @@
       top: 5%;
       left: 0%;
       transform: translate(5%, -50%);
+    }
+
+    @include tablet-up {
+      left: 50%;
     }
 
     & img {
@@ -132,6 +124,10 @@
     font-size: 3.2rem;
     line-height: 116%;
     margin: 0;
+
+    &--special {
+      color: $color-purple;
+    }
 
     @include small-mobile-up {
       margin: 0.6rem 0;
@@ -190,10 +186,11 @@
       font-size: 1rem;
       text-align: center;
     }
+
   }
 
   &__call-to-action {
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,14 +223,15 @@
     }
 
     @include small-desktop-up {
-      width: 35%;
-      min-height: 1rem;
+      width: 45%;
+      min-height: 4.2rem;
       padding: 0 2rem;
     }
 
     @include large-desktop-up {
-      margin-top: 2.4rem;
-      min-height: 3.2rem;
+      width: 30%;
+      margin-top: 1rem;
+      max-height: 4.2rem;
       padding: 0 2rem;
     }
 
@@ -303,8 +301,8 @@
   }
 
   &__lines {
-    width: 700px;
-    height: 718px;
+    width: 640px;
+    aspect-ratio: 0.97 / 1;
 
     @include small-mobile-up {
       width: 100%;
@@ -315,9 +313,13 @@
       max-width: 55%;
     }
 
+    @include tablet-up {
+      width: 540px;
+      margin: -2rem 0;
+    }
+
     @include small-desktop-up {
-      width: 514px;
-      height: 526px;
+      width: 500px;
     }
   }
 
