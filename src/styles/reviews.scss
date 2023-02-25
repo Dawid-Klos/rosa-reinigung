@@ -265,6 +265,10 @@
     }
 }
 
+.awssld__controls button {
+    z-index: 1;
+}
+
 .awssld__content,
 .awssld__wrapper {
     @include small-mobile-up {

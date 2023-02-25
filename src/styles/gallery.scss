@@ -77,7 +77,8 @@
     }
 
     @include large-mobile {
-      --slider-height-percentage: 200%;
+      --slider-height-percentage: 130%;
+      --control-button-width: 15%;
     }
 
     @include tablet-up {
