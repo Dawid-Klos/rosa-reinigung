@@ -3,10 +3,11 @@
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 6rem 1rem 1rem 1rem;
-    padding: 8rem;
+    justify-items: center;
+    margin: 6rem 1rem;
+    padding: 6rem;
     position: relative;
-    background-color: hsla(278, 47%, 64%, 0.15);
+    background-color: hsla(278deg, 47%, 64%, 0.15);
     border-radius: 0.6rem;
 
     @include small-mobile-up {
@@ -22,7 +23,9 @@
     }
 
     @include small-desktop-up {
-        margin: 6rem 1rem 1rem 1rem;
+        margin: 6rem 1rem;
+        align-items: flex-start;
+        justify-items: flex-start;
         padding: 4rem;
     }
 
@@ -89,6 +92,7 @@
 }
 
 .contact-details {
+    width: 80%;
 
     &__heading {
         font-family: $font-family-raleway;
@@ -153,7 +157,7 @@
     }
 
     &__contact {
-        width: 80%;
+        width: 75%;
         display: flex;
         justify-content: flex-start;
         align-items: center;

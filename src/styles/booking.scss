@@ -372,7 +372,6 @@
         position: relative;
 
         &:focus-within {
-            border: 2px solid $color-purple;
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
         }
 

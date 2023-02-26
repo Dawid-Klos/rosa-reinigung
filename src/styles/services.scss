@@ -100,9 +100,9 @@
 
 .service {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
-  margin: 4rem 9rem;
+  margin: 4rem 2rem;
   position: relative;
 
   @include small-mobile-up {
@@ -123,8 +123,7 @@
   }
 
   @include large-desktop-up {
-    margin: 4rem 20rem;
-    justify-content: space-around;
+    margin: 8rem 5rem;
   }
 
   &--reverse {
@@ -202,7 +201,7 @@
 }
 
 .service-content {
-  margin: 6rem 0;
+  // margin: 6rem 0;
   max-width: 32vw;
   padding: 1rem 0;
   align-self: center;
