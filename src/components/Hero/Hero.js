@@ -20,7 +20,9 @@ const Hero = () => {
             Wir bieten Dienstleistungen in <span>Hamburg</span>
           </p>
         </div>
-        <h1 className="hero-content__heading">Moin moin, schön, dass Du da bist!</h1>
+        <h1 className="hero-content__heading">
+          <span className="hero-content__heading--special"> Moin moin</span>, schön, dass Du da bist!
+        </h1>
         <p className="hero-content__description">
           Ich bin Pamela, und <strong>Rosa Reinigung</strong> ist mein Unternehmen, das seit 2021 besteht. Es ist das
           Ergebnis von meiner großen Liebe zur Sauberkeit im weitesten Sinne. Mit Hilfe unserer Unternehmen können Sie

@@ -229,7 +229,7 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-        --slider-height-percentage: 135%;
+        --slider-height-percentage: 145%;
         --control-button-width: 0%;
         --organic-arrow-height: 0;
     }
@@ -260,7 +260,7 @@
     @include large-desktop-up {
         margin: 4rem auto;
         --slider-height-percentage: 25%;
-        --control-button-width: 30%;
+        --control-button-width: 50%;
 
     }
 }

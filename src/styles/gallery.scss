@@ -52,7 +52,6 @@
   &__slider {
     margin: 1rem auto;
     width: 80%;
-    height: fit-content;
     --slider-height-percentage: 75%;
     --slider-transition-duration: 800ms;
     --organic-arrow-thickness: 6px;
@@ -69,7 +68,7 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-      --slider-height-percentage: 330%;
+      --slider-height-percentage: 360%;
 
     }
 
