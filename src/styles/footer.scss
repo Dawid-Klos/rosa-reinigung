@@ -5,8 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column wrap;
     background: hsla(332deg, 77%, 85%, 0.2);
-    min-height: 6vh;
     padding: 1rem;
 
     @include small-mobile-up {
@@ -19,8 +19,13 @@
     }
 
     &__img {
-        width: 6em;
-        height: 6rem;
+        width: 7em;
+        height: 7rem;
+
+        @include small-desktop-up {
+            width: 6em;
+            height: 6rem;
+        }
     }
 
     &__copyrights {

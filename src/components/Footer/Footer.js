@@ -8,7 +8,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <img className="footer__img" src={Logo} alt="Rosa Reinigung Firmenlogo" />
-      <p className="footer__copyrights">Urheberrechte © 2023 Rosa Reinigung. Alle Rechte vorbehalten.</p>
+      <p className="footer__copyrights">
+        Urheberrechte © 2023 <strong>Rosa Reinigung</strong>. Alle Rechte vorbehalten.
+      </p>
     </footer>
   );
 };
