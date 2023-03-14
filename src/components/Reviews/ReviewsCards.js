@@ -18,7 +18,7 @@ const reviewsCards = reviews.map((review, i) => {
   return (
     <div className="review-card" key={review.id}>
       <div className="review-card__avatar">
-        <img src={i % 2 === 0 ? AvatarIcon : AvatarIcon2} alt="User" />
+        <img src={i % 2 === 0 ? AvatarIcon : AvatarIcon2} alt="Benutzer-Avatar" />
       </div>
       <p className="review-card__name">{review.name}</p>
       <p className="review-card__comment">{review.comment}</p>

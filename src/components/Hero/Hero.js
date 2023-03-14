@@ -15,7 +15,7 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-content">
         <div className="hero-content__location">
-          <img src={LocationIcon} alt="Location icon" />
+          <img src={LocationIcon} alt="" />
           <p>
             Wir bieten Dienstleistungen in <span>Hamburg</span>
           </p>
@@ -32,7 +32,7 @@ const Hero = () => {
         </p>
         <a className="hero-content__call-to-action" href="#form">
           <p>Terminvereinbarung</p>
-          <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+          <img src={ArrowRightIcon} alt="" />
         </a>
       </div>
       <div className="hero-image">

@@ -59,18 +59,18 @@ const Contact = () => {
         </p>
         <ul className="contact-cooperation__points">
           <li className="contact-cooperation__point">
-            <img src={CheckIcon} alt="Pink check mark" />
+            <img src={CheckIcon} alt="" />
             <p>Ein gesponserter Beitrag oder eine Reihe von Beiträgen Einem Facebook – oder Instagram-Post</p>
           </li>
           <li className="contact-cooperation__point">
-            <img src={CheckIcon} alt="Pink check mark" />
+            <img src={CheckIcon} alt="" />
             <p>Produkt Bewertungen und Tests die die in einem Wettbewerb gipfeln</p>
           </li>
         </ul>
       </div>
 
       <div className="contact__image-wrapper">
-        <img className="contact__img" src={Image} alt="A woman falling through mess and cable on the floor" />
+        <img className="contact__img" src={Image} alt="Frau fällt über Kabel auf den Boden" />
       </div>
     </section>
   );

@@ -29,7 +29,7 @@ const Checkout = ({ submitErrors }) => {
           <p className="checkout__message">
             Bitte geben Sie unserem Team 48 Stunden Zeit, um Ihren Dienst zu bestätigen.
           </p>
-          <img className="checkout__img" src={SuccessImg} alt="Success" />
+          <img className="checkout__img" src={SuccessImg} alt="" />
         </div>
       );
     }
@@ -43,7 +43,7 @@ const Checkout = ({ submitErrors }) => {
             Bitte warten Sie eine Minute und versuchen Sie es dann erneut oder kontaktieren Sie den Support für
             Unterstützung.
           </p>
-          <img className="checkout__img" src={FailImg} alt="Fail" />
+          <img className="checkout__img" src={FailImg} alt="" />
         </div>
       );
     }
