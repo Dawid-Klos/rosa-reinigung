@@ -15,12 +15,14 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-content">
         <div className="hero-content__location">
-          <img src={LocationIcon} alt="Location icon" />
+          <img src={LocationIcon} alt="" />
           <p>
             Wir bieten Dienstleistungen in <span>Hamburg</span>
           </p>
         </div>
-        <h1 className="hero-content__heading">Moin moin, schön, dass Du da bist!</h1>
+        <h1 className="hero-content__heading">
+          <span className="hero-content__heading--special"> Moin moin</span>, schön, dass Du da bist!
+        </h1>
         <p className="hero-content__description">
           Ich bin Pamela, und <strong>Rosa Reinigung</strong> ist mein Unternehmen, das seit 2021 besteht. Es ist das
           Ergebnis von meiner großen Liebe zur Sauberkeit im weitesten Sinne. Mit Hilfe unserer Unternehmen können Sie
@@ -30,7 +32,7 @@ const Hero = () => {
         </p>
         <a className="hero-content__call-to-action" href="#form">
           <p>Terminvereinbarung</p>
-          <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+          <img src={ArrowRightIcon} alt="" />
         </a>
       </div>
       <div className="hero-image">

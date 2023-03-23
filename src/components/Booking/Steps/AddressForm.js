@@ -34,7 +34,11 @@ const AddressForm = ({ errors, touched, values }) => {
           {values.termsOfService ? <img src={TickIcon} alt="" /> : null}
         </label>
         <p className="form__policy-text">
-          Ich habe die <a href="/politik">Datenschutzerklärung</a> gelesen und erkläre mich damit einverstanden.
+          Ich habe die <a href="/politik">Datenschutzerklärung</a> und die{" "}
+          <a href="https://www.emailjs.com/legal/data-protection-agreement" target="_blank">
+            EmailJS Datenverarbeitung
+          </a>{" "}
+          gelesen und erkläre mich damit einverstanden.
         </p>
       </div>
       {errors.termsOfService && touched.termsOfService ? (

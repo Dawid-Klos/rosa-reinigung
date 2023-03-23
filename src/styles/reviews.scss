@@ -4,7 +4,7 @@
     display: flex;
     flex-flow: column nowrap;
     position: relative;
-    margin: 8rem 0 14rem 0;
+    margin: 4rem 0 10rem 0;
 
     @include small-mobile-up {
         margin: 4rem 0 0 0;
@@ -229,7 +229,7 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-        --slider-height-percentage: 135%;
+        --slider-height-percentage: 145%;
         --control-button-width: 0%;
         --organic-arrow-height: 0;
     }
@@ -253,16 +253,20 @@
     @include small-desktop-up {
         margin: 1rem auto;
         --control-button-width: 24%;
-        --slider-height-percentage: 45%;
+        --slider-height-percentage: 40%;
         --control-bullet-width: 4px;
     }
 
     @include large-desktop-up {
         margin: 4rem auto;
         --slider-height-percentage: 25%;
-        --control-button-width: 30%;
+        --control-button-width: 50%;
 
     }
+}
+
+.awssld__controls button {
+    z-index: 10;
 }
 
 .awssld__content,

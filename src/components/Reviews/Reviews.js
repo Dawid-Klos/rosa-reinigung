@@ -14,8 +14,8 @@ const Reviews = () => {
       <h2 className="reviews__heading">Kundenmeinungen.</h2>
       <AwesomeSlider className="awesome-slider">{reviewsCards}</AwesomeSlider>
       <div className="reviews__image-wrapper">
-        <img src={Lines} alt="Pink curved lines going around reviews" />
-        <img src={Circles} alt="Purple circles as a visual detail in the background" />
+        <img src={Lines} alt="" />
+        <img src={Circles} alt="" />
       </div>
     </section>
   );

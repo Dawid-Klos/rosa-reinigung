@@ -36,7 +36,7 @@ const DetailsForm = ({ service, errors, touched }) => {
           </div>
         ))
       ) : (
-        <div>An error occured</div>
+        <div>Es ist ein Fehler aufgetreten</div>
       )}
 
       <div className="form__field">

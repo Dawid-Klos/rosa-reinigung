@@ -60,13 +60,13 @@ const HouseCleaning = () => {
           activeTab === tabName.basic ? "house-cleaning__tab--active" : null
         }`}
       >
-        <img src={BasicServiceIcon} alt="Two hands indicating the quality of the service" loading="lazy" />
+        <img src={BasicServiceIcon} alt="Zwei Hände, die die Qualität des Dienstes anzeigen" loading="lazy" />
         <h4>Die BASIS-Reinigung</h4>
         <ul className="tab-list">
           {basicServiceTasks.map((task, i) => {
             return (
               <li className="tab-list__row" key={i}>
-                <img src={CheckMarkIcon} alt="Pink check mark" />
+                <img src={CheckMarkIcon} alt="" />
                 <p>{task}</p>
               </li>
             );
@@ -84,7 +84,7 @@ const HouseCleaning = () => {
           {extraServiceTasks.map((task, i) => {
             return (
               <div className="tab-list__row" key={i}>
-                <img src={CheckMarkIcon} alt="Pink check mark" />
+                <img src={CheckMarkIcon} alt="" />
                 <p>{task}</p>
               </div>
             );
@@ -101,7 +101,7 @@ const HouseCleaning = () => {
       'Wir werden uns an Ihre Bedürfnisse, Erwartungen und Ihr Budget anpassen. Sie können eine laufende Reinigung Ihrer Wohnung auf wöchentlicher oder zweiwöchentlicher Basis oder einen einmaligen Service bestellen. Wir reinigen von Montag bis Freitag von 6 Uhr bis 20 Uhr. Wir unterteilen unsere Dienstleistungen in "Basis-Reinigung" und "Extra-Reinigung". ',
     isReversed: false,
     image: ServiceImage,
-    imageAlt: "A person drinking a tea on the sofa in a clean room",
+    imageAlt: "Eine Person trinkt einen Tee auf dem Sofa in einem sauberen Zimmer",
     hasBackground: false,
     backgroundPath: "",
     extraStuff: servicesTabs,

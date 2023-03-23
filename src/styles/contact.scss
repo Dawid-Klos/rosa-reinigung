@@ -3,10 +3,11 @@
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 6rem 1rem 1rem 1rem;
-    padding: 8rem;
+    justify-items: center;
+    margin: 6rem 1rem;
+    padding: 6rem;
     position: relative;
-    background-color: hsla(278, 47%, 64%, 0.15);
+    background-color: hsla(278deg, 47%, 64%, 0.15);
     border-radius: 0.6rem;
 
     @include small-mobile-up {
@@ -22,7 +23,9 @@
     }
 
     @include small-desktop-up {
-        margin: 6rem 1rem 1rem 1rem;
+        margin: 6rem 1rem;
+        align-items: flex-start;
+        justify-items: flex-start;
         padding: 4rem;
     }
 
@@ -39,6 +42,12 @@
         top: 55%;
         left: 50%;
         transform: translate(-50%, 0%);
+
+        @include large-mobile {
+            top: 0%;
+            left: 75%;
+            transform: translate(-50%, 20%);
+        }
 
         @include tablet-up {
             top: 0%;
@@ -63,6 +72,12 @@
             display: none;
         }
 
+        @include large-mobile {
+            display: inline;
+            width: 40vw;
+            height: 40vw;
+        }
+
         @include tablet-up {
             display: inline;
             width: 40vw;
@@ -77,6 +92,7 @@
 }
 
 .contact-details {
+    width: 80%;
 
     &__heading {
         font-family: $font-family-raleway;
@@ -128,6 +144,12 @@
             max-width: 90%;
         }
 
+        @include large-mobile {
+            width: calc(45% - 2rem);
+            max-width: 50%;
+            margin: 1rem;
+        }
+
         @include tablet-up {
             max-width: 50%;
             margin: 1rem;
@@ -135,7 +157,7 @@
     }
 
     &__contact {
-        width: 80%;
+        width: 75%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -147,11 +169,14 @@
 
         @include small-mobile-up {
             width: calc(100% - 2rem);
-            // max-width: 90%;
         }
 
         @include medium-mobile {
             max-width: 85%;
+        }
+
+        @include small-desktop-up {
+            width: 100%;
         }
 
         &:hover {
@@ -197,6 +222,11 @@
 }
 
 .contact-cooperation {
+
+    @include large-mobile {
+        padding: 1rem;
+    }
+
     &__heading {
         font-family: $font-family-raleway;
         font-size: 3rem;
@@ -254,6 +284,10 @@
         gap: 1rem;
         padding: 0;
         margin: 0;
+
+        @include large-mobile {
+            gap: 0;
+        }
 
         @include tablet-up {
             width: 75%;

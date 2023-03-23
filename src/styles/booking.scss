@@ -87,7 +87,7 @@
         height: 55vw;
         top: 0vw;
         left: -1vw;
-        transform: translate(-1vw, -3.2vw);
+        transform: translate(-1vw, -2.6vw);
         z-index: -1;
 
         @include small-mobile-up {
@@ -100,7 +100,7 @@
         }
 
         @include large-desktop-up {
-            transform: translate(-1vw, -6.8vw);
+            transform: translate(-1vw, -6vw);
         }
     }
 }
@@ -249,6 +249,10 @@
             flex-flow: column-reverse nowrap;
             gap: 2rem;
         }
+
+        @include small-desktop-up {
+            min-width: 50vw;
+        }
     }
 
     &__button {
@@ -372,7 +376,6 @@
         position: relative;
 
         &:focus-within {
-            border: 2px solid $color-purple;
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
         }
 

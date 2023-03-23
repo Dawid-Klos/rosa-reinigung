@@ -11,7 +11,7 @@ const WindowCleaning = () => {
       "Wir reinigen die Fenster in Ihrer Wohnung, Ihrem Büro, Ihrem Wohnzimmer usw. Wir reinigen keine Fenster in großer Höhe. Wir können das Glass allein oder ein Set zusammen mit den Fensterrahmen reinigen.",
     isReversed: false,
     image: ServiceImage,
-    imageAlt: "A person drinking a coffee looking trough a perfect clean window",
+    imageAlt: "Eine Person trinkt einen Kaffee und schaut durch ein perfektes, sauberes Fenster",
     hasBackground: true,
     backgroundPath: Lines,
     extraStuff: null,

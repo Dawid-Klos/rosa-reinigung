@@ -2,14 +2,12 @@
 
 .hero {
   display: flex;
-  justify-content: space-between;
-  min-height: 85vh;
-  margin: 6rem 1rem 1rem 1rem;
+  justify-content: space-around;
+  padding: 5% 5%;
+  margin: 7rem 2rem 2rem 2rem;
   background-color: $color-pink-light;
   border-radius: 0.6rem;
   position: relative;
-  font-size: 0.8rem;
-
 
   @include small-mobile-up {
     justify-content: space-evenly;
@@ -31,7 +29,8 @@
   }
 
   @include large-desktop-up {
-    margin: 7rem 8rem 0 8rem;
+    padding: 2% 12% 4% 12%;
+    margin: 7rem 1rem;
   }
 }
 
@@ -39,9 +38,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  margin-left: 8rem;
-  margin-top: -2rem;
-  max-width: 40rem;
   z-index: 1;
 
   @include small-mobile-up {
@@ -55,15 +51,6 @@
     margin: 0 1.6rem;
   }
 
-  @include small-desktop-up {
-    margin-left: 4rem;
-    max-width: 26rem;
-  }
-
-  @include large-desktop-up {
-    margin-top: -3rem;
-    margin-left: 13rem;
-  }
 
   &__location {
     display: flex;
@@ -87,6 +74,10 @@
       top: 5%;
       left: 0%;
       transform: translate(5%, -50%);
+    }
+
+    @include tablet-up {
+      left: 50%;
     }
 
     & img {
@@ -133,6 +124,10 @@
     line-height: 116%;
     margin: 0;
 
+    &--special {
+      color: $color-purple;
+    }
+
     @include small-mobile-up {
       margin: 0.6rem 0;
       font-size: 2rem;
@@ -157,18 +152,18 @@
     }
 
     @include small-desktop-up {
-      font-size: 3rem;
+      font-size: 2.8rem;
       min-width: 26rem;
     }
 
     @include large-desktop-up {
-      font-size: 3.6rem;
+      font-size: 3.2rem;
     }
   }
 
   &__description {
     line-height: 1.8rem;
-    color: hsla(280, 2%, 31%, 0.65);
+    color: $color-grey-light;
     max-width: 40vw;
 
     @include small-mobile-up {
@@ -178,22 +173,26 @@
       margin: 0;
     }
 
-    @include small-desktop-up {
-      line-height: 1.5rem;
-    }
-
-    @include large-desktop-up {
-      line-height: 2rem;
-    }
-
     @include tablet-up {
       font-size: 1rem;
       text-align: center;
     }
+
+    @include small-desktop-up {
+      line-height: 1.8rem;
+    }
+
+    @include large-desktop-up {
+      line-height: 2rem;
+      max-width: 32vw;
+    }
+
+
+
   }
 
   &__call-to-action {
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,26 +225,26 @@
     }
 
     @include small-desktop-up {
-      width: 35%;
-      min-height: 1rem;
+      min-height: 0;
       padding: 0 2rem;
     }
 
     @include large-desktop-up {
-      margin-top: 2.4rem;
-      min-height: 3.2rem;
+      width: 30%;
+      margin-top: 1rem;
+      max-height: 4.2rem;
       padding: 0 2rem;
     }
 
     &:hover {
-      width: 40%;
+      width: 45%;
       box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35),
         0px 6px 24px rgba(175, 120, 206, 0.45);
       color: $color-white;
       cursor: pointer;
 
       @include small-desktop-up {
-        width: 45%;
+        width: 55%;
         min-height: 2rem;
         padding: 0 2rem;
       }
@@ -298,18 +297,30 @@
     margin-top: 4rem;
   }
 
+  @include large-mobile {
+    margin-top: 3rem;
+  }
+
   &__lines {
-    width: 700px;
-    height: 718px;
+    width: 640px;
+    aspect-ratio: 0.97 / 1;
 
     @include small-mobile-up {
       width: 100%;
       height: 100%;
     }
 
+    @include large-mobile {
+      max-width: 55%;
+    }
+
+    @include tablet-up {
+      width: 540px;
+      margin: -2rem 0;
+    }
+
     @include small-desktop-up {
-      width: 514px;
-      height: 526px;
+      width: 460px;
     }
   }
 
