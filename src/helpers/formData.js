@@ -208,7 +208,7 @@ export const FORM_DETAILS_VARIANTS = {
       label: "Art des Gebäudes",
       icon: HouseAreaIcon,
       htmlFor: "buildingType",
-      placeholder: "Einmaliger, wöchentlicher oder vierzehntägiger Dienst",
+      placeholder: "z. B. Theater, Schule oder Büro",
       type: "text",
     },
     {
