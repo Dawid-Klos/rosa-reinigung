@@ -4,7 +4,6 @@ import "../styles/privacy-policy.scss";
 import Logo from "../images/logo.svg";
 
 import { Link } from "gatsby";
-
 import { Seo } from "../components/Seo";
 
 const Politik = () => {
