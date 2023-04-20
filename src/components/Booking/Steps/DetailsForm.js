@@ -9,7 +9,6 @@ const DetailsForm = ({ service, errors, touched }) => {
   const [values, setValues] = useState(null);
 
   useEffect(() => {
-    console.log(service);
     setValues(FORM_DETAILS_VARIANTS[service]);
   }, [service]);
 
