@@ -54,6 +54,7 @@ const DetailsForm = ({ service, errors, touched }) => {
                 id="date"
                 name="date"
                 min={minDateValue}
+                placeholder="DD.MM.YYYY"
               />
             </div>
           )}
