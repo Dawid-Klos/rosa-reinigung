@@ -68,17 +68,17 @@
     --content-background-color: none;
 
     @include small-mobile-up {
-      --slider-height-percentage: 300%;
+      --slider-height-percentage: 250%;
       --control-button-width: 20%;
       width: auto;
     }
 
     @include medium-mobile {
-      --slider-height-percentage: 250%;
+      --slider-height-percentage: 150%;
     }
 
     @include large-mobile {
-      --slider-height-percentage: 170%;
+      --slider-height-percentage: 135%;
       --control-button-width: 50%;
     }
 

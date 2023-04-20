@@ -252,7 +252,9 @@
         }
 
       }
+    }
 
+    @include hover {
       &:hover img {
         transition: all 0.8s;
         width: 1.6rem;
@@ -260,6 +262,8 @@
         transform: rotateY(360deg);
       }
     }
+
+
 
     & img {
       width: 0.1rem;

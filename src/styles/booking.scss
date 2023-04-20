@@ -112,7 +112,7 @@
     align-items: center;
     padding: 2rem;
     border-radius: 0.6rem;
-    margin-top: 20vh;
+    margin-top: 13rem;
     background-color: $color-white;
     box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
     min-width: 35vw;
@@ -246,7 +246,6 @@
 
         @include small-mobile-up {
             width: 90%;
-            flex-flow: column-reverse nowrap;
             gap: 2rem;
         }
 
@@ -321,7 +320,6 @@
                 transition: transform .1s ease-in-out, box-shadow .1s ease-in-out;
 
                 @include small-mobile-up {
-                    min-width: 75%;
                     box-shadow: none;
                 }
 
