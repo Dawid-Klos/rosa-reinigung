@@ -33,6 +33,7 @@ const AddressForm = ({ errors, touched, values }) => {
           <Field className="form__tick-box--field" type="checkbox" id="termsOfService" name="termsOfService" />
           {values.termsOfService ? <img src={TickIcon} alt="" /> : null}
         </label>
+
         <p className="form__policy-text">
           Ich habe die <a href="/politik">Datenschutzerklärung</a> gelesen und erkläre mich damit einverstanden.
         </p>

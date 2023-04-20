@@ -168,15 +168,19 @@
         text-decoration: none;
 
         @include small-mobile-up {
-            width: calc(100% - 2rem);
+            width: 12rem;
         }
 
         @include medium-mobile {
-            max-width: 85%;
+            width: 15rem;
+        }
+
+        @include tablet-up {
+            width: 18rem;
         }
 
         @include small-desktop-up {
-            width: 100%;
+            width: 16rem;
         }
 
         &:hover {
