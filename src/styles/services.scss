@@ -322,9 +322,12 @@
       padding: 1rem;
     }
 
-    &:hover {
-      background-color: $color-purple-light;
+    @include hover {
+      &:hover {
+        background-color: $color-purple-light;
+      }
     }
+
   }
 }
 
@@ -376,9 +379,11 @@
       font-size: 1rem;
     }
 
-    &:hover {
-      transition: background-color 0.25s;
-      background-color: $color-grey-lighter;
+    @include hover {
+      &:hover {
+        transition: background-color 0.25s;
+        background-color: $color-grey-lighter;
+      }
     }
 
     &--active {

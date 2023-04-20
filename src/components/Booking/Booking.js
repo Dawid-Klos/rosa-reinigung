@@ -59,15 +59,17 @@ const Booking = () => {
       case 3:
         return <Checkout submitErrors={submitErrors} />;
       default:
-        return <p>Error - please refresh the page and try again!</p>;
+        return <p>Es ist ein Problem aufgetreten. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut.</p>;
     }
   };
 
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
     if (currentStep < 0 || currentStep >= 3) return;
+
     if (reverse === "reverse") {
       setCurrentStep((step) => step - 1);
     }
+
     validateForm().then((errors) => {
       if (Object.keys(errors).length !== 0) {
         STEP_FIELDS[currentStep].forEach((field) => {
@@ -79,26 +81,32 @@ const Booking = () => {
     });
   };
 
+  const setSuccess = (setSubmitting) => {
+    setSubmitErrors(false);
+    setSubmitting(false);
+    setLoading(false);
+    setCurrentStep(3);
+  };
+
+  const setFailure = (error) => {
+    setSubmitErrors(error);
+    setLoading(false);
+    setCurrentStep(3);
+  };
+
   const handleSubmit = (values, setSubmitting) => {
     setLoading(true);
     emailjs
       .send(process.env.GATSBY_SERVICE_ID, process.env.GATSBY_TEMPLATE_ID, values, process.env.GATSBY_PUBLIC_KEY)
       .then((res) => {
         if (res.status === 200) {
-          setSubmitErrors(false);
-          setSubmitting(false);
-          setLoading(false);
-          setCurrentStep(3);
+          setSuccess(setSubmitting);
         } else {
-          setSubmitErrors(res.status);
-          setLoading(false);
-          setCurrentStep(3);
+          setFailure(res);
         }
       })
       .catch((err) => {
-        setSubmitErrors(err);
-        setLoading(false);
-        setCurrentStep(3);
+        setFailure(err);
       });
   };
 
@@ -133,6 +141,7 @@ const Booking = () => {
         {({ validateForm, setFieldTouched, submitForm, isSubmitting, errors, touched, values }) => (
           <Form className={`form ${currentStep === 1 || currentStep === 3 ? "form__service" : ""}`}>
             {loading ? <span className="spinner"></span> : renderCurrentStep(errors, touched, values)}
+
             {currentStep > 2 || loading ? null : (
               <div className="form__button-wrapper">
                 {currentStep === 0 ? null : (
@@ -151,7 +160,7 @@ const Booking = () => {
                   onClick={currentStep === 2 ? submitForm : () => handleCurrentStep("", validateForm, setFieldTouched)}
                 >
                   <p>{currentStep === 2 ? "Einreichen" : "Weiter"}</p>
-                  <img src={ArrowRightIcon} alt="Arrow pointing to right" />
+                  <img src={ArrowRightIcon} alt="" />
                 </button>
               </div>
             )}

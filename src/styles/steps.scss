@@ -185,9 +185,11 @@
             box-shadow: 0px 0px 8px rgba(175, 120, 206, 0.6);
         }
 
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.12);
+        @include hover {
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.12);
+            }
         }
     }
 
