@@ -245,8 +245,8 @@
     }
 
     @include tablet-up {
-        --slider-height-percentage: 45%;
-        --control-button-width: 12%;
+        --slider-height-percentage: 55%;
+        --control-button-width: 50%;
         --organic-arrow-height: 24px;
     }
 
@@ -265,26 +265,53 @@
     }
 }
 
-.awssld__controls button {
-    z-index: 10;
-}
+.awssld {
 
-.awssld__content,
-.awssld__wrapper {
-    @include small-mobile-up {
-        align-items: flex-start;
-        overflow: visible;
+    &__content {
+        @include small-mobile-up {
+            align-items: flex-start;
+            overflow: visible;
+        }
+
+        @include medium-mobile {
+            align-items: center;
+        }
+
+        @include large-mobile {
+            align-items: center;
+        }
+
+        @include tablet-up {
+            align-items: center;
+        }
     }
 
-    @include medium-mobile {
-        align-items: center;
+    &__controls {
+        @include tablet-up {
+            width: 25% !important;
+        }
+
+        & button {
+            z-index: 10;
+        }
     }
 
-    @include large-mobile {
-        align-items: center;
-    }
+    &__wrapper {
+        @include small-mobile-up {
+            align-items: flex-start;
+            overflow: visible;
+        }
 
-    @include tablet-up {
-        align-items: center;
+        @include medium-mobile {
+            align-items: center;
+        }
+
+        @include large-mobile {
+            align-items: center;
+        }
+
+        @include tablet-up {
+            align-items: center;
+        }
     }
 }

@@ -66,8 +66,9 @@ const Booking = () => {
   const handleCurrentStep = (reverse, validateForm, setFieldTouched) => {
     if (currentStep < 0 || currentStep >= 3) return;
 
-    if (reverse === "reverse") {
+    if (reverse) {
       setCurrentStep((step) => step - 1);
+      return;
     }
 
     validateForm().then((errors) => {
@@ -144,24 +145,25 @@ const Booking = () => {
 
             {currentStep > 2 || loading ? null : (
               <div className="form__button-wrapper">
-                {currentStep === 0 ? null : (
-                  <button
-                    className="form__button--ghost"
-                    type="button"
-                    onClick={() => handleCurrentStep("reverse", validateForm, setFieldTouched)}
-                  >
-                    vorheriger Schritt
-                  </button>
-                )}
                 <button
                   className="form__button"
                   type="button"
                   disabled={isSubmitting}
-                  onClick={currentStep === 2 ? submitForm : () => handleCurrentStep("", validateForm, setFieldTouched)}
+                  onClick={
+                    currentStep === 2 ? submitForm : () => handleCurrentStep(false, validateForm, setFieldTouched)
+                  }
                 >
                   <p>{currentStep === 2 ? "Einreichen" : "Weiter"}</p>
-                  <img src={ArrowRightIcon} alt="" />
                 </button>
+                {currentStep === 0 ? null : (
+                  <button
+                    className="form__button--ghost"
+                    type="button"
+                    onClick={() => handleCurrentStep(true, validateForm, setFieldTouched)}
+                  >
+                    vorheriger Schritt
+                  </button>
+                )}
               </div>
             )}
           </Form>

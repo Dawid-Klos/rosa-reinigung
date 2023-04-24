@@ -69,7 +69,8 @@
 
     @include small-mobile-up {
       --slider-height-percentage: 360%;
-
+      --control-button-width: 20%;
+      width: auto;
     }
 
     @include medium-mobile {
@@ -77,8 +78,8 @@
     }
 
     @include large-mobile {
-      --slider-height-percentage: 130%;
-      --control-button-width: 15%;
+      --slider-height-percentage: 135%;
+      --control-button-width: 50%;
     }
 
     @include tablet-up {

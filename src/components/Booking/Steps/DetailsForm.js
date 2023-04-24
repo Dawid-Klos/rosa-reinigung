@@ -9,7 +9,6 @@ const DetailsForm = ({ service, errors, touched }) => {
   const [values, setValues] = useState(null);
 
   useEffect(() => {
-    console.log(service);
     setValues(FORM_DETAILS_VARIANTS[service]);
   }, [service]);
 
@@ -55,6 +54,7 @@ const DetailsForm = ({ service, errors, touched }) => {
                 id="date"
                 name="date"
                 min={minDateValue}
+                placeholder="DD.MM.YYYY"
               />
             </div>
           )}

@@ -101,7 +101,7 @@ const Politik = () => {
               <li>
                 <p>
                   <strong>Website</strong> refers to Rosa Reinigung, accessible from{" "}
-                  <a href="https://www.rosareinigung.de" rel="external nofollow noopener" target="_blank">
+                  <a href="https://www.rosareinigung.de" rel="noreferrer" target="_blank">
                     https://www.rosareinigung.de
                   </a>
                 </p>
@@ -438,7 +438,8 @@ const Politik = () => {
             <ul>
               <li>
                 <p>
-                  By email: <a href="mailto:datenschutzpolitik@rosareinigung.de">datenschutzpolitik@rosareinigung.de</a>
+                  By email:{" "}
+                  <a href="mailto:datenschutzpolitik@rosareinigung.de">datenschutzpolitik@&#8203;rosareinigung.de</a>
                 </p>
               </li>
               <li>
