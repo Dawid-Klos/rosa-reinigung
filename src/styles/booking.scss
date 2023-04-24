@@ -144,11 +144,6 @@
         min-width: 26vw;
     }
 
-    &>:last-child {
-        margin-top: 1rem;
-        gap: 6rem;
-    }
-
     &__service {
         background-color: transparent;
         box-shadow: none;
@@ -239,15 +234,18 @@
     }
 
     &__button-wrapper {
-        min-width: 30vw;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
+        // display: flex;
+        // flex-flow: row nowrap;
+        // justify-content: space-around;
+        // align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
 
         @include small-mobile-up {
-            width: 90%;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            justify-items: center;
         }
 
         @include small-desktop-up {
@@ -257,23 +255,19 @@
 
     &__button {
         width: 14rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: $color-purple;
         border-radius: 0.8rem;
         text-decoration: none;
         color: hsla(324, 100%, 99%, 0.8);
-        transition: min-width .6s;
+        grid-column-start: 1;
+        grid-column-end: 3;
 
         @include small-mobile-up {
             width: 12rem;
-            transition: none;
         }
 
         @include small-desktop-up {
-            min-width: 35%;
-            min-height: 1rem;
+            width: 12rem;
         }
 
         @include large-desktop-up {
@@ -281,19 +275,6 @@
             padding: 0 2rem;
         }
 
-        &--ghost {
-            color: inherit;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-
-            @include hover {
-                &:hover {
-                    font-weight: 600;
-                    color: $color-purple;
-                }
-            }
-        }
 
         &:focus {
             box-shadow: 0px 2px 36px rgba(175, 120, 206, 0.35),
@@ -336,12 +317,40 @@
             color: inherit;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.1rem;
             padding: 0.4rem 0;
-            margin-right: 1rem;
             transition: color 0.4s ease-in-out;
-            margin-left: 0.6rem;
+
+            @include small-mobile-up {
+                font-size: 0.9rem;
+            }
         }
+
+        &--ghost {
+            color: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            cursor: pointer;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            @include hover {
+                &:hover {
+                    font-weight: 600;
+                    color: $color-purple;
+                }
+            }
+
+            @include small-mobile-up {
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+
+    &>:last-child {
+        margin-top: 1rem;
+        gap: 2rem;
     }
 
     &__policy {

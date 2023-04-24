@@ -145,15 +145,6 @@ const Booking = () => {
 
             {currentStep > 2 || loading ? null : (
               <div className="form__button-wrapper">
-                {currentStep === 0 ? null : (
-                  <button
-                    className="form__button--ghost"
-                    type="button"
-                    onClick={() => handleCurrentStep(true, validateForm, setFieldTouched)}
-                  >
-                    vorheriger Schritt
-                  </button>
-                )}
                 <button
                   className="form__button"
                   type="button"
@@ -164,6 +155,15 @@ const Booking = () => {
                 >
                   <p>{currentStep === 2 ? "Einreichen" : "Weiter"}</p>
                 </button>
+                {currentStep === 0 ? null : (
+                  <button
+                    className="form__button--ghost"
+                    type="button"
+                    onClick={() => handleCurrentStep(true, validateForm, setFieldTouched)}
+                  >
+                    vorheriger Schritt
+                  </button>
+                )}
               </div>
             )}
           </Form>
