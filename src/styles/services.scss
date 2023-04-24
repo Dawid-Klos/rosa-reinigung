@@ -138,6 +138,7 @@
   &__img-wrapper {
     max-width: 50%;
     height: auto;
+    align-self: flex-start;
 
     @include small-mobile-up {
       display: flex;
