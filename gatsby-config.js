@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Rosa Reinigung - Professionelle Reinigungsdienste`,
     description: `Mit Hilfe von Rosa Reinigung können Sie Ihre Zeit für die wöchentliche Reinigung und die saisonale Fensterreinigung sparen und Ihren Umzug völlig stressfrei überstehen. Wir organisieren jeden Raum in Ihrem Haus, vom Dachboden bis zum Keller, damit Sauberkeit Ihr Dauergast ist.`,
-    image: `src/images/rosareinigung.png`,
+    image: `/rosareinigung.png`,
     siteUrl: `https://rosareinigung.de`,
     charset: `utf-8`,
   },
