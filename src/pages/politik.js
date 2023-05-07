@@ -458,5 +458,5 @@ const Politik = () => {
 export default Politik;
 
 export const Head = () => {
-  return <Seo title="Rosa Reinigung - Datenschutzpolitik" />;
+  return <Seo title="Rosa Reinigung - Datenschutzpolitik" pathname="/politik/" />;
 };
