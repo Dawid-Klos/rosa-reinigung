@@ -478,7 +478,7 @@
   display: flex;
   flex-flow: column wrap;
   font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   margin-top: 1rem;
   border-radius: 0.6rem;
 
@@ -489,7 +489,7 @@
   &__warning {
     display: flex;
     justify-content: flex-start;
-    padding: 0.5rem 0;
+    padding-bottom: 0.5rem;
 
     @include small-mobile-up {
       padding: 0 0 0.6rem 0;
