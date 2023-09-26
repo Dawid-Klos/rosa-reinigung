@@ -8,7 +8,6 @@ import Checkout from "./Steps/Checkout";
 import { statusBarSteps, STEP_FIELDS, initialData } from "../../helpers/formData";
 import { stepOneSchema, stepTwoSchema, stepThreeSchema } from "./ValidationSchema";
 
-import ArrowRightIcon from "../../images/icons/icon-arrow-right.svg";
 import Lines from "../../images/img-line-booking.svg";
 
 import "../../styles/booking.scss";
