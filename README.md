@@ -29,5 +29,5 @@ Figma was used to prepare low-fidelity and high-fidelity prototypes adhering to 
 
 ## Preview
 
-[Live preview](https://rosareinigungmain.gatsbyjs.io/)
+[Live preview](https://main--imaginative-bonbon-63aa96.netlify.app/)
 
